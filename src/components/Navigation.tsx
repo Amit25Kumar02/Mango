@@ -1,0 +1,547 @@
+import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import logo from "@/assets/hero-logo.png"
+import whitelogo from "@/assets/white-hero.png"
+
+export const Navigation = ({ itemColor = "#fff" }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
+  const [isLabsOpen, setIsLabsOpen] = useState(false);
+  const [isTrainingOpen, setIsTrainingOpen] = useState(false);
+  const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
+  const navigate = useNavigate();
+  const ref = useRef(null)
+
+  // Helper function to generate route paths
+  const getRoutePath = (category: string, item: string) => {
+    const slug = item.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
+    return `/${category}/${slug}`;
+  };
+
+  // Handle navigation to dynamic routes
+  const handleItemClick = (category: string, item: string) => {
+    const path = getRoutePath(category, item);
+    navigate(path);
+    // Close all dropdowns
+    setIsSolutionsOpen(false);
+    setIsIndustriesOpen(false);
+    setIsLabsOpen(false);
+    setIsAboutUsOpen(false);
+    setIsTrainingOpen(false);
+    setIsMobileMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { label: 'Solutions', href: '#solutions', hasDropdown: true },
+    { label: 'Industries', href: '#industries', hasDropdown: true },
+    { label: 'Labs', href: '#labs', hasDropdown: true },
+    { label: 'Training', href: '#training', hasDropdown: true },
+    { label: 'About Us', href: '#about', hasDropdown: true },
+  ];
+
+  const solutionsItems = [
+    {
+      title: 'AI Product Development',
+      description: 'Build AI-powered platforms and applications ready to scale globally.'
+    },
+    {
+      title: 'Data Analytics & Insights',
+      description: 'Transform fragmented data into clean, unified pipelines for seamless AI integration.'
+    },
+    {
+      title: 'Machine Learning Solutions',
+      description: 'Custom ML models, computer vision, NLP, and predictive analytics for your business.'
+    },
+    {
+      title: 'Compliance & Security',
+      description: 'HIPAA, FDA, and EMA-ready AI systems from day one.'
+    },
+    {
+      title: 'AI Talent Development',
+      description: 'Train, certify, and place AI professionals and corporate teams.'
+    }
+  ];
+
+  const industriesItems = [
+    {
+      title: 'IT Consulting Business',
+      description: 'Elite IT talent placement, technical consulting, and team augmentation services'
+    },
+    {
+      title: 'Medical & Healthcare',
+      description: 'Predictive patient analytics, diagnostics'
+    },
+    {
+      title: 'Startups & Enterprises',
+      description: 'Scalable AI products & cloud-native platforms'
+    }
+  ];
+
+  const labsItems = [
+    {
+      title: 'Food Haven',
+      category: 'Health Tech',
+      description: 'AI-powered healthy lifestyle food delivery platform with personalized nutrition',
+      status: 'Coming Soon',
+      statusColor: 'border-green-500'
+    },
+    {
+      title: 'Mango Boutique',
+      category: 'E-commerce',
+      description: 'Immersive VR shopping experience with AI-powered style recommendations',
+      status: 'Coming Soon',
+      statusColor: 'border-green-500'
+    },
+    {
+      title: 'DriveMeSafe',
+      category: 'Transportation',
+      description: 'Community-driven ride-sharing platform focused on family safety',
+      status: 'Coming Soon',
+      statusColor: 'border-green-500'
+    },
+    {
+      title: 'EduMind AI',
+      category: 'Education',
+      description: 'Personalized learning platform with adaptive AI tutoring systems',
+      status: 'Beta Testing',
+      statusColor: 'border-blue-500'
+    },
+    {
+      title: 'GreenTrack',
+      category: 'Sustainability',
+      description: 'Carbon footprint tracking and sustainability optimization for businesses',
+      status: 'In Development',
+      statusColor: 'border-orange-500'
+    },
+    {
+      title: 'HealthSync',
+      category: 'Healthcare',
+      description: 'AI-powered patient data integration and predictive health analytics',
+      status: 'Coming Soon',
+      statusColor: 'border-green-500'
+    }
+  ];
+
+  const trainingItems = [
+    {
+      title: 'Programs Overview',
+      description: 'Individual and corporate AI courses'
+    },
+    {
+      title: 'Waitlist Signup',
+      description: 'Get early access to our programs'
+    },
+    {
+      title: 'Corporate training',
+      description: 'Upskilling enterprise teams'
+    },
+  ];
+
+  const aboutUsItems = [
+    {
+      title: 'Our Story',
+      description: 'Learn about our journey, mission, and vision for the future of AI and technology.'
+    },
+    {
+      title: 'Leadership Team',
+      description: 'Meet the experts and leaders driving innovation at MangoAnalytics.'
+    },
+    {
+      title: 'Careers',
+      description: 'Join our team and be part of the next generation of AI solutions.'
+    },
+    {
+      title: 'Contact',
+      description: 'Join our team and be part of the next generation of AI solutions.'
+    }
+  ];
+
+
+  return (
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`${isScrolled ? "" : "fixed"} top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? ' text-foreground backdrop-blur-md border-b border-primary/20'
+          : 'text-foreground'
+        }`}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center space-x-2 cursor-pointer"
+            onClick={() => navigate('/')}
+          >
+            <img
+              src={window.location.pathname !== "/" ? logo : whitelogo}
+              className="filter drop-shadow-[0_0_6px_rgba(255,255,255,0.75)]"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              style={{ marginTop: "10px" }}
+              height={144}
+              width={144}
+              alt="logo"
+            />
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <div key={item.label} className="relative">
+                {item.hasDropdown ? (
+                  <div
+                    className="flex items-center space-x-1 cursor-pointer"
+                    onClick={() => {
+                      if (item.label === 'Solutions') {
+                        setIsSolutionsOpen(!isSolutionsOpen);
+                        setIsIndustriesOpen(false);
+                        setIsLabsOpen(false);
+                        setIsAboutUsOpen(false);
+                        setIsTrainingOpen(false);
+                      } else if (item.label === 'Industries') {
+                        setIsIndustriesOpen(!isIndustriesOpen);
+                        setIsSolutionsOpen(false);
+                        setIsLabsOpen(false);
+                        setIsAboutUsOpen(false);
+                        setIsTrainingOpen(false);
+                      } else if (item.label === 'Labs') {
+                        setIsLabsOpen(!isLabsOpen);
+                        setIsSolutionsOpen(false);
+                        setIsIndustriesOpen(false);
+                        setIsAboutUsOpen(false);
+                        setIsTrainingOpen(false);
+                      } else if (item.label === "Training") {
+                        setIsTrainingOpen(!isTrainingOpen);
+                        setIsSolutionsOpen(false);
+                        setIsIndustriesOpen(false);
+                        setIsLabsOpen(false);
+                        setIsAboutUsOpen(false);
+                      } else if (item.label === 'About Us') {
+                        setIsAboutUsOpen(!isAboutUsOpen);
+                        setIsSolutionsOpen(false);
+                        setIsIndustriesOpen(false);
+                        setIsLabsOpen(false);
+                        setIsTrainingOpen(false);
+                      }
+                    }}
+                  >
+                    <motion.span
+                      whileHover={{ scale: 1.1 }}
+                      className="text-foreground text-xl hover:text-primary transition-colors duration-300 relative group"
+                      style={{
+                        color: isScrolled ? '#333' : itemColor,
+                      }}
+                    >
+                      {item.label}
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
+                    </motion.span>
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${(item.label === 'Solutions' && isSolutionsOpen) ||
+                        (item.label === 'Industries' && isIndustriesOpen) ||
+                        (item.label === 'Labs' && isLabsOpen) ||
+                        (item.label === 'Training' && isTrainingOpen) ||
+                        (item.label === 'About Us' && isAboutUsOpen) ? 'rotate-180' : ''
+                      }`} style={{ color: isScrolled ? '#333' : itemColor }} />
+                  </div>
+                ) : (
+                  <motion.a
+                    href={item.href}
+                    whileHover={{ scale: 1.1 }}
+                    className="text-foreground hover:text-primary transition-colors duration-300 relative group"
+                    style={{
+                      color: isScrolled ? '#333' : itemColor,
+                    }}
+                  >
+                    {item.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
+                  </motion.a>
+                )}
+              </div>
+            ))}
+            <Button variant="hero" size="lg" onClick={() => window.open("/about/contact",)}>
+              Get Started
+            </Button>
+          </div>
+
+          {/* Solutions Dropdown */}
+          {isSolutionsOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="absolute top-full right-[40%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-50 bg-white w-[30%]"
+              onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+            >
+              <div className="mx-auto px-2 sm:px-6 lg:px-8 py-8">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-3">
+                  {solutionsItems.map((solution, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95 "
+                      onClick={() => handleItemClick('solutions', solution.title)}
+                    >
+                      <h3 className="text-white font-semibold text-lg mb-2 text-gradient-primary transition-colors duration-300">
+                        {solution.title}
+                      </h3>
+
+                      <p className="text-black text-sm leading-relaxed">
+                        {solution.description}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Industries Dropdown */}
+          {isIndustriesOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="absolute top-full right-[30%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-50 bg-white w-[30%]"
+              onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
+            >
+              <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div className="grid grid-cols-1 gap-3">
+                  {industriesItems.map((industry, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
+                      onClick={() => handleItemClick('industries', industry.title)}
+                    >
+                      <h3 className="text-white font-semibold text-lg mb-2 text-gradient-primary transition-colors duration-300">
+                        {industry.title}
+                      </h3>
+                      <p className="text-black text-sm leading-relaxed">
+                        {industry.description}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Labs Dropdown */}
+          {isLabsOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="absolute top-full right-[20%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-50 bg-white w-[30%] overflow-y-auto max-h-[600px]"
+              onClick={() => setIsLabsOpen(!isLabsOpen)}
+            >
+              <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+                {/* ✅ New Heading Section */}
+                <div className="mb-6 text-center">
+                  <h2 className="text-2xl font-bold text-gradient-primary">
+                    MangoAnalytics Labs
+                  </h2>
+                  <p className="text-sm text-black mt-1">
+                    Innovations in progress — shaping the future, one breakthrough at a time.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
+                  {labsItems.map((lab, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
+                      onClick={() => handleItemClick('labs', lab.title)}
+                    >
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-gradient-primary font-semibold text-lg transition-colors duration-300">
+                          {lab.title}
+                        </h3>
+                        <span className={`px-2 py-1 rounded-full text-xs text-black border ${lab.statusColor}`}>
+                          {lab.status}
+                        </span>
+                      </div>
+                      <p className="text-black text-sm leading-relaxed">
+                        {lab.description}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+
+          {/* Training Dropdown */}
+          {isTrainingOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="absolute top-full right-[15%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-50 bg-white w-[20%]"
+              onClick={() => setIsTrainingOpen(!isTrainingOpen)}
+            >
+              <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div className="grid grid-cols-1 gap-3">
+                  {trainingItems.map((trainingItem, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
+                      onClick={() => handleItemClick('training', trainingItem.title)}
+                    >
+                      <h3 className="text-gradient-primary font-semibold text-lg mb-2 transition-colors duration-300">
+                        {trainingItem.title}
+                      </h3>
+                      <p className="text-black text-sm leading-relaxed">
+                        {trainingItem.description}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* About Us Dropdown */}
+          {isAboutUsOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="absolute top-full right-[10%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-50 bg-white w-[30%]"
+              onClick={() => setIsAboutUsOpen(!isAboutUsOpen)}
+            >
+              <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div className="grid grid-cols-1 gap-3">
+                  {aboutUsItems.map((aboutItem, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
+                      onClick={() => handleItemClick('about', aboutItem.title)}
+                    >
+                      <h3 className="text-gradient-primary font-semibold text-lg mb-2 transition-colors duration-300">
+                        {aboutItem.title}
+                      </h3>
+                      <p className="text-black text-sm leading-relaxed">
+                        {aboutItem.description}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <Button
+              variant="hero"
+              size="icon"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="hover:bg-transparent focus:bg-transparent active:bg-transparent"
+            >
+              {isMobileMenuOpen ? <X /> : <Menu />}
+            </Button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden backdrop-blur-md border-t border-primary/20 bg-white/90 rounded-b-lg mt-2 mb-4"
+          >
+            <div className="px-4 py-6 space-y-4">
+              {navItems.map((item) => (
+                <div key={item.label}>
+                  <a
+                    href={item.href}
+                    className="block text-black hover:text-primary transition-colors duration-300 py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                  {item.hasDropdown && (
+                    <div className="ml-4 mt-2 space-y-2">
+                      {(item.label === 'Solutions'
+                        ? solutionsItems
+                        : item.label === 'Industries'
+                          ? industriesItems
+                          : item.label === 'Labs'
+                            ? labsItems
+                            : item.label === 'Training'
+                              ? trainingItems
+                              : aboutUsItems
+                      ).map((dropdownItem: any, index) => (
+                        <div
+                          key={index}
+                          className="p-3 bg-slate-700/30 rounded-lg cursor-pointer hover:bg-slate-600/30 transition-colors duration-300"
+                          onClick={() => {
+                            const category = item.label.toLowerCase().replace(/\s+/g, '-');
+                            handleItemClick(category, dropdownItem.title);
+                          }}
+                        >
+                          <h4 className="text-gradient-primary font-medium text-sm mb-1">
+                            {dropdownItem.title}
+                          </h4>
+                          {dropdownItem.category && (
+                            <p className="text-purple-400 text-xs mb-1">{dropdownItem.category}</p>
+                          )}
+                          <p className={`text-black text-xs`}>
+                            {dropdownItem.description}
+                          </p>
+                          {dropdownItem.status && (
+                            <span className={`inline-block px-2 py-1 rounded-full text-xs text-white mt-2 ${dropdownItem.statusColor}`}>
+                              {dropdownItem.status}
+                            </span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+              <Button
+                className="w-full bg-teal-500 hover:bg-teal-600 text-white"
+                size="lg"
+                onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}
+              >
+                Schedule a Demo
+              </Button>
+            </div>
+          </motion.div>
+        )}
+      </div>
+    </motion.nav>
+  );
+};
