@@ -22,7 +22,7 @@ const Icons: any = {
 
 const AnalyticsHero = ({ content }: any) => {
   return (
-    <section className="w-full bg-[#0c0f1a] text-white py-16 md:py-20">
+    <section className="w-full bg-[#0c0f1a] text-white py-16 md:py-20 px-4 sm:px-4 md:px-32 -mb-32">
       <div className="container mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
         {/* LEFT CONTENT */}
@@ -34,7 +34,7 @@ const AnalyticsHero = ({ content }: any) => {
           </span>
 
           {/* Heading + Highlight */}
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mt-6">
+          <h1 className="text-2xl sm:text-2xl md:text-4xl font-bold leading-tight mt-6">
             {content.title.split(" ").map((word: string, i: number) => (
               <span
                 key={i}
@@ -50,7 +50,7 @@ const AnalyticsHero = ({ content }: any) => {
           </h1>
 
           {/* Description */}
-          <p className="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+          <p className="mt-6 text-gray-300 text-[14px] sm:text-[14px] leading-relaxed max-w-xl mx-auto lg:mx-0">
             {content.description}
           </p>
 
@@ -59,7 +59,7 @@ const AnalyticsHero = ({ content }: any) => {
             {content.buttons?.map((btn: string, index: number) => (
               <button
                 key={index}
-                className={`px-6 py-3 rounded-xl font-semibold transition flex items-center justify-center gap-2 w-full sm:w-auto ${
+                className={`px-2 py-2  rounded-xl font-semibold transition flex items-center justify-center gap-2 w-full sm:w-auto ${
                   index === 0
                     ? "bg-cyan-500 hover:bg-cyan-600 text-white"
                     : "bg-[#141a28] hover:bg-[#1c2335] border border-cyan-500/30 text-cyan-300"
@@ -71,10 +71,10 @@ const AnalyticsHero = ({ content }: any) => {
           </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-10 sm:gap-16 mt-14">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-4 md:gap-10 mt-14">
             {content.stats.map((stat: any, i: number) => (
               <div key={i} className="text-center">
-                <p className="text-3xl font-extrabold text-cyan-400">{stat.value}</p>
+                <p className="text-2xl font-extrabold text-cyan-400">{stat.value}</p>
                 <p className="text-gray-400 text-sm">{stat.label}</p>
               </div>
             ))}
@@ -142,7 +142,7 @@ const AnalyticsHero = ({ content }: any) => {
                       {m.label}
                     </div>
 
-                    <p className="text-green-400 text-lg sm:text-xl font-bold">
+                    <p className="text-green-400 text-md sm:text-md font-bold">
                       {m.value}
                     </p>
                   </div>

@@ -33,11 +33,11 @@ interface PlatformFeaturesProps {
 
 const PlatformFeatures: React.FC<PlatformFeaturesProps> = ({ data }) => {
   return (
-    <section className="py-24 bg-[#0e0e11] text-white">
+    <section className="py-24 px-4 md:px-32 bg-[#0e0e11] text-white">
       <div className="container mx-auto px-6">
 
         {/* Title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+        <h2 className="text-2xl md:text-4xl font-bold text-center text-gradient-primary mb-16">
           {data.title}
         </h2>
 
@@ -52,7 +52,7 @@ const PlatformFeatures: React.FC<PlatformFeaturesProps> = ({ data }) => {
               <div className="mb-6">{iconMap[item.icon]}</div>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold mb-3">
+              <h3 className="text-xl font-semibold text-gradient-primary mb-3">
                 {item.title}
               </h3>
 

@@ -30,11 +30,11 @@ const getStatusStyle = (status: string): string => {
 
 const DevelopmentNetwork: React.FC<DevelopmentNetworkProps> = ({ data }) => {
   return (
-    <section className="relative py-20 bg-[#0f0f0f] text-white text-center z-0">
+    <section className="relative py-20 px-4 md:px-32 bg-[#0f0f0f] text-white text-center z-0">
       <div className="container mx-auto px-6">
 
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">
+        <h2 className="text-2xl md:text-4xl font-bold mb-10 text-gradient-primary">
           {data.title}
         </h2>
 

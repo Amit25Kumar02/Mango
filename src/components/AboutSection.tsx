@@ -64,7 +64,7 @@ export const AboutSection = () => {
     <section
       id="about"
       ref={ref}
-      className="py-20 relative overflow-hidden px-4 sm:px-6 md:px-10 lg:px-20"
+      className="py-10 sm:py-10 md:py-24 lg:py-24 relative overflow-hidden px-2 sm:px-2 md:px-32 lg:px-32"
     >
       {/* <div className="absolute inset-0">
         <video
@@ -113,7 +113,7 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center space-x-2 backdrop-blur-md border border-primary/30 rounded-full px-4 py-2 mb-6"
+              className="inline-flex backdrop-blur-md border border-primary/30 rounded-full px-4 py-2 mb-6"
             >
               <span className="text-md font-medium text-gradient-primary">
                 About Mango Analytics
@@ -125,7 +125,7 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 }}
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-8 leading-snug"
+              className="text-2xl sm:text-2xl md:text-3xl font-bold text-gradient-primary mb-8 leading-snug"
             >
               Empowering AI, Enterprises & Professionals with AI Excellence
             </motion.p>
@@ -177,7 +177,7 @@ export const AboutSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 gap-6"
+            className="grid grid-cols-1 gap-4"
           >
             {features.map((feature, index) => (
               <motion.div
@@ -185,20 +185,20 @@ export const AboutSection = () => {
                 initial={{ opacity: 0, x: 80 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.4 + index * 0.15 }}
-                className="card-interactive hover-gradient p-4 sm:p-6 rounded-xl flex items-center gap-4"
+                className="card-interactive hover-gradient p-2 sm:p-4 rounded-xl flex items-center gap-2"
               >
                 {/* Text */}
                 <div className="flex-1">
                   <h3 className="text-lg sm:text-xl font-semibold text-gradient-primary mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-black text-sm sm:text-base">
+                  <p className="text-black text-[14px] md:text-base">
                     {feature.description}
                   </p>
                 </div>
 
                 {/* Icon */}
-                <div className="relative flex items-center justify-center h-14 w-14 sm:h-20 sm:w-20 rounded-lg bg-gradient-primary">
+                <div className="relative flex items-center justify-center h-12 w-12 sm:h-16 sm:w-16 rounded-lg bg-gradient-primary">
                   <div className="absolute inset-0 rounded-lg bg-gradient-primary animate-pulse-glow opacity-30" />
                   <feature.icon className="h-7 w-7 sm:h-10 sm:w-10 text-white" />
                 </div>

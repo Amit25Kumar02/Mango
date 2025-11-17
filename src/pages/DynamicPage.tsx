@@ -58,6 +58,7 @@ import ProgressSection from '@/components/ProgressSection';
 import LeadershipSection from '@/components/LeadershipSection';
 import CareersSection from '@/components/CareersSection';
 import ContactSectionAbout from '@/components/ContactSectionAbout';
+import ProcessSection from '@/components/ProcessSection';
 
 
 const DynamicPage = () => {
@@ -279,16 +280,6 @@ const DynamicPage = () => {
           "Real-time Analytics",
           "Business Intelligence Dashboards",
         ],
-
-        companies: [
-          "Fortune 500",
-          "Tech Startups",
-          "Government",
-          "Healthcare",
-          "Finance",
-          "IT Services",
-        ],
-
         technologies: {
           title: "Powered by Leading Technologies",
           description:
@@ -308,7 +299,36 @@ const DynamicPage = () => {
             "Elasticsearch",
           ],
         },
-
+        footerMain: {
+          title: "Ready to unlock your data's potential?",
+          subtitle: "Let's discuss how our analytics solutions can transform your business intelligence and drive growth."
+        },
+        analyticsData: {
+          title: "Our Analytics Process",
+          subtitle: "A systematic approach to transforming your data into strategic advantage",
+          steps: [
+            {
+              number: "01",
+              title: "Data Discovery",
+              description: "We analyze your current data landscape, identify sources, and assess data quality and accessibility.",
+            },
+            {
+              number: "02",
+              title: "Architecture Design",
+              description: "Custom analytics architecture tailored to your business needs, scalability requirements, and technical constraints.",
+            },
+            {
+              number: "03",
+              title: "Implementation",
+              description: "Rapid deployment of analytics solutions with minimal disruption to your existing operations.",
+            },
+            {
+              number: "04",
+              title: "Optimization",
+              description: "Continuous monitoring, refinement, and enhancement to ensure maximum value from your analytics investment.",
+            },
+          ],
+        },
         section2: {
           title: "Our Analytics Process",
           description:
@@ -384,6 +404,10 @@ const DynamicPage = () => {
             'AWS SageMaker', 'Google AI Platform', 'Azure ML', 'MLflow'
           ]
         },
+        buttons: [
+          "Start Building ML Solutions",
+          "View ML Pricing"
+        ],
         section2: {
           title: "Our Strategic AI & IT Approach",
           framework: {
@@ -490,6 +514,10 @@ const DynamicPage = () => {
           'Data Security Protocols',
           'Audit Trail Management'
         ],
+        buttons: [
+          "Start Compliant Build",
+          "View Compliance Framework",
+        ],
         companies: [
           "HealthTech",
           "FinServ",
@@ -558,6 +586,10 @@ const DynamicPage = () => {
           'Talent Placement Services',
           'Corporate Upskilling',
           'Mentorship Programs'
+        ],
+        buttons: [
+          "Explore Programs",
+          "Join our Community"
         ],
         companies: [
           "TechCorp",
@@ -686,6 +718,10 @@ const DynamicPage = () => {
           'Project Management',
           'Technology Strategy'
         ],
+        buttons: [
+          "Start Your Project",
+          "View Case Studies",
+        ],
         section4: {
           title: "Our IT consulting services span every stage of your transformation",
           description: "Explore how we help IT organizations scale, innovate, and deliver exceptional results.",
@@ -725,6 +761,10 @@ const DynamicPage = () => {
           'Team Augmentation',
           'Project Management',
           'Technology Strategy'
+        ],
+        buttons: [
+          "Transform Patient Care",
+          "View healthcare Cases",
         ],
         section4: {
           title: "AI solutions that improve patient outcomes",
@@ -789,6 +829,10 @@ const DynamicPage = () => {
           "Netflix",
           "Spotify"
         ],
+        buttons: [
+          "Scale your Vision",
+          "View Success Stories",
+        ],
         section4: {
           title: "End-to-end IT consulting for your transformation",
           description: "Explore how we help IT organizations scale, innovate, and deliver exceptional results.",
@@ -814,6 +858,10 @@ const DynamicPage = () => {
           'Seamless Delivery Integration',
           'Lifestyle Tracking',
           'Nutrition Analytics'
+        ],
+        buttons: [
+          "Join Waitlist",
+          "View Demo",
         ],
         developmentProgress: {
           percentage: 52,
@@ -938,10 +986,14 @@ const DynamicPage = () => {
           'Personalized Curation',
           'Social Shopping Features'
         ],
+        buttons: [
+          "Join Early Access",
+          "Experience Demo",
+        ],
         developmentProgress: {
           percentage: 32,
           expectedLaunch: "Q3 2025",
-          teamSize: "7"
+          vrplatforms: "Meta,Apple"
         },
         footerMain: {
           title: "Step Into the Future of Shopping",
@@ -1084,6 +1136,10 @@ const DynamicPage = () => {
           'Real-time Safety Monitoring',
           'Community Ratings',
           'Emergency Response System'
+        ],
+        buttons: [
+          "Safety Network",
+          "Learn About Safety",
         ],
         developmentProgress: {
           percentage: 28,
@@ -1416,27 +1472,27 @@ const DynamicPage = () => {
             }
           ]
         },
-        betaTestingResults: {
+        marketOpportunity : {
           title: "Beta Testing Results",
           subtitle: "Real results from our closed beta program with students and educators",
           items: [
             {
-              value: "89%",
+              percentage: "89%",
               title: "Learning Efficiency",
               subText: "+34% improvement"
             },
             {
-              value: "92%",
+              percentage: "92%",
               title: "Knowledge Retention",
               subText: "+28% vs traditional"
             },
             {
-              value: "4.8",
+              percentage: "4.8",
               title: "User Satisfaction",
               subText: "Out of 5.0"
             },
             {
-              value: "67%",
+              percentage: "67%",
               title: "Time Reduction",
               subText: "Faster learning"
             }
@@ -1648,6 +1704,10 @@ const DynamicPage = () => {
           'Health Trend Analysis',
           'Risk Assessment',
           'Care Coordination'
+        ],
+        buttons: [
+          "Request Healthcare Demo",
+          "HIPAA Compliance",
         ],
         developmentProgress: {
           percentage: 45,
@@ -2155,6 +2215,7 @@ const DynamicPage = () => {
         {/* Development Progress Section */}
         {content.progress && <ProgressSection content={{ progress: content.progress }} />}
 
+        {content.analyticsData && (<ProcessSection data={content.analyticsData} />)}
         {/* Strategic Approach Section */}
         {content.section2 && <SecondBanner data={content.section2} />}
 
@@ -2180,7 +2241,7 @@ const DynamicPage = () => {
         {/* Services Grid Section */}
         {content.section3 && <ThirdBanner data={content.section3} />}
 
-        {content.formSection && <section className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 z-9999">
+        {content.formSection && <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16 z-9999">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -2188,11 +2249,11 @@ const DynamicPage = () => {
             className="text-center mb-12"
           >
             {/* <BackgroundParticle /> */}
-            <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.formSection.title}</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.formSection.title}</h2>
             <p className="text-xl text-black max-w-4xl mx-auto">
               {content.formSection.subtitle}
             </p>
-            <div className='flex items-center justify-center m-10 relative gap-10 z-999999'>
+            <div className='flex items-center justify-center m-10 relative gap-4 z-999999'>
               <form className="space-y-6  border border-primary/30 rounded-[1rem] p-5">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -2269,7 +2330,7 @@ const DynamicPage = () => {
                 </Button>
               </form>
               {/* Upcoming Programs Section */}
-              <div className="bg-white rounded-2xl mt-5 mb-5 py-8 px-4 md:px-12 w-[40%]">
+              <div className="bg-white rounded-2xl mt-5 mb-5 py-8 px-4 md:px-4 w-[50%]">
                 <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-8">Upcoming Programs</h2>
                 <div className="flex flex-col gap-7">
                   {/* Program 1 */}
@@ -2278,7 +2339,7 @@ const DynamicPage = () => {
                       <span className="bg-gradient-primary text-xs text-white px-3 py-1 rounded-full font-semibold">Advanced</span>
                       <span className="text-sm text-amber-600 font-semibold">Q2 2024</span>
                     </div>
-                    <p className="text-lg font-bold text-black/70 mb-[2px]">Advanced Computer Vision</p>
+                    <p className="text-lg font-bold text-gradient-primary mb-[2px]">Advanced Computer Vision</p>
                     <p className="text-gray-600 text-sm leading-relaxed">Deep dive into image recognition, object detection, and neural networks</p>
                   </div>
                   {/* Program 2 */}
@@ -2287,7 +2348,7 @@ const DynamicPage = () => {
                       <span className="bg-gradient-primary text-xs text-white px-3 py-1 rounded-full font-semibold">Executive</span>
                       <span className="text-sm text-amber-600 font-semibold">Q2 2024</span>
                     </div>
-                    <p className="text-lg font-bold text-black/70 mb-[2px]">AI Ethics & Governance</p>
+                    <p className="text-lg font-bold text-gradient-primary mb-[2px]">AI Ethics & Governance</p>
                     <p className="text-gray-600 text-sm leading-relaxed">Navigate the ethical implications and governance of AI in business</p>
                   </div>
                   {/* Program 3 */}
@@ -2296,7 +2357,7 @@ const DynamicPage = () => {
                       <span className="bg-gradient-primary text-xs text-white px-3 py-1 rounded-full font-semibold">Intermediate</span>
                       <span className="text-sm text-amber-600 font-semibold">Q3 2024</span>
                     </div>
-                    <p className="text-lg font-bold text-black/70 mb-[2px]">Generative AI Applications</p>
+                    <p className="text-lg font-bold text-gradient-primary mb-[2px]">Generative AI Applications</p>
                     <p className="text-gray-600 text-sm leading-relaxed">Build applications with GPT, DALL-E, and other generative models</p>
                   </div>
                 </div>
@@ -2322,7 +2383,7 @@ const DynamicPage = () => {
 
         {content.section5 && (
           <section className="bg-[#0b0d17] text-white py-20">
-            <div className="container mx-auto px-6 md:px-10 lg:px-16 flex flex-col md:flex-row items-center gap-12">
+            <div className="container mx-auto px-4 md:px-32 lg:px-32 flex flex-col md:flex-row items-center gap-12">
               {/* Left Side: Text */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -2330,7 +2391,7 @@ const DynamicPage = () => {
                 transition={{ duration: 0.8 }}
                 className="flex-1 space-y-8"
               >
-                <h2 className="text-4xl md:text-5xl font-bold text-white">
+                <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary">
                   {content.section5.title}
                 </h2>
                 <p className="text-lg text-gray-300 max-w-lg">
@@ -2355,7 +2416,7 @@ const DynamicPage = () => {
                           <Icon size={22} />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-lg text-white">
+                          <h3 className="font-semibold text-lg text-gradient-primary">
                             {item.title}
                           </h3>
                           <p className="text-gray-400">{item.description}</p>
@@ -2384,7 +2445,7 @@ const DynamicPage = () => {
         )}
 
         {/* <SuccessStoriesSection/> */}
-        {content.section42 && <section className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {content.section42 && <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -2392,8 +2453,8 @@ const DynamicPage = () => {
             className="text-center mb-12"
           >
             {/* <BackgroundParticle /> */}
-            <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.section42.title}</h2>
-            <p className="text-xl text-black max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.section42.title}</h2>
+            <p className="text-lg text-black max-w-4xl mx-auto">
               {content.section42.description}
             </p>
           </motion.div>
@@ -2496,15 +2557,15 @@ const DynamicPage = () => {
 
         {/* Technologies Section */}
         {content?.technologies && (
-          <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <section className="container mx-auto px-4 sm:px-4 lg:px-32 py-16">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.technologies.title}</h2>
-              <p className="text-xl text-black max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.technologies.title}</h2>
+              <p className="text-lg text-black max-w-4xl mx-auto">
                 We leverage the most advanced analytics tools and platforms to deliver exceptional results
               </p>
             </motion.div>
@@ -2535,7 +2596,7 @@ const DynamicPage = () => {
 
       {content.contact && <ContactSectionAbout content={{ contact: content.contact }} />}
 
-      {content?.footerMain && <section className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {content?.footerMain && <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-12">
         {/* <BackgroundParticle /> */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -2543,11 +2604,11 @@ const DynamicPage = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.footerMain.title}</h2>
-          <p className="text-xl text-black max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.footerMain.title}</h2>
+          <p className="text-lg text-black max-w-4xl mx-auto">
             {content.footerMain.subtitle}
           </p>
-          <div className='flex gap-5 justify-center mt-5'>
+          <div className='flex gap-2 md:gap-5 justify-center mt-5'>
             <Button variant="hero" onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}>Request Demo</Button>
             <Button variant='cyber' onClick={() => window.open('/about/contact', '_blank')} className='border border-primary/30 text-black'>Partner with us</Button>
           </div>

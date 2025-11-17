@@ -73,7 +73,7 @@ export const ServicesSection = () => {
     <section
       id="services"
       ref={ref}
-      className="py-20 relative px-4 sm:px-6 md:px-10 lg:px-20"
+      className="py-10 sm:py-10 md:py-10 lg:py-10 relative px-2 sm:px-4 md:px-32 lg:px-32"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -110,7 +110,7 @@ export const ServicesSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold mb-6 text-gradient-primary"
+            className="text-2xl md:text-4xl font-bold mb-6 text-gradient-primary"
           >
             <span className="text-gradient-primary">
               From Idea to Impact – Our Services
@@ -123,7 +123,7 @@ export const ServicesSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+            className="text-[14px] md:text-lg text-muted-foreground max-w-4xl mx-auto"
           >
             From intelligent automation to custom AI models, we deliver
             comprehensive solutions that transform how you operate and compete
@@ -132,7 +132,7 @@ export const ServicesSection = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -154,11 +154,11 @@ export const ServicesSection = () => {
 
                 {/* Content */}
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-gradient-primary group-hover:text-gradient-primary transition-all duration-300">
+                  <h3 className="text-xl font-bold mb-4 text-gradient-primary group-hover:text-gradient-primary transition-all duration-300">
                     {service.title}
                   </h3>
 
-                  <p className="text-foreground mb-6 leading-relaxed">
+                  <p className="text-[14px] md:text-md  leading-relaxed">
                     {service.description}
                   </p>
 

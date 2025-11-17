@@ -17,11 +17,11 @@ interface SafetyMarketImpactProps {
 
 const SafetyMarketImpact: React.FC<SafetyMarketImpactProps> = ({ data }) => {
   return (
-    <section className="relative py-20 bg-gradient-to-b from-[#080606] via-[#080606] to-[#000000] text-center text-white">
+    <section className="relative py-20 px-4 md:px-32 bg-gradient-to-b from-[#080606] via-[#080606] to-[#000000] text-center text-white">
       <div className="container mx-auto px-6">
 
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-gradient-primary">
           {data.title}
         </h2>
 
@@ -37,7 +37,7 @@ const SafetyMarketImpact: React.FC<SafetyMarketImpactProps> = ({ data }) => {
               key={index}
               className="bg-[#070606]/60 border border-[#070606] rounded-xl py-8 px-6 text-center shadow-[0_0_30px_rgba(255,115,0,0.08)] hover:shadow-[0_0_35px_rgba(255,115,0,0.15)] transition"
             >
-              <div className={`text-3xl md:text-4xl font-extrabold mb-2 ${item.color ?? "text-orange-500"}`}>
+              <div className={`text-2xl md:text-3xl font-extrabold mb-2 ${item.color ?? "text-orange-500"}`}>
                 {item.percentage}
               </div>
 

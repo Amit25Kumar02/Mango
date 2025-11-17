@@ -2,16 +2,18 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle as Tick , Wand,} from "lucide-react";
+import { CheckCircle as Tick, Wand, } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface Section4Item {
-     icon?: React.ElementType;
+    icon?: React.ElementType;
     company: string;
     category?: string;
     challenge: string;
     solution: string;
     timeline?: string;
     results: string[];
+    button?: { label: string; link?: string }[];
 }
 
 interface Section4Content {
@@ -32,8 +34,8 @@ const Section4Page: React.FC<Props> = ({ content }) => {
     const section = content.section4;
 
     return (
-        <section className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            
+        <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16">
+
             {/* Title */}
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -41,20 +43,19 @@ const Section4Page: React.FC<Props> = ({ content }) => {
                 transition={{ duration: 0.8 }}
                 className="text-center mb-12"
             >
-                <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-4">
+                <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-4">
                     {section.title}
                 </h2>
 
-                <p className="text-xl text-black max-w-4xl mx-auto">
+                <p className="text-md text-black max-w-4xl mx-auto">
                     {section.description}
                 </p>
             </motion.div>
 
             {/* Cards Grid */}
             <div
-                className={`grid grid-cols-1 lg:grid-cols-${
-                    section.data.length > 4 ? 3 : section.data.length
-                } gap-8`}
+                className={`grid grid-cols-1 lg:grid-cols-${section.data.length > 4 ? 3 : section.data.length
+                    } gap-4`}
             >
                 {section.data.map((story, index) => (
                     <motion.div
@@ -64,7 +65,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
                         transition={{ delay: index * 0.2 }}
                         className="rounded-xl p-6 border border-primary/40 bg-white/70 backdrop-blur-md hover:shadow-lg transition-all duration-300"
                     >
-                        
+
 
                         {/* Category + Timeline (Hide if empty) */}
                         {(story.category || story.timeline) && (
@@ -109,7 +110,17 @@ const Section4Page: React.FC<Props> = ({ content }) => {
                                     </p>
                                 </div>
                             )}
+                            {story.button && (
+                                <Button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="mt-4 bg-gradient-primary text-white font-semibold w-full"
+                                >
+                                    {story.button}
+                                </Button>
+                            )}
                         </div>
+
                     </motion.div>
                 ))}
             </div>

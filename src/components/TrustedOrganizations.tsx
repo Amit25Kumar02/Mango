@@ -23,11 +23,11 @@ const TrustedOrganizations: React.FC<TrustedOrganizationsProps> = ({
   metrics,
 }) => {
   return (
-    <section className="py-20 bg-[#0e0e11] text-white text-center">
+    <section className="py-20 px-4 md:px-32 bg-[#0e0e11] text-white text-center">
       <div className="container mx-auto px-6">
 
         {/* TITLE */}
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <h2 className="text-2xl md:text-4xl text-gradient-primary font-bold mb-4">
           Trusted by Leading Organizations
         </h2>
 
@@ -36,7 +36,7 @@ const TrustedOrganizations: React.FC<TrustedOrganizationsProps> = ({
         </p>
 
         {/* TOP CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-20">
           {organizations.map((item, index) => (
             <div
               key={index}

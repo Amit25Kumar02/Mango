@@ -52,7 +52,7 @@ export const HeroSection = () => {
       <section
         ref={ref}
         id="home"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden pb-24 md:pb-0"
+        className="relative min-h-screen flex justify-center overflow-hidden  px-4 md:px-26 lg:px-32"
       >
         {/* Background Video */}
         {/* <div 
@@ -61,7 +61,7 @@ export const HeroSection = () => {
       > */}
         <div className="absolute inset-0 bg-blue">
           <video
-            className="w-full h-full object-fill md:object-cover"
+            className="w-full h-full object-cover md:object-cover"
             src={heroBg}
             autoPlay
             muted
@@ -119,9 +119,9 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, type: 'spring', stiffness: 100, duration: 0.8 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 mt-20"
+              className="text-2xl md:text-5xl lg:text-5xl font-bold leading-tight md:mb-6 mt-20 lg:mt-20"
             >
-              <span className="text-foreground text-3xl md:text-4xl lg:text-6xl">
+              <span className="text-foreground text-gradient-primary text-2xl sm:text-2xl md:text-5xl lg:text-5xl">
                 {/* Transform your Business */}
                 {displayedText}
               </span>
@@ -131,9 +131,9 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, type: 'spring', stiffness: 100, duration: 0.8 }}
-              className="text-3xl md:text-3xl lg:text-3xl font-bold leading-tight mb-6 mt-5"
+              className="text-2xl md:text-3xl lg:text-3xl font-bold leading-tight my-2 md:my-4"
             >
-              <span className="text-foreground text-3xl">
+              <span className="text-foreground text-xl md:text-2xl">
                 {/* Transform your Business */}
                 (Data + AI):
               </span>
@@ -143,9 +143,9 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, type: 'spring', stiffness: 100, duration: 0.8 }}
-              className="text-3xl md:text-3xl lg:text-3xl font-bold leading-tight mb-6 mt-5"
+              className="text-xl md:text-2xl lg:text-2xl font-bold leading-tight my-4 md:mb-6 md:mt-5"
             >
-              <span className="text-foreground text-3xl">
+              <span className="text-foreground text-xl md:text-2xl">
                 {/* Transform your Business */}
                 Unlocking Infinite Possibilities
               </span>
@@ -157,7 +157,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-md md:text-2xl sm:text-md text-foreground max-w-3xl mx-auto mb-10 leading-relaxed"
+              className="text-[14px] md:text-xl sm:text-md text-foreground max-w-2xl mx-auto mb-3 md:mb-10 leading-relaxed"
             >
               We help businesses harness the power of AI — from strategy to deployment — delivering real results through innovation, compliance, and expertise. From building cutting-edge AI solutions to training tomorrow's AI leaders, we're redefining what's possible.
             </motion.p>
@@ -169,15 +169,15 @@ export const HeroSection = () => {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <Button variant="glass" size="xl" className="group hover:scale-105 transition-transform" onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}>
+              <Button variant="glass" size="sm" className="group hover:scale-105 transition-transform" onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}>
                 Schedule a Demo
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="glass" size="xl" className="group  hover:scale-105 transition-transform" onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}>
+              <Button variant="glass" size="sm" className="group  hover:scale-105 transition-transform" onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}>
                 <Zap className="mr-2 h-5 w-5" />
                 Free Consultation
               </Button>
-              <Button variant="glass" size="xl" className="group  hover:scale-105 transition-transform" onClick={() => window.open("/about/contact")}>
+              <Button variant="glass" size="sm" className="group  hover:scale-105 transition-transform" onClick={() => window.open("/about/contact")}>
                 <User className="mr-2 h-5 w-5" />
                 Join Training Program
               </Button>

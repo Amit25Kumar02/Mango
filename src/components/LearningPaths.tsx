@@ -21,11 +21,11 @@ interface LearningPathsProps {
 
 const LearningPaths: React.FC<LearningPathsProps> = ({ data }) => {
   return (
-    <section className="py-20 bg-[#0d0d0f] text-white">
+    <section className="py-20 px-4 md:px-32 bg-[#0d0d0f] text-white">
       <div className="container mx-auto px-6">
 
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-3">
+        <h2 className="text-2xl md:text-4xl text-gradient-primary font-bold text-center mb-3">
           {data.title}
         </h2>
 
@@ -34,7 +34,7 @@ const LearningPaths: React.FC<LearningPathsProps> = ({ data }) => {
         </p>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {data.items.map((item, index) => (
             <div
               key={index}
@@ -46,7 +46,7 @@ const LearningPaths: React.FC<LearningPathsProps> = ({ data }) => {
               </span>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold mt-4">
+              <h3 className="text-lg font-semibold text-gradient-primary mt-4">
                 {item.title}
               </h3>
 

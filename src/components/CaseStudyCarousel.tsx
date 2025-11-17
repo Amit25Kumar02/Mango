@@ -52,20 +52,20 @@ export default function CaseStudyCarousel() {
     const currentCase = caseStudies[current];
 
     return (
-        <section className="py-20 bg-gradient-to-b from-[#0B0D24] to-[#121633] text-white px-6 lg:px-16 relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-b from-[#0B0D24] to-[#121633] text-white px-4 md:px-32 relative overflow-hidden">
             {/* Section Title */}
             <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-center text-4xl md:text-5xl font-bold mb-12"
+                className="text-center text-2xl md:text-4xl font-bold mb-10 -mt-10 md:mt-0 "
             >
                 Proven Results That{" "}
                 <span className="text-gradient-primary">Speak for Themselves</span>
             </motion.h2>
 
             {/* Carousel Container */}
-            <div className="relative max-w-6xl mx-auto">
+            <div className="relative max-w-4xl mx-auto">
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={current}
@@ -80,23 +80,23 @@ export default function CaseStudyCarousel() {
                             <img
                                 src={currentCase.image}
                                 alt={currentCase.title}
-                                className="w-full h-[450px] object-cover rounded-xl transition-transform duration-500 hover:scale-105"
+                                className="w-full h-auto md:h-[450px] object-cover rounded-xl transition-transform duration-500 hover:scale-105"
                             />
                         </div>
 
                         {/* Text & Stats Section */}
                         <div className="flex flex-col h-full justify-start">
-                            <h3 className="text-2xl md:text-3xl font-semibold mb-4  leading-snug">
+                            <h3 className="text-lg md:text-2xl font-semibold mb-4 leading-snug">
                                 {currentCase.title}
                             </h3>
-                            <p className="text-gray-300 mb-8 leading-relaxed">
+                            <p className="text-gray-300 text-sm md:text-md mb-8 leading-relaxed">
                                 {currentCase.description}
                             </p>
                             <div className="grid grid-cols-3 gap-4 text-center">
                                 {currentCase.stats.map((stat, i) => (
                                     <div key={i} className="space-y-2">
                                         <stat.icon className="w-6 h-6 mx-auto text-cyan-400" />
-                                        <p className="text-2xl font-bold text-cyan-400">{stat.value}</p>
+                                        <p className="text-xl font-bold text-cyan-400">{stat.value}</p>
                                         <p className="text-sm text-gray-400">{stat.label}</p>
                                     </div>
                                 ))}

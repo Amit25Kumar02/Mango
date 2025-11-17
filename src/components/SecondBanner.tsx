@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 const SecondBanner = ({ data }) => {
-  return <section className="mx-auto px-4 sm:px-6 lg:px-10 py-16 z-9999" style={{
+  return <section className="mx-auto px-4 sm:px-4 lg:px-32 py-16 z-9999" style={{
     background: '#21253F',
   }}>
     <motion.div
@@ -9,7 +9,7 @@ const SecondBanner = ({ data }) => {
       transition={{ duration: 0.8 }}
       className="text-center mb-12"
     >
-      <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }} >{data.title}</h2>
+      <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }} >{data.title}</h2>
     </motion.div>
 
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -33,7 +33,7 @@ const SecondBanner = ({ data }) => {
             </div> */}
             <div>
               <h3 className="text-xl font-bold text-gradient-primary mb-2">{step.title}</h3>
-              <p className="text-white  leading-relaxed">{step.description}</p>
+              <p className="text-white text-[14px] md:text-md leading-relaxed">{step.description}</p>
             </div>
           </motion.div>
         ))}
@@ -70,7 +70,7 @@ const SecondBanner = ({ data }) => {
           <div className="flex justify-around text-center border-t border-white/20 pt-6">
             <div>
               <p
-                className={`text-3xl font-bold ${data.framework.stats.timeline.color || "text-cyan-400"
+                className={`text-2xl font-bold ${data.framework.stats.timeline.color || "text-cyan-400"
                   }`}
               >
                 {data.framework.stats.timeline.value}
@@ -81,7 +81,7 @@ const SecondBanner = ({ data }) => {
             </div>
             <div>
               <p
-                className={`text-3xl font-bold ${data.framework.stats.roi.color || "text-green-400"
+                className={`text-2xl font-bold ${data.framework.stats.roi.color || "text-green-400"
                   }`}
               >
                 {data.framework.stats.roi.value}

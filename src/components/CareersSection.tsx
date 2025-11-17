@@ -17,12 +17,12 @@ const CareersSection: React.FC<CareersProps> = ({ content }) => {
     return (
         <>
             <section className="relative w-full bg-[#21253F] pt-4 pb-10 mb-0">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="container mx-auto px-4 sm:px-4 lg:px-32">
                     <div className="text-center mb-7">
                         {/* Stats */}
                         <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-6">
                             <div className="flex flex-col items-center">
-                                <span className="text-4xl font-bold text-yellow-200">6</span>
+                                <span className="text-4xl font-bold text-yellow-500">6</span>
                                 <span className="text-sm text-foreground mt-1">Open Positions</span>
                             </div>
                             <div className="h-7 border-l border-zinc-200 hidden md:block"></div>
@@ -45,10 +45,10 @@ const CareersSection: React.FC<CareersProps> = ({ content }) => {
                 </div>
             </section>
 
-            <section className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 rounded-3xl mb-10">
+            <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16 rounded-3xl mb-10">
                 <div className="text-center mb-12">
                     <h2
-                        className="text-4xl md:text-5xl font-bold text-gradient-primary mb-2"
+                        className="text-2xl md:text-4xl font-bold text-gradient-primary mb-2"
                         style={{ lineHeight: 1.15 }}
                     >
                         Our Hiring Process
@@ -108,7 +108,7 @@ const CareersSection: React.FC<CareersProps> = ({ content }) => {
 
             <section className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <div className="text-center mb-8">
-                    <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-2">
+                    <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-2">
                         Open Positions
                     </h2>
                     <p className="text-base md:text-lg text-black/70 max-w-xl mx-auto">
@@ -118,7 +118,7 @@ const CareersSection: React.FC<CareersProps> = ({ content }) => {
             </section>
 
 
-            <section className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-10">
 
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -131,7 +131,7 @@ const CareersSection: React.FC<CareersProps> = ({ content }) => {
                             <h3 className="text-xl font-semibold text-gradient-primary">
                                 Senior AI Engineer
                             </h3>
-                            <span className="inline-block bg-gradient-to-tr from-sky-600 to-blue-400 px-2 py-0.5 rounded-md text-white text-xs font-medium ml-2">
+                            <span className="inline-block bg-gradient-primary px-2 py-0.5 rounded-md text-white text-xs font-medium ml-2">
                                 Full-Time
                             </span>
                         </div>
@@ -183,7 +183,7 @@ const CareersSection: React.FC<CareersProps> = ({ content }) => {
                             <h3 className="text-xl font-semibold text-gradient-primary">
                                 Machine Learning Engineer
                             </h3>
-                            <span className="inline-block bg-gradient-to-tr from-sky-600 to-blue-400 px-2 py-0.5 rounded-md text-white text-xs font-medium ml-2">
+                            <span className="inline-block bg-gradient-primary px-2 py-0.5 rounded-md text-white text-xs font-medium ml-2">
                                 Data Science
                             </span>
                         </div>

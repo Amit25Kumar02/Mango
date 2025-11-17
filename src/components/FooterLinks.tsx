@@ -24,7 +24,7 @@ export const FooterLinks = () => {
               <a href="https://www.linkedin.com/company/mangoanalytics-ai//" aria-label="LinkedIn" className="hover:text-primary transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61560089967426" aria-label="Facebook" className="hover:text-primary transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61562263534607" aria-label="Facebook" className="hover:text-primary transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
               <a href="https://www.youtube.com/@MangoAnalytics-d5a" aria-label="Facebook" className="hover:text-primary transition-colors">

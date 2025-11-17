@@ -27,7 +27,7 @@ const ContactSectionAbout: React.FC<ContactProps> = ({ content }) => {
   return (
     <>
 
-      <section className="relative w-full py-24 bg-[#192890] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full py-24 px-4 md:px-32 bg-[#192890] flex items-center justify-center overflow-hidden">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-16">
 
           {/* LEFT SIDE */}
@@ -36,8 +36,8 @@ const ContactSectionAbout: React.FC<ContactProps> = ({ content }) => {
               NEW
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-              Let's start <span className="text-gradient-primary">planning</span><br /> your AI transformation
+            <h2 className="text-2xl md:text-4xl font-bold text-white leading-tight mb-6">
+              Let's start <span className="text-gradient-primary">planning</span><br /> your AI <span className="text-gradient-primary">transformation</span>
             </h2>
 
             <p className="text-lg text-white/70 mb-7">
@@ -49,7 +49,7 @@ const ContactSectionAbout: React.FC<ContactProps> = ({ content }) => {
               {["Free Consultation", "Response within 24 hours", "1:1 with Solution Manager"].map(
                 (label, i) => (
                   <li className="flex items-center text-white/90 text-base" key={i}>
-                    <span className="mr-3 text-lime-400 bg-lime-400/10 rounded-full p-1">
+                    <span className="mr-3 text-green-500 bg-lime-400/10 rounded-full p-1">
                       <svg viewBox="0 0 16 16" fill="none" className="w-5 h-5">
                         <path
                           d="M6.5 11.294l-3.147-3.147a.5.5 0 01.708-.708L7 10.293l4.94-4.94a.5.5 0 01.707.707l-5.293 5.293a.5.5 0 01-.707 0z"
@@ -65,7 +65,7 @@ const ContactSectionAbout: React.FC<ContactProps> = ({ content }) => {
           </div>
 
           {/* RIGHT SIDE FORM */}
-          <div className="lg:w-[480px] w-full max-w-md bg-[#22253A]/95 px-8 py-10 shadow-2xl shadow-black/30 rounded-xl">
+          <div className="lg:w-[480px] w-full max-w-md bg-[#22253A]/95 px-6 py-6 shadow-2xl shadow-black/30 rounded-xl">
             <h3 className="text-xl font-semibold text-white mb-2">Start Your Journey</h3>
             <p className="text-sm text-white/50 mb-5">
               Fill out the enquiry and our team will reach out to you.
@@ -156,8 +156,8 @@ const ContactSectionAbout: React.FC<ContactProps> = ({ content }) => {
       </section>
 
       <section className="w-full py-16 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-5xl font-bold text-gradient-primary text-center mb-2">
+        <div className="container mx-auto px-4 sm:px-4 lg:px-32">
+          <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary text-center mb-2">
             Our Locations
           </h2>
           <p className="text-xl text-black text-center mb-12">

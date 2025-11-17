@@ -27,7 +27,7 @@ interface GreenTrackHeroProps {
 
 const GreenTrackHero: React.FC<GreenTrackHeroProps> = ({ data }) => {
   return (
-    <section className="py-20 bg-[#0b0d12] text-white -mb-32">
+    <section className="py-20 px-4 md:px-32 bg-[#0b0d12] text-white -mb-32">
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
 
         {/* LEFT SIDE */}
@@ -51,22 +51,22 @@ const GreenTrackHero: React.FC<GreenTrackHeroProps> = ({ data }) => {
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-2xl md:text-4xl font-bold mb-4">
             {data.title}
           </h1>
 
           {/* Description */}
-          <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
+          <p className="text-gray-300 text-md leading-relaxed mb-8 max-w-xl">
             {data.description}
           </p>
 
           {/* Buttons */}
           <div className="flex gap-4">
-            <button className="px-2 md:px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl font-semibold">
+            <button className="px-2 md:px-4 py-2 bg-green-600 hover:bg-green-700 rounded-xl font-semibold">
               Request Early Access
             </button>
 
-            <button className="px-4 md:px-6 py-3 bg-[#14161b] border border-[#2a2d33] hover:bg-[#1b1d23] rounded-xl font-semibold text-green-300">
+            <button className="px-2 md:px-4 py-2 bg-[#14161b] border border-[#2a2d33] hover:bg-[#1b1d23] rounded-xl font-semibold text-green-300">
               View Roadmap
             </button>
           </div>

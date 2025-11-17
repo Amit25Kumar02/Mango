@@ -63,7 +63,7 @@ export const TestimonialsSection = () => {
     <section
       id="team"
       ref={ref}
-      className="relative py-24 sm:py-28 px-4 sm:px-6 md:px-12 lg:px-20 overflow-hidden"
+      className="relative py-24 sm:py-28 px-4 sm:px-4 md:px-32 lg:px-32 overflow-hidden"
     >
       {/* Quotes background */}
       <div className="pointer-events-none absolute inset-0">
@@ -78,16 +78,16 @@ export const TestimonialsSection = () => {
           initial={{ opacity: 0, y: 300 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
           <span className="inline-flex items-center space-x-2 backdrop-blur-md border border-primary/30 rounded-full px-4 py-2 mb-4 text-sm">
-            <span className="text-lg font-medium text-gradient-primary">
+            <span className="text-md font-medium text-gradient-primary">
               What Our Clients Have to Say About Us
             </span>
           </span>
 
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-primary"
+            className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gradient-primary"
             style={{ lineHeight: 1.15 }}
           >
             Trusted By Modern Teams
@@ -95,14 +95,14 @@ export const TestimonialsSection = () => {
         </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 * i, duration: 0.6 }}
-              className="group relative overflow-hidden rounded-2xl p-6 backdrop-blur-md border border-primary/40 shadow-[0_8px_40px_hsl(var(--foreground)/0.05)] transition-all duration-300 hover:shadow-glow-primary hover:border-primary/40"
+              className="group relative overflow-hidden rounded-2xl p-4 backdrop-blur-md border border-primary/40 shadow-[0_8px_40px_hsl(var(--foreground)/0.05)] transition-all duration-300 hover:shadow-glow-primary hover:border-primary/40"
             >
               <div className="absolute inset-0"></div>
 
@@ -123,17 +123,17 @@ export const TestimonialsSection = () => {
               </div>
 
               {/* top quotes */}
-              <Quote className="absolute right-6 top-6 h-16 w-16 text-primary/70 hover:shadow-glow-primary hidden md:block" />
+              <Quote className="absolute right-6 top-6 h-16 w-16 text-primary/70 hover:shadow-glow-primary hidden" />
 
               <div className="flex items-center gap-4 mb-4">
                 <img
                   src={t.avatar}
                   alt={t.name}
-                  className="h-12 w-12 rounded-full object-cover"
+                  className="h-10 w-10 rounded-full object-cover"
                 />
                 <div>
                   <div
-                    className="font-semibold text-gradient-primary"
+                    className="font-semibold  text-gradient-primary"
                     style={
                       {
                         // color: '#19288F'
@@ -172,7 +172,7 @@ export const TestimonialsSection = () => {
           { value: "24/7", label: "AI-Powered Support" },
         ].map((stat, index) => (
           <div key={index} className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-gradient-primary mb-2">
+            <div className="text-2xl md:text-4xl font-bold text-gradient-primary mb-2">
               {stat.label !== "AI-Powered Support" ? (
                 <CountingNumber
                   target={Number(stat.value)}
@@ -184,7 +184,7 @@ export const TestimonialsSection = () => {
                 stat.value
               )}
             </div>
-            <div className="text-black text-sm">{stat.label}</div>
+            <div className="text-black text-base">{stat.label}</div>
           </div>
         ))}
       </motion.div>

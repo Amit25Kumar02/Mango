@@ -22,7 +22,7 @@ export const Challenges = () => {
   return (
     <section
       id="challeges"
-      className="relative container mx-auto px-4 sm:px-6 md:px-10 lg:px-20 py-16"
+      className="relative container mx-auto px-4 sm:px-4 md:px-32 lg:px-32 py-16"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -32,19 +32,19 @@ export const Challenges = () => {
       >
         {/* <BackgroundParticle /> */}
         <h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-6"
+          className="text-2xl sm:text-2xl md:text-4xl font-bold text-gradient-primary mb-6"
           style={{ lineHeight: 1.15 }}
         >
           Solving IT Consulting's Biggest Challenges
         </h2>
 
-        <p className="text-base sm:text-lg md:text-xl text-black max-w-4xl mx-auto">
+        <p className="text-[14px] sm:text-[14px] md:text-lg text-black max-w-4xl mx-auto">
           IT consulting faces unique hurdles—security, scalability, and ever-changing
           tech. We break through barriers to make technology seamless for your business.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {data?.map((story, index) => (
           <motion.div
             key={index}
@@ -53,13 +53,13 @@ export const Challenges = () => {
             transition={{ delay: index * 0.2 }}
             className="rounded-xl p-6 border border-primary/40 bg-[#21253F]"
           >
-            <p className="text-xl font-bold text-gradient-primary mb-4">
+            <p className="text-lg font-bold text-gradient-primary mb-4">
               {story.title}
             </p>
 
             <div className="space-y-4">
               <div>
-                <p className="text-foreground text-sm leading-relaxed">
+                <p className="text-[14px]">
                   {story.desc}
                 </p>
               </div>

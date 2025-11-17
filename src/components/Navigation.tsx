@@ -200,7 +200,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => (
               <div key={item.label} className="relative">
                 {item.hasDropdown ? (
@@ -242,7 +242,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                   >
                     <motion.span
                       whileHover={{ scale: 1.1 }}
-                      className="text-foreground text-xl hover:text-primary transition-colors duration-300 relative group"
+                      className="text-foreground text-lg md:text-lg lg:text-xl hover:text-primary transition-colors duration-300 relative group"
                       style={{
                         color: isScrolled ? '#333' : itemColor,
                       }}
@@ -272,7 +272,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                 )}
               </div>
             ))}
-            <Button variant="hero" size="lg" onClick={() => window.open("/about/contact",)}>
+            <Button variant="hero" size="sm" onClick={() => window.open("/about/contact",)}>
               Get Started
             </Button>
           </div>

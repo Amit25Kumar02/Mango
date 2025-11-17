@@ -8,11 +8,10 @@ const HeroBanner = ({ content }: any) => {
   const hasRightColumn = content.bannerImage || content.developmentProgress;
 
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 z-50">
+    <section className="container mx-auto px-4 sm:px-4 lg:px-32 py-12 z-50">
       <div
-        className={`grid grid-cols-1 ${
-          hasRightColumn ? "lg:grid-cols-2" : "lg:grid-cols-1"
-        } gap-10 items-center`}
+        className={`grid grid-cols-1 ${hasRightColumn ? "lg:grid-cols-2" : "lg:grid-cols-1"
+          } gap-10 items-center`}
       >
         {/* LEFT SECTION */}
         <motion.div
@@ -23,13 +22,13 @@ const HeroBanner = ({ content }: any) => {
         >
           {/* Title */}
           <h1
-            className="text-3xl sm:text-4xl md:text-6xl font-bold text-gradient-primary mb-6 leading-tight"
+            className="text-2xl sm:text-2xl md:text-4xl font-bold text-gradient-primary mb-6 leading-tight"
           >
             {content.title}
           </h1>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-black leading-relaxed max-w-2xl">
+          <p className="text-[14px] sm:text-[14px] md:text-lg text-black leading-relaxed ">
             {content.description}
           </p>
 
@@ -40,12 +39,11 @@ const HeroBanner = ({ content }: any) => {
                 <Button
                   key={index}
                   variant={index === 0 ? "hero" : "cyber"}
-                  className={`flex items-center justify-center ${
-                    index === 0 ? "text-white" : "text-black"
-                  } w-full sm:w-auto`}
+                  className={`flex items-center justify-center ${index === 0 ? "text-white" : "text-black"
+                    } w-full sm:w-auto`}
                 >
                   {item}
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  {/* <ArrowRight className="ml-2 h-4 w-4" /> */}
                 </Button>
               ))}
             </div>
@@ -58,11 +56,11 @@ const HeroBanner = ({ content }: any) => {
                 TRUSTED BY EXECUTIVES AT
               </p>
 
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex flex-wrap justify-center gap-2">
                 {content.companies.map((d: string, i: number) => (
                   <span
                     key={i}
-                    className="border border-primary/40 rounded-full px-3 py-2 text-xs sm:text-sm"
+                    className="border border-primary/40 rounded-full px-3 py-2 text-sm sm:text-sm"
                   >
                     {d}
                   </span>
@@ -112,7 +110,9 @@ const HeroBanner = ({ content }: any) => {
             </div>
 
             {/* Bottom Stats */}
-            <div className="grid grid-cols-2 text-xs sm:text-sm text-gray-200 gap-32 lg:gap-72">
+            <div className="grid grid-cols-2 text-xs sm:text-sm text-gray-200 gap-32">
+
+              {/* Expected Launch — always shown */}
               <div>
                 <span className="block opacity-60">Expected Launch</span>
                 <span className="font-semibold text-white">
@@ -120,6 +120,7 @@ const HeroBanner = ({ content }: any) => {
                 </span>
               </div>
 
+              {/* Show ONLY ONE: teamSize → OR compliance → OR VR Platforms */}
               {content.developmentProgress.teamSize ? (
                 <div>
                   <span className="block opacity-60">Family Size</span>
@@ -127,15 +128,24 @@ const HeroBanner = ({ content }: any) => {
                     {content.developmentProgress.teamSize} Members
                   </span>
                 </div>
-              ) : (
+              ) : content.developmentProgress.compliance ? (
                 <div>
                   <span className="block opacity-60">Compliance</span>
                   <span className="font-semibold text-white">
                     {content.developmentProgress.compliance}
                   </span>
                 </div>
+              ) : (
+                <div>
+                  <span className="block opacity-60">VR Platforms</span>
+                  <span className="font-semibold text-white">
+                    {content.developmentProgress.vrplatforms}
+                  </span>
+                </div>
               )}
+
             </div>
+
           </div>
         )}
       </div>

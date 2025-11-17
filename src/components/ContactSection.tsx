@@ -55,7 +55,7 @@ export const ContactSection = () => {
     <section
       id="contact"
       ref={ref}
-      className="py-20 relative overflow-hidden px-4 sm:px-6 md:px-10 lg:px-20"
+      className="py-20 relative overflow-hidden px-4 sm:px-4 md:px-32 lg:px-32"
     >
       {/* Background Elements (kept commented out in your original) */}
       <div className="absolute inset-0">
@@ -87,7 +87,7 @@ export const ContactSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gradient-primary"
+            className="text-2xl sm:text-2xl md:text-4xl font-bold mb-6 text-gradient-primary"
             style={{ lineHeight: 1.15 }}
           >
             Ready to Transform ?
@@ -97,46 +97,31 @@ export const ContactSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto"
+            className="text-base sm:text-md md:text-md text-muted-foreground max-w-3xl mx-auto"
           >
             Let's discuss how our AI solutions can revolutionize your operations.
             Get in touch with our experts today.
           </motion.p>
 
-          {/* The exact mailto link the user asked for */}
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="mt-4 text-sm text-primary"
-          >
-            Or email us directly:&nbsp;
-            <a
-              href="mailto:someone@example.com"
-              className="underline hover:text-cyan-400"
-            >
-              someone@example.com
-            </a>
-          </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="card-interactive p-6 rounded-2xl"
+            className="card-interactive p-4 rounded-2xl"
           >
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center">
-                <Send className="h-6 w-6 text-white" />
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="w-10 h-10 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl bg-gradient-primary flex items-center justify-center">
+                <Send className="h-4 w-4 md:h-6 md:w-6 text-white" />
               </div>
               <div>
-                <h3 className="text-2xl text-gradient-primary font-bold text-foreground">
+                <h3 className="text-lg sm:text-lg md:text-xl lg:text-2xl text-gradient-primary font-bold text-foreground">
                   Send us a message
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-sm">
                   We'll get back to you within 24 hours
                 </p>
               </div>
@@ -249,14 +234,14 @@ export const ContactSection = () => {
             className="space-y-8"
           >
             {/* Contact Cards */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.5 + index * 0.1, duration: 0.6 }}
-                  className="card-interactive hover-gradient p-4 rounded-xl"
+                  className="card-interactive hover-gradient p-3 rounded-xl"
                 >
                   <div className="flex items-center space-x-4">
                     <div
@@ -266,7 +251,7 @@ export const ContactSection = () => {
                     </div>
 
                     <div className="flex-1">
-                      <h4 className="text-lg text-gradient-primary font-semibold text-foreground mb-1">
+                      <h4 className="text-md md:text-lg text-gradient-primary font-semibold text-foreground mb-1">
                         {info.title}
                       </h4>
                       <p className="text-sm text-muted-foreground mb-2">
@@ -275,13 +260,13 @@ export const ContactSection = () => {
 
                       {/* Render email as mailto link (keeps original info.value also clickable) */}
                       {index === 0 ? (
-                        <p className="text-primary font-medium">
+                        <p className="text-primary text-sm md:text-md">
                           <a href={`mailto:${info.value}`} className="underline">
                             {info.value}
                           </a>
                         </p>
                       ) : (
-                        <p className="text-primary font-medium">
+                        <p className="text-primary text-sm md:text-md">
                           {info.value}
                         </p>
                       )}
@@ -298,8 +283,8 @@ export const ContactSection = () => {
               transition={{ delay: 0.8, duration: 0.6 }}
               className="card-interactive hover-gradient p-6 rounded-2xl text-center"
             >
-              <div className="w-16 h-16 rounded-2xl bg-gradient-secondary flex items-center justify-center mx-auto mb-4">
-                <Calendar className="h-8 w-8 text-white" />
+              <div className="w-14 h-14 rounded-2xl bg-gradient-secondary flex items-center justify-center mx-auto mb-4">
+                <Calendar className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-2xl text-gradient-primary font-bold text-foreground mb-4">
                 Schedule a Strategy Call

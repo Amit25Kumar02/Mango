@@ -16,11 +16,11 @@ interface MarketOpportunityProps {
 
 const MarketOpportunity: React.FC<MarketOpportunityProps> = ({ data }) => {
   return (
-    <section className="relative py-20 bg-gradient-to-b from-[#120b17] via-[#1b0f24] to-[#120b17] text-center text-white">
+    <section className="relative py-20 px-4 md:px-32 bg-gradient-to-b from-[#120b17] via-[#1b0f24] to-[#120b17] text-center text-white">
       <div className="container mx-auto px-6">
 
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-gradient-primary">
           {data.title}
         </h2>
 
@@ -36,7 +36,7 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({ data }) => {
               key={index}
               className="bg-[#22152c]/60 border border-[#3a2448] rounded-2xl py-10 px-6 text-center shadow-[0_0_30px_rgba(162,89,255,0.08)] hover:shadow-[0_0_35px_rgba(162,89,255,0.15)] transition"
             >
-              <div className="text-3xl md:text-4xl font-extrabold text-purple-300 mb-2">
+              <div className="text-2xl md:text-3xl font-extrabold text-purple-300 mb-2">
                 {item.percentage}
               </div>
 

@@ -449,7 +449,7 @@ const TrainingPrograms = [
       'Risk assessment and mitigation',
 
     ],
-    button: "Enroll Now"
+    button: "Learn More"
   },
   {
     icon: 'rocket',
@@ -465,7 +465,7 @@ const TrainingPrograms = [
       'Real project implementation',
 
     ],
-    button: "Enroll Now"
+    button: "Learn More"
   },
   {
     icon: 'camera',
@@ -481,7 +481,7 @@ const TrainingPrograms = [
       'Cross-functional collaboration',
 
     ],
-    button: "Enroll Now"
+    button: "Learn More"
   },
 ]
 const OurValues = [
