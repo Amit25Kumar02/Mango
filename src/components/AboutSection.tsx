@@ -109,25 +109,28 @@ export const AboutSection = () => {
 
 
             {/* Top Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.2 }}
-              className="inline-flex backdrop-blur-md border border-primary/30 rounded-full px-4 py-2 mb-6"
-            >
-              <span className="text-md font-medium text-gradient-primary">
-                About Mango Analytics
-              </span>
-            </motion.div>
+            <div className="w-full flex justify-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.2 }}
+                className="backdrop-blur-md border border-primary/30 rounded-full px-4 py-2 mb-6"
+              >
+                <span className="text-md font-medium text-gradient-primary">
+                  About Mango Analytics
+                </span>
+              </motion.div>
+            </div>
+
 
             {/* Main Title */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 }}
-              className="text-4xl md:text-5xl font-bold text-balance mb-6 text-black"
+              className="text-4xl md:text-5xl font-bold text-balance text-center mb-6 text-black"
             >
-              Empowering AI, Enterprises & Professionals with 
+              Empowering AI, Enterprises & Professionals with
               <span className="text-gradient-primary">AI Excellence</span>
             </motion.p>
 
