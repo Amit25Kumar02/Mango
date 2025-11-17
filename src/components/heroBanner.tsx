@@ -1,17 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CheckCircle } from "lucide-react";
 
 const HeroBanner = ({ content }: any) => {
-  const hasRightColumn = content.bannerImage || content.developmentProgress;
+  const hasRightColumn =
+    content.bannerImage ||
+    content.title === "Upskilling enterprise teams" ||
+    content.developmentProgress;
 
   return (
     <section className="container mx-auto px-4 sm:px-4 lg:px-32 py-12 z-50">
       <div
-        className={`grid grid-cols-1 ${hasRightColumn ? "lg:grid-cols-2" : "lg:grid-cols-1"
-          } gap-10 items-center`}
+        className={`grid grid-cols-1 ${
+          hasRightColumn ? "lg:grid-cols-2" : "lg:grid-cols-1"
+        } gap-10 items-center`}
       >
         {/* LEFT SECTION */}
         <motion.div
@@ -21,9 +25,7 @@ const HeroBanner = ({ content }: any) => {
           className="flex flex-col items-center text-center"
         >
           {/* Title */}
-          <h1
-            className="text-2xl sm:text-2xl md:text-4xl font-bold text-gradient-primary mb-6 leading-tight"
-          >
+          <h1 className="text-2xl sm:text-2xl md:text-4xl font-bold text-gradient-primary mb-6 leading-tight">
             {content.title}
           </h1>
 
@@ -39,11 +41,11 @@ const HeroBanner = ({ content }: any) => {
                 <Button
                   key={index}
                   variant={index === 0 ? "hero" : "cyber"}
-                  className={`flex items-center justify-center ${index === 0 ? "text-white" : "text-black"
-                    } w-full sm:w-auto`}
+                  className={`flex items-center justify-center ${
+                    index === 0 ? "text-white" : "text-black"
+                  } w-full sm:w-auto`}
                 >
                   {item}
-                  {/* <ArrowRight className="ml-2 h-4 w-4" /> */}
                 </Button>
               ))}
             </div>
@@ -70,28 +72,55 @@ const HeroBanner = ({ content }: any) => {
           )}
         </motion.div>
 
-        {/* RIGHT IMAGE SECTION */}
-        {content.bannerImage && (
+        {/* ✅ RIGHT COLUMN — SPECIAL TRAINING CARD */}
+        {content.title === "Upskilling enterprise teams" ? (
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center"
+            transition={{ duration: 0.7 }}
+            className="bg-[#121214] border border-[#2c2c2f] rounded-2xl p-8 shadow-xl max-w-lg w-full mx-auto"
           >
-            <div className="rounded-2xl overflow-hidden w-full">
-              <img
-                src={content.bannerImage}
-                alt={content.title}
-                className="w-full h-[260px] sm:h-[350px] md:h-[450px] object-cover rounded-lg shadow-lg"
-              />
-            </div>
+            <h3 className="text-lg font-semibold mb-6 flex items-center gap-2 text-yellow-400">
+              Enterprise-Ready Training
+            </h3>
+
+            <ul className="space-y-4">
+              {[
+                "Custom curriculum development",
+                "On-site and remote delivery",
+                "Progress tracking and analytics",
+                "Ongoing support and mentorship",
+              ].map((item, index) => (
+                <li key={index} className="flex items-center gap-3 text-gray-300">
+                  <CheckCircle size={18} className="text-yellow-400" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </motion.div>
+        ) : (
+          /* DEFAULT RIGHT IMAGE CODE */
+          content.bannerImage && (
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex justify-center"
+            >
+              <div className="rounded-2xl overflow-hidden w-full">
+                <img
+                  src={content.bannerImage}
+                  alt={content.title}
+                  className="w-full h-[260px] sm:h-[350px] md:h-[450px] object-cover rounded-lg shadow-lg"
+                />
+              </div>
+            </motion.div>
+          )
         )}
 
-        {/* DEVELOPMENT PROGRESS (FULLY RESPONSIVE) */}
+        {/* DEVELOPMENT PROGRESS (KEEP AS-IS) */}
         {content.developmentProgress && (
           <div className="mx-auto w-full max-w-xl rounded-xl bg-gradient-to-br from-[#263a4d] to-[#29193d] p-6 shadow-lg border border-primary/20">
-            {/* Top Row */}
             <div className="flex justify-between items-center mb-3">
               <span className="text-white font-medium">Project Progress</span>
               <span className="text-cyan-300 font-semibold">
@@ -99,7 +128,6 @@ const HeroBanner = ({ content }: any) => {
               </span>
             </div>
 
-            {/* Progress bar */}
             <div className="w-full h-3 rounded-lg bg-white/10 mb-4 overflow-hidden">
               <div
                 className="h-3 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-300 transition-all duration-700"
@@ -109,10 +137,7 @@ const HeroBanner = ({ content }: any) => {
               />
             </div>
 
-            {/* Bottom Stats */}
             <div className="grid grid-cols-2 text-xs sm:text-sm text-gray-200 gap-32">
-
-              {/* Expected Launch — always shown */}
               <div>
                 <span className="block opacity-60">Expected Launch</span>
                 <span className="font-semibold text-white">
@@ -120,7 +145,6 @@ const HeroBanner = ({ content }: any) => {
                 </span>
               </div>
 
-              {/* Show ONLY ONE: teamSize → OR compliance → OR VR Platforms */}
               {content.developmentProgress.teamSize ? (
                 <div>
                   <span className="block opacity-60">Family Size</span>
@@ -143,9 +167,7 @@ const HeroBanner = ({ content }: any) => {
                   </span>
                 </div>
               )}
-
             </div>
-
           </div>
         )}
       </div>
