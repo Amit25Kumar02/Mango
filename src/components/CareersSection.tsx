@@ -22,22 +22,22 @@ const CareersSection: React.FC<CareersProps> = ({ content }) => {
                         {/* Stats */}
                         <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-6">
                             <div className="flex flex-col items-center">
-                                <span className="text-4xl font-bold text-yellow-500">6</span>
+                                <span className="text-3xl font-bold text-yellow-500">6</span>
                                 <span className="text-sm text-foreground mt-1">Open Positions</span>
                             </div>
                             <div className="h-7 border-l border-zinc-200 hidden md:block"></div>
                             <div className="flex flex-col items-center">
-                                <span className="text-4xl font-bold text-yellow-500">100%</span>
+                                <span className="text-3xl font-bold text-yellow-500">100%</span>
                                 <span className="text-sm text-foreground mt-1">Remote Friendly</span>
                             </div>
                             <div className="h-7 border-l border-zinc-200 hidden md:block"></div>
                             <div className="flex flex-col items-center">
-                                <span className="text-4xl font-bold text-yellow-500">20+</span>
+                                <span className="text-3xl font-bold text-yellow-500">20+</span>
                                 <span className="text-sm text-foreground mt-1">Team Countries</span>
                             </div>
                             <div className="h-7 border-l border-zinc-200 hidden md:block"></div>
                             <div className="flex flex-col items-center">
-                                <span className="text-4xl font-bold text-yellow-500">4.9</span>
+                                <span className="text-3xl font-bold text-yellow-500">4.9</span>
                                 <span className="text-sm text-foreground mt-1">Candidate Rating</span>
                             </div>
                         </div>
@@ -48,7 +48,7 @@ const CareersSection: React.FC<CareersProps> = ({ content }) => {
             <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16 rounded-3xl mb-10">
                 <div className="text-center mb-12">
                     <h2
-                        className="text-2xl md:text-4xl font-bold text-gradient-primary mb-2"
+                        className="text-2xl md:text-3xl font-bold text-gradient-primary mb-2"
                         style={{ lineHeight: 1.15 }}
                     >
                         Our Hiring Process
@@ -108,7 +108,7 @@ const CareersSection: React.FC<CareersProps> = ({ content }) => {
 
             <section className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <div className="text-center mb-8">
-                    <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-2">
+                    <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-2">
                         Open Positions
                     </h2>
                     <p className="text-base md:text-lg text-black/70 max-w-xl mx-auto">

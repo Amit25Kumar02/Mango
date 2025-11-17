@@ -38,7 +38,7 @@ const ProgressSection: React.FC<Props> = ({ content }) => {
             >
                 {/* Title */}
                 <h2
-                    className="text-2xl sm:text-2xl md:text-4xl font-bold text-gradient-primary mb-6"
+                    className="text-2xl sm:text-2xl md:text-3xl font-bold text-gradient-primary mb-6"
                     style={{ lineHeight: 1.15 }}
                 >
                     {progress.title}

@@ -19,9 +19,7 @@ const LeadershipSection: React.FC<LeadershipProps> = ({ content }) => {
 
   return (
     <>
-      {/* -------------------------------------------------- */}
-      {/* 🔘 SHOW / HIDE TOGGLE */}
-      {/* -------------------------------------------------- */}
+
       <div className="container mx-auto px-6 py-6">
         <label className="flex items-center gap-2 cursor-pointer">
           <input
@@ -39,9 +37,7 @@ const LeadershipSection: React.FC<LeadershipProps> = ({ content }) => {
       {/* Only render if toggle is ON */}
       {showLeadership && (
         <>
-          {/* -------------------------------------------------- */}
-          {/* ⭐ LEADERSHIP MAIN PROFILE SECTION */}
-          {/* -------------------------------------------------- */}
+
           <section className="relative container mx-auto sm:px-6 lg:px-8 ">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -246,9 +242,6 @@ const LeadershipSection: React.FC<LeadershipProps> = ({ content }) => {
             </motion.div>
           </section>
 
-          {/* -------------------------------------------------- */}
-          {/* ⭐ TEAM STRUCTURE / HIERARCHY SECTION */}
-          {/* -------------------------------------------------- */}
           <section className="relative mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-[#21253F] mt-20">
             <div className="text-center mb-8">
               <h2

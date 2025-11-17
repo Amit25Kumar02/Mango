@@ -27,7 +27,7 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <ServicesSection />
-        <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary  text-center mb-20" style={{ lineHeight: 1.15 }}>Our Technical Expertise</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary  text-center mb-20" style={{ lineHeight: 1.15 }}>Our Technical Expertise</h2>
          
         <BrandMarquee />
         <Challenges />

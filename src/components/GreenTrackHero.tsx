@@ -51,7 +51,7 @@ const GreenTrackHero: React.FC<GreenTrackHeroProps> = ({ data }) => {
           </div>
 
           {/* Title */}
-          <h1 className="text-2xl md:text-4xl font-bold mb-4">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4">
             {data.title}
           </h1>
 
@@ -76,7 +76,7 @@ const GreenTrackHero: React.FC<GreenTrackHeroProps> = ({ data }) => {
         <div className="rounded-3xl p-10 bg-gradient-to-br from-[#13321e] via-[#2a2920] to-[#2d1d0f] shadow-xl">
 
           {/* % */}
-          <h2 className="text-4xl font-bold text-green-400 text-center mb-3">
+          <h2 className="text-3xl font-bold text-green-400 text-center mb-3">
             {data.stats.percentage}%
           </h2>
 

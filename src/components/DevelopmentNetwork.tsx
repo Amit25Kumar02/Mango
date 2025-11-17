@@ -34,7 +34,7 @@ const DevelopmentNetwork: React.FC<DevelopmentNetworkProps> = ({ data }) => {
       <div className="container mx-auto px-6">
 
         {/* Title */}
-        <h2 className="text-2xl md:text-4xl font-bold mb-10 text-gradient-primary">
+        <h2 className="text-2xl md:text-3xl font-bold mb-10 text-gradient-primary">
           {data.title}
         </h2>
 

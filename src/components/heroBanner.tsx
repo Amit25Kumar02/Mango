@@ -25,7 +25,7 @@ const HeroBanner = ({ content }: any) => {
           className="flex flex-col items-center text-center"
         >
           {/* Title */}
-          <h1 className="text-2xl sm:text-2xl md:text-4xl font-bold text-gradient-primary mb-6 leading-tight">
+          <h1 className="text-2xl sm:text-2xl md:text-3xl font-bold text-gradient-primary mb-6 leading-tight">
             {content.title}
           </h1>
 

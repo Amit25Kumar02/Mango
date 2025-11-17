@@ -20,7 +20,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ data }) => {
       <div className="container mx-auto px-6 text-center">
 
         {/* Section Title */}
-        <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-3">
+        <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-3">
           {data.title}
         </h2>
 

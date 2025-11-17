@@ -87,7 +87,7 @@ export const ContactSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-2xl sm:text-2xl md:text-4xl font-bold mb-6 text-gradient-primary"
+            className="text-2xl sm:text-2xl md:text-3xl font-bold mb-6 text-gradient-primary"
             style={{ lineHeight: 1.15 }}
           >
             Ready to Transform ?

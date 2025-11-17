@@ -20,7 +20,7 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({ data }) => {
       <div className="container mx-auto px-6">
 
         {/* Title */}
-        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-gradient-primary">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gradient-primary">
           {data.title}
         </h2>
 

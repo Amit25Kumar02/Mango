@@ -32,7 +32,7 @@ export const Challenges = () => {
       >
         {/* <BackgroundParticle /> */}
         <h2
-          className="text-2xl sm:text-2xl md:text-4xl font-bold text-gradient-primary mb-6"
+          className="text-2xl sm:text-2xl md:text-3xl font-bold text-gradient-primary mb-6"
           style={{ lineHeight: 1.15 }}
         >
           Solving IT Consulting's Biggest Challenges

@@ -9,7 +9,7 @@ const SecondBanner = ({ data }) => {
       transition={{ duration: 0.8 }}
       className="text-center mb-12"
     >
-      <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }} >{data.title}</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }} >{data.title}</h2>
     </motion.div>
 
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

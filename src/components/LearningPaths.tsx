@@ -25,7 +25,7 @@ const LearningPaths: React.FC<LearningPathsProps> = ({ data }) => {
       <div className="container mx-auto px-6">
 
         {/* Title */}
-        <h2 className="text-2xl md:text-4xl text-gradient-primary font-bold text-center mb-3">
+        <h2 className="text-2xl md:text-3xl text-gradient-primary font-bold text-center mb-3">
           {data.title}
         </h2>
 

@@ -329,50 +329,50 @@ const DynamicPage = () => {
             },
           ],
         },
-        section2: {
-          title: "Our Analytics Process",
-          description:
-            "A systematic approach to transforming your data into strategic advantage",
-          items: [
-            {
-              number: 1,
-              title: "Data Discovery",
-              description:
-                "We analyze your current data landscape, identify sources, and assess data quality and accessibility.",
-            },
-            {
-              number: 2,
-              title: "Architecture Design",
-              description:
-                "Custom analytics architecture tailored to your business needs, scalability requirements, and technical constraints.",
-            },
-            {
-              number: 3,
-              title: "Implementation",
-              description:
-                "Rapid deployment of analytics solutions with minimal disruption to your existing operations.",
-            },
-            {
-              number: 4,
-              title: "Optimization",
-              description:
-                "Continuous monitoring, refinement, and enhancement to ensure maximum value from your analytics investment.",
-            },
-          ],
-          framework: {
-            title: "AI & IT Transformation Framework",
-            items: [
-              { title: "Assess", percentage: 100, color: "bg-green-500" },
-              { title: "Plan", percentage: 75, color: "bg-red-500" },
-              { title: "Execute", percentage: 45, color: "bg-purple-500" },
-              { title: "Optimize", percentage: 20, color: "bg-yellow-500" },
-            ],
-            stats: {
-              timeline: { value: "18", label: "Months Avg Timeline", color: "text-cyan-400", },
-              roi: { value: "340%", label: "ROI Achievement", color: "text-green-400", },
-            },
-          },
-        },
+        // section2: {
+        //   title: "Our Analytics Process",
+        //   description:
+        //     "A systematic approach to transforming your data into strategic advantage",
+        //   items: [
+        //     {
+        //       number: 1,
+        //       title: "Data Discovery",
+        //       description:
+        //         "We analyze your current data landscape, identify sources, and assess data quality and accessibility.",
+        //     },
+        //     {
+        //       number: 2,
+        //       title: "Architecture Design",
+        //       description:
+        //         "Custom analytics architecture tailored to your business needs, scalability requirements, and technical constraints.",
+        //     },
+        //     {
+        //       number: 3,
+        //       title: "Implementation",
+        //       description:
+        //         "Rapid deployment of analytics solutions with minimal disruption to your existing operations.",
+        //     },
+        //     {
+        //       number: 4,
+        //       title: "Optimization",
+        //       description:
+        //         "Continuous monitoring, refinement, and enhancement to ensure maximum value from your analytics investment.",
+        //     },
+        //   ],
+        //   framework: {
+        //     title: "AI & IT Transformation Framework",
+        //     items: [
+        //       { title: "Assess", percentage: 100, color: "bg-green-500" },
+        //       { title: "Plan", percentage: 75, color: "bg-red-500" },
+        //       { title: "Execute", percentage: 45, color: "bg-purple-500" },
+        //       { title: "Optimize", percentage: 20, color: "bg-yellow-500" },
+        //     ],
+        //     stats: {
+        //       timeline: { value: "18", label: "Months Avg Timeline", color: "text-cyan-400", },
+        //       roi: { value: "340%", label: "ROI Achievement", color: "text-green-400", },
+        //     },
+        //   },
+        // },
       },
 
       'solutions/machine-learning-solutions': {
@@ -1349,61 +1349,61 @@ const DynamicPage = () => {
           ]
         },
 
-        section2: {
-          title: "Platform Capabilities",
-          description: "Accelerate learning outcomes with adaptive AI and state-of-the-art educational technology.",
-          items: [
-            {
-              number: 1,
-              title: "Adaptive AI Tutoring",
-              description: "Personalized learning paths that adapt in real-time based on student performance and learning style"
+        // section2: {
+        //   title: "Platform Capabilities",
+        //   description: "Accelerate learning outcomes with adaptive AI and state-of-the-art educational technology.",
+        //   items: [
+        //     {
+        //       number: 1,
+        //       title: "Adaptive AI Tutoring",
+        //       description: "Personalized learning paths that adapt in real-time based on student performance and learning style"
 
-            },
-            {
-              number: 2,
-              title: "Interactive Content",
-              description: "Dynamic educational content generation with multimedia explanations and practice exercises"
+        //     },
+        //     {
+        //       number: 2,
+        //       title: "Interactive Content",
+        //       description: "Dynamic educational content generation with multimedia explanations and practice exercises"
 
-            },
-            {
-              number: 3,
-              title: "Progress Analytics",
-              description: "Comprehensive learning analytics for students, parents, and educators with actionable insights"
+        //     },
+        //     {
+        //       number: 3,
+        //       title: "Progress Analytics",
+        //       description: "Comprehensive learning analytics for students, parents, and educators with actionable insights"
 
-            },
-            {
-              number: 4,
-              title: "Collaborative Learning",
-              description: "AI-facilitated group projects and peer learning opportunities with smart matching"
+        //     },
+        //     {
+        //       number: 4,
+        //       title: "Collaborative Learning",
+        //       description: "AI-facilitated group projects and peer learning opportunities with smart matching"
 
-            },
-          ],
-          framework: {
-            title: "Beta Testing Results",
-            items: [
-              {
-                title: "Learning Efficiency",
-                percentage: "86",
-                color: 'bg-green-500'
-              },
-              {
-                title: "Knowledge Retention",
-                percentage: "92",
-                color: 'bg-red-500'
-              },
-              {
-                title: "User Satisfaction",
-                percentage: "70",
-                color: 'bg-yellow-500'
-              },
-              {
-                title: "Time Reduction",
-                percentage: 67,
-                color: 'bg-purple-500'
-              }
-            ]
-          },
-        },
+        //     },
+        //   ],
+        //   framework: {
+        //     title: "Beta Testing Results",
+        //     items: [
+        //       {
+        //         title: "Learning Efficiency",
+        //         percentage: "86",
+        //         color: 'bg-green-500'
+        //       },
+        //       {
+        //         title: "Knowledge Retention",
+        //         percentage: "92",
+        //         color: 'bg-red-500'
+        //       },
+        //       {
+        //         title: "User Satisfaction",
+        //         percentage: "70",
+        //         color: 'bg-yellow-500'
+        //       },
+        //       {
+        //         title: "Time Reduction",
+        //         percentage: 67,
+        //         color: 'bg-purple-500'
+        //       }
+        //     ]
+        //   },
+        // },
         progress: {
           title: "Development Progress",
           items: [
@@ -1525,61 +1525,61 @@ const DynamicPage = () => {
             teamSize: "6 Members"
           },
         },
-        section2: {
-          title: "Platform Features",
-          description: "Accelerate learning outcomes with adaptive AI and state-of-the-art educational technology.",
-          items: [
-            {
-              number: 1,
-              title: "Carbon Footprint Tracking",
-              description: "Comprehensive carbon emission monitoring across all business operations with real-time data collection"
+        // section2: {
+        //   title: "Platform Features",
+        //   description: "Accelerate learning outcomes with adaptive AI and state-of-the-art educational technology.",
+        //   items: [
+        //     {
+        //       number: 1,
+        //       title: "Carbon Footprint Tracking",
+        //       description: "Comprehensive carbon emission monitoring across all business operations with real-time data collection"
 
-            },
-            {
-              number: 2,
-              title: "Sustainability Analytics",
-              description: "Advanced analytics and predictive modeling for sustainability performance optimization"
+        //     },
+        //     {
+        //       number: 2,
+        //       title: "Sustainability Analytics",
+        //       description: "Advanced analytics and predictive modeling for sustainability performance optimization"
 
-            },
-            {
-              number: 3,
-              title: "Compliance Reporting",
-              description: "Automated ESG reporting for regulatory compliance and stakeholder transparency"
+        //     },
+        //     {
+        //       number: 3,
+        //       title: "Compliance Reporting",
+        //       description: "Automated ESG reporting for regulatory compliance and stakeholder transparency"
 
-            },
-            {
-              number: 4,
-              title: "Supply Chain Insights",
-              description: "End-to-end supply chain sustainability tracking and vendor impact assessment."
+        //     },
+        //     {
+        //       number: 4,
+        //       title: "Supply Chain Insights",
+        //       description: "End-to-end supply chain sustainability tracking and vendor impact assessment."
 
-            },
-          ],
-          framework: {
-            title: "Market Opportunity",
-            items: [
-              {
-                title: "ESG Software Market",
-                percentage: "$16.3B",
-                color: 'bg-green-500'
-              },
-              {
-                title: "Annual Growth Rate",
-                percentage: "23.1",
-                color: 'bg-red-500'
-              },
-              {
-                title: "Companies Need ESG",
-                percentage: "87",
-                color: 'bg-yellow-500'
-              },
-              {
-                title: "Sustainable Investments",
-                percentage: '$30T',
-                color: 'bg-purple-500'
-              }
-            ]
-          },
-        },
+        //     },
+        //   ],
+        //   framework: {
+        //     title: "Market Opportunity",
+        //     items: [
+        //       {
+        //         title: "ESG Software Market",
+        //         percentage: "$16.3B",
+        //         color: 'bg-green-500'
+        //       },
+        //       {
+        //         title: "Annual Growth Rate",
+        //         percentage: "23.1",
+        //         color: 'bg-red-500'
+        //       },
+        //       {
+        //         title: "Companies Need ESG",
+        //         percentage: "87",
+        //         color: 'bg-yellow-500'
+        //       },
+        //       {
+        //         title: "Sustainable Investments",
+        //         percentage: '$30T',
+        //         color: 'bg-purple-500'
+        //       }
+        //     ]
+        //   },
+        // },
         progress: {
           title: "Development Timeline",
           items: [
@@ -2249,7 +2249,7 @@ const DynamicPage = () => {
             className="text-center mb-12"
           >
             {/* <BackgroundParticle /> */}
-            <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.formSection.title}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.formSection.title}</h2>
             <p className="text-xl text-black max-w-4xl mx-auto">
               {content.formSection.subtitle}
             </p>
@@ -2391,7 +2391,7 @@ const DynamicPage = () => {
                 transition={{ duration: 0.8 }}
                 className="flex-1 space-y-8"
               >
-                <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary">
+                <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary">
                   {content.section5.title}
                 </h2>
                 <p className="text-lg text-gray-300 max-w-lg">
@@ -2453,7 +2453,7 @@ const DynamicPage = () => {
             className="text-center mb-12"
           >
             {/* <BackgroundParticle /> */}
-            <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.section42.title}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.section42.title}</h2>
             <p className="text-lg text-black max-w-4xl mx-auto">
               {content.section42.description}
             </p>
@@ -2494,7 +2494,7 @@ const DynamicPage = () => {
         {/* Our Journey Timeline Section */}
         {content.journey && <section className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 rounded-3xl mb-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-2" style={{ lineHeight: 1.15 }}>Our Journey</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-2" style={{ lineHeight: 1.15 }}>Our Journey</h2>
             <p className="text-md md:text-lg text-black/80 max-w-2xl mx-auto">
               From vision to reality – the story of MangoAnalytics
             </p>
@@ -2564,7 +2564,7 @@ const DynamicPage = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.technologies.title}</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.technologies.title}</h2>
               <p className="text-lg text-black max-w-4xl mx-auto">
                 We leverage the most advanced analytics tools and platforms to deliver exceptional results
               </p>
@@ -2604,7 +2604,7 @@ const DynamicPage = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.footerMain.title}</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.footerMain.title}</h2>
           <p className="text-lg text-black max-w-4xl mx-auto">
             {content.footerMain.subtitle}
           </p>

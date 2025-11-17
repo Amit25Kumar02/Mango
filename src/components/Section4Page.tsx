@@ -43,7 +43,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
                 transition={{ duration: 0.8 }}
                 className="text-center mb-12"
             >
-                <h2 className="text-2xl md:text-4xl font-bold text-gradient-primary mb-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-4">
                     {section.title}
                 </h2>
 

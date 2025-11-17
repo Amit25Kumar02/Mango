@@ -87,7 +87,7 @@ export const TestimonialsSection = () => {
           </span>
 
           <h2
-            className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gradient-primary"
+            className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gradient-primary"
             style={{ lineHeight: 1.15 }}
           >
             Trusted By Modern Teams
@@ -172,7 +172,7 @@ export const TestimonialsSection = () => {
           { value: "24/7", label: "AI-Powered Support" },
         ].map((stat, index) => (
           <div key={index} className="text-center">
-            <div className="text-2xl md:text-4xl font-bold text-gradient-primary mb-2">
+            <div className="text-2xl md:text-3xl font-bold text-gradient-primary mb-2">
               {stat.label !== "AI-Powered Support" ? (
                 <CountingNumber
                   target={Number(stat.value)}

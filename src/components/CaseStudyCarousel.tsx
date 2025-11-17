@@ -58,7 +58,7 @@ export default function CaseStudyCarousel() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-center text-2xl md:text-4xl font-bold mb-10 -mt-10 md:mt-0 "
+                className="text-center text-2xl md:text-3xl font-bold mb-10 -mt-10 md:mt-0 "
             >
                 Proven Results That{" "}
                 <span className="text-gradient-primary">Speak for Themselves</span>

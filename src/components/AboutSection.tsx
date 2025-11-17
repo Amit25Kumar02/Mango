@@ -101,7 +101,7 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-4xl md:text-5xl font-bold mb-6 text-gradient-primary"
+              className="text-2xl md:text-3xl font-bold mb-6 text-gradient-primary"
             >
               Transforming Businesses with{" "}
               <span className="text-gradient-primary">Intelligent Solutions</span>
@@ -151,7 +151,7 @@ export const AboutSection = () => {
 
               {/* Stat 1 */}
               <div className="hover-gradient text-center p-4 rounded-lg backdrop-blur-md border border-primary/20">
-                <div className="text-3xl sm:text-4xl font-bold text-gradient-primary mb-1">
+                <div className="text-2xl sm:text-2xl md:text-3xl font-bold text-gradient-primary mb-1">
                   <CountingNumber target={500} suffix="+" isInView={statsInView} />
                 </div>
                 <div className="text-sm sm:text-base text-muted-foreground">
@@ -161,7 +161,7 @@ export const AboutSection = () => {
 
               {/* Stat 2 */}
               <div className="hover-gradient text-center p-4 rounded-lg backdrop-blur-md border border-primary/20">
-                <div className="text-3xl sm:text-4xl font-bold text-gradient-primary mb-1">
+                <div className="text-2xl sm:text-2xl md:text-3xl font-bold text-gradient-primary mb-1">
                   <CountingNumber target={98} suffix="%" isInView={statsInView} />
                 </div>
                 <div className="text-sm sm:text-base text-muted-foreground">

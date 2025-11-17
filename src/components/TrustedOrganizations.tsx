@@ -27,7 +27,7 @@ const TrustedOrganizations: React.FC<TrustedOrganizationsProps> = ({
       <div className="container mx-auto px-6">
 
         {/* TITLE */}
-        <h2 className="text-2xl md:text-4xl text-gradient-primary font-bold mb-4">
+        <h2 className="text-2xl md:text-3xl text-gradient-primary font-bold mb-4">
           Trusted by Leading Organizations
         </h2>
 
@@ -55,7 +55,7 @@ const TrustedOrganizations: React.FC<TrustedOrganizationsProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {metrics.map((metric, index) => (
             <div key={index}>
-              <div className="text-4xl font-extrabold text-yellow-400 mb-2">
+              <div className="text-3xl font-extrabold text-yellow-400 mb-2">
                 {metric.value}
               </div>
               <p className="text-gray-300 max-w-xs mx-auto leading-relaxed">

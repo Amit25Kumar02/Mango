@@ -37,7 +37,7 @@ const SecuritySection: React.FC<Props> = ({ content }) => {
         className="text-center mb-14"
       >
         <h2
-          className="text-2xl sm:text-2xl md:text-4xl font-bold text-gradient-primary mb-4"
+          className="text-2xl sm:text-2xl md:text-3xl font-bold text-gradient-primary mb-4"
           style={{ lineHeight: 1.2 }}
         >
           {security.title}

@@ -37,7 +37,7 @@ const PlatformFeatures: React.FC<PlatformFeaturesProps> = ({ data }) => {
       <div className="container mx-auto px-6">
 
         {/* Title */}
-        <h2 className="text-2xl md:text-4xl font-bold text-center text-gradient-primary mb-16">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-gradient-primary mb-16">
           {data.title}
         </h2>
 

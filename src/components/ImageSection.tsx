@@ -40,7 +40,7 @@ const ImageSection: React.FC<ImageSectionProps> = ({ content }) => {
         >
         
           <h2
-            className="text-2xl lg:text-4xl md:text-4xl font-bold text-gradient-primary mb-5"
+            className="text-2xl lg:text-3xl md:text-3xl font-bold text-gradient-primary mb-5"
             style={{ lineHeight: 1.15 }}
           >
             {section.title}

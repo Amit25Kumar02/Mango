@@ -34,7 +34,7 @@ const AnalyticsHero = ({ content }: any) => {
           </span>
 
           {/* Heading + Highlight */}
-          <h1 className="text-2xl sm:text-2xl md:text-4xl font-bold leading-tight mt-6">
+          <h1 className="text-2xl sm:text-2xl md:text-3xl font-bold leading-tight mt-6">
             {content.title.split(" ").map((word: string, i: number) => (
               <span
                 key={i}
