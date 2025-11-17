@@ -11,7 +11,7 @@ const HeroBanner = ({ content }: any) => {
     content.developmentProgress;
 
   return (
-    <section className="container mx-auto px-4 sm:px-4 lg:px-32 py-12 z-50">
+    <section className="container mx-auto px-4 sm:px-4 lg:px-8 py-12 z-10">
       <div
         className={`grid grid-cols-1 ${
           hasRightColumn ? "lg:grid-cols-2" : "lg:grid-cols-1"
@@ -25,7 +25,7 @@ const HeroBanner = ({ content }: any) => {
           className="flex flex-col items-center text-center"
         >
           {/* Title */}
-          <h1 className="text-2xl sm:text-2xl md:text-3xl font-bold text-gradient-primary mb-6 leading-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-6 leading-tight">
             {content.title}
           </h1>
 

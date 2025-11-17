@@ -52,13 +52,13 @@ export default function CaseStudyCarousel() {
     const currentCase = caseStudies[current];
 
     return (
-        <section className="py-20 bg-gradient-to-b from-[#0B0D24] to-[#121633] text-white px-4 md:px-32 relative overflow-hidden">
+        <section className="py-10 md:mt-10 bg-gradient-to-b from-[#0B0D24] to-[#121633] text-white px-6 md:px-8 relative overflow-hidden">
             {/* Section Title */}
             <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-center text-2xl md:text-3xl font-bold mb-10 -mt-10 md:mt-0 "
+                className="text-center text-4xl md:text-5xl font-bold mb-10 -mt-10 md:mt-0 "
             >
                 Proven Results That{" "}
                 <span className="text-gradient-primary">Speak for Themselves</span>

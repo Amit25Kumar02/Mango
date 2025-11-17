@@ -22,7 +22,7 @@ const Icons: any = {
 
 const AnalyticsHero = ({ content }: any) => {
   return (
-    <section className="w-full bg-[#0c0f1a] text-white py-16 md:py-20 px-4 sm:px-4 md:px-32 -mb-32">
+    <section className="w-full bg-[#0c0f1a] text-white py-16 md:py-20 px-4 sm:px-4 md:px-8 -mb-32">
       <div className="container mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
         {/* LEFT CONTENT */}
@@ -34,7 +34,7 @@ const AnalyticsHero = ({ content }: any) => {
           </span>
 
           {/* Heading + Highlight */}
-          <h1 className="text-2xl sm:text-2xl md:text-3xl font-bold leading-tight mt-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mt-6">
             {content.title.split(" ").map((word: string, i: number) => (
               <span
                 key={i}
@@ -47,10 +47,10 @@ const AnalyticsHero = ({ content }: any) => {
                 {word + " "}
               </span>
             ))}
-          </h1>
+          </h2>
 
           {/* Description */}
-          <p className="mt-6 text-gray-300 text-[14px] sm:text-[14px] leading-relaxed max-w-xl mx-auto lg:mx-0">
+          <p className="mt-6 text-gray-300 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
             {content.description}
           </p>
 

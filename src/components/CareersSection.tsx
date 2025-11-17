@@ -45,16 +45,16 @@ const CareersSection: React.FC<CareersProps> = ({ content }) => {
                 </div>
             </section>
 
-            <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16 rounded-3xl mb-10">
+            <section className="relative container mx-auto px-4 sm:px-4 lg:px-8 py-16 rounded-3xl mb-10">
                 <div className="text-center mb-12">
                     <h2
-                        className="text-2xl md:text-3xl font-bold text-gradient-primary mb-2"
+                        className="text-4xl md:text-5xl font-bold text-gradient-primary mb-2"
                         style={{ lineHeight: 1.15 }}
                     >
                         Our Hiring Process
                     </h2>
 
-                    <p className="text-md md:text-lg text-black/80 max-w-2xl mx-auto">
+                    <p className="text-lg md:text-xl text-black/80 max-w-2xl mx-auto">
                         We've designed our process to be thorough yet respectful of your time
                     </p>
                 </div>

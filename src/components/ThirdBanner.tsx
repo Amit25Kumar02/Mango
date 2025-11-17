@@ -1,13 +1,13 @@
 import {motion} from "framer-motion"
 const ThirdBanner = ({data}) =>{
-    return <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16">
+    return <section className="relative container mx-auto px-4 sm:px-4 lg:px-8 py-16">
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       className="text-center mb-12"
     >
-      <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-6"  style={{ lineHeight: 1.15 }} >{data.title}</h2>
+      <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6"  style={{ lineHeight: 1.15 }} >{data.title}</h2>
       <p className="text-md text-black max-w-4xl mx-auto">
        {data.description}
       </p>

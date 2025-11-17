@@ -2241,7 +2241,7 @@ const DynamicPage = () => {
         {/* Services Grid Section */}
         {content.section3 && <ThirdBanner data={content.section3} />}
 
-        {content.formSection && <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16 z-9999">
+        {content.formSection && <section className="relative container mx-auto px-4 sm:px-4 lg:px-8 py-16 z-9999">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -2249,7 +2249,7 @@ const DynamicPage = () => {
             className="text-center mb-12"
           >
             {/* <BackgroundParticle /> */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.formSection.title}</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.formSection.title}</h2>
             <p className="text-xl text-black max-w-4xl mx-auto">
               {content.formSection.subtitle}
             </p>
@@ -2331,7 +2331,7 @@ const DynamicPage = () => {
               </form>
               {/* Upcoming Programs Section */}
               <div className="bg-white rounded-2xl mt-5 mb-5 py-8 px-4 md:px-4 w-[50%]">
-                <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-8">Upcoming Programs</h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-8">Upcoming Programs</h2>
                 <div className="flex flex-col gap-7">
                   {/* Program 1 */}
                   <div className="rounded-xl border border-gray-200 bg-white px-6 py-6 relative flex flex-col gap-2 shadow-sm">
@@ -2383,7 +2383,7 @@ const DynamicPage = () => {
 
         {content.section5 && (
           <section className="bg-[#0b0d17] text-white py-20">
-            <div className="container mx-auto px-4 md:px-32 lg:px-32 flex flex-col md:flex-row items-center gap-12">
+            <div className="container mx-auto px-4 md:px-8 lg:px-8 flex flex-col md:flex-row items-center gap-12">
               {/* Left Side: Text */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -2391,7 +2391,7 @@ const DynamicPage = () => {
                 transition={{ duration: 0.8 }}
                 className="flex-1 space-y-8"
               >
-                <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary">
+                <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary">
                   {content.section5.title}
                 </h2>
                 <p className="text-lg text-gray-300 max-w-lg">
@@ -2445,7 +2445,7 @@ const DynamicPage = () => {
         )}
 
         {/* <SuccessStoriesSection/> */}
-        {content.section42 && <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16">
+        {content.section42 && <section className="relative container mx-auto px-4 sm:px-4 lg:px-8 py-16">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -2453,7 +2453,7 @@ const DynamicPage = () => {
             className="text-center mb-12"
           >
             {/* <BackgroundParticle /> */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.section42.title}</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.section42.title}</h2>
             <p className="text-lg text-black max-w-4xl mx-auto">
               {content.section42.description}
             </p>
@@ -2494,7 +2494,7 @@ const DynamicPage = () => {
         {/* Our Journey Timeline Section */}
         {content.journey && <section className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 rounded-3xl mb-10">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-2" style={{ lineHeight: 1.15 }}>Our Journey</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-2" style={{ lineHeight: 1.15 }}>Our Journey</h2>
             <p className="text-md md:text-lg text-black/80 max-w-2xl mx-auto">
               From vision to reality – the story of MangoAnalytics
             </p>
@@ -2557,14 +2557,14 @@ const DynamicPage = () => {
 
         {/* Technologies Section */}
         {content?.technologies && (
-          <section className="container mx-auto px-4 sm:px-4 lg:px-32 py-16">
+          <section className="container mx-auto px-4 sm:px-4 lg:px-8 py-16">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.technologies.title}</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.technologies.title}</h2>
               <p className="text-lg text-black max-w-4xl mx-auto">
                 We leverage the most advanced analytics tools and platforms to deliver exceptional results
               </p>
@@ -2596,7 +2596,7 @@ const DynamicPage = () => {
 
       {content.contact && <ContactSectionAbout content={{ contact: content.contact }} />}
 
-      {content?.footerMain && <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-12">
+      {content?.footerMain && <section className="relative container mx-auto px-4 sm:px-4 lg:px-8 py-12">
         {/* <BackgroundParticle /> */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -2604,7 +2604,7 @@ const DynamicPage = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.footerMain.title}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.footerMain.title}</h2>
           <p className="text-lg text-black max-w-4xl mx-auto">
             {content.footerMain.subtitle}
           </p>

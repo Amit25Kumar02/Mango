@@ -27,7 +27,7 @@ interface GreenTrackHeroProps {
 
 const GreenTrackHero: React.FC<GreenTrackHeroProps> = ({ data }) => {
   return (
-    <section className="py-20 px-4 md:px-32 bg-[#0b0d12] text-white -mb-32">
+    <section className="py-20 px-4 md:px-8 bg-[#0b0d12] text-white -mb-32">
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
 
         {/* LEFT SIDE */}
@@ -51,7 +51,7 @@ const GreenTrackHero: React.FC<GreenTrackHeroProps> = ({ data }) => {
           </div>
 
           {/* Title */}
-          <h1 className="text-2xl md:text-3xl font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             {data.title}
           </h1>
 
@@ -76,7 +76,7 @@ const GreenTrackHero: React.FC<GreenTrackHeroProps> = ({ data }) => {
         <div className="rounded-3xl p-10 bg-gradient-to-br from-[#13321e] via-[#2a2920] to-[#2d1d0f] shadow-xl">
 
           {/* % */}
-          <h2 className="text-3xl font-bold text-green-400 text-center mb-3">
+          <h2 className="text-5xl font-bold text-green-400 text-center mb-3">
             {data.stats.percentage}%
           </h2>
 

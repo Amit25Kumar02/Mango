@@ -73,7 +73,7 @@ export const ServicesSection = () => {
     <section
       id="services"
       ref={ref}
-      className="py-10 sm:py-10 md:py-10 lg:py-10 relative px-2 sm:px-4 md:px-32 lg:px-32"
+      className="py-10 md:mt-10 px-4 sm:px-6 lg:px-8"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -110,9 +110,9 @@ export const ServicesSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-2xl md:text-3xl font-bold mb-6 text-gradient-primary"
+            className="text-4xl md:text-5xl text-balance font-bold text-gradient-primary mb-4"
           >
-            <span className="text-gradient-primary">
+            <span className="text-gradient-primary font-bold ">
               From Idea to Impact – Our Services
             </span>
             <br />
@@ -123,7 +123,7 @@ export const ServicesSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-[14px] md:text-lg text-muted-foreground max-w-4xl mx-auto"
+            className="text-xl text-muted-foreground max-w-4xl mx-auto text-pretty leading-relaxed"
           >
             From intelligent automation to custom AI models, we deliver
             comprehensive solutions that transform how you operate and compete
@@ -154,11 +154,11 @@ export const ServicesSection = () => {
 
                 {/* Content */}
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-gradient-primary group-hover:text-gradient-primary transition-all duration-300">
+                  <h3 className="relative text-xl font-semibold text-foreground mb-3 group-hover:text-gradient-primary transition-colors text-gradient-primary group-hover:text-gradient-primary">
                     {service.title}
                   </h3>
 
-                  <p className="text-[14px] md:text-md  leading-relaxed">
+                  <p className="relative text-white-foreground text-pretty">
                     {service.description}
                   </p>
 

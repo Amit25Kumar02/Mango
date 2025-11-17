@@ -63,7 +63,7 @@ export const TestimonialsSection = () => {
     <section
       id="team"
       ref={ref}
-      className="relative py-24 sm:py-28 px-4 sm:px-4 md:px-32 lg:px-32 overflow-hidden"
+      className="relative py-14 md:mt-10 px-4 sm:px-4 md:px-8 lg:px-8 overflow-hidden"
     >
       {/* Quotes background */}
       <div className="pointer-events-none absolute inset-0">
@@ -81,13 +81,13 @@ export const TestimonialsSection = () => {
           className="text-center mb-10"
         >
           <span className="inline-flex items-center space-x-2 backdrop-blur-md border border-primary/30 rounded-full px-4 py-2 mb-4 text-sm">
-            <span className="text-md font-medium text-gradient-primary">
+            <span className="text-lg font-medium text-gradient-primary">
               What Our Clients Have to Say About Us
             </span>
           </span>
 
           <h2
-            className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gradient-primary"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gradient-primary"
             style={{ lineHeight: 1.15 }}
           >
             Trusted By Modern Teams
@@ -102,7 +102,7 @@ export const TestimonialsSection = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 * i, duration: 0.6 }}
-              className="group relative overflow-hidden rounded-2xl p-4 backdrop-blur-md border border-primary/40 shadow-[0_8px_40px_hsl(var(--foreground)/0.05)] transition-all duration-300 hover:shadow-glow-primary hover:border-primary/40"
+              className="group relative overflow-hidden rounded-2xl p-4 backdrop-blur-md border border-primary/40 shadow-[0_8px_40px_hsl(var(--foreground)/0.05)] transition-all duration-300 hover:shadow-glow-primary hover:border-primary/40 bg-[#21253F] hover:bg-[#21253F]"
             >
               <div className="absolute inset-0"></div>
 
@@ -133,7 +133,7 @@ export const TestimonialsSection = () => {
                 />
                 <div>
                   <div
-                    className="font-semibold  text-gradient-primary"
+                    className="font-semibold text-gradient-primary"
                     style={
                       {
                         // color: '#19288F'
@@ -142,11 +142,11 @@ export const TestimonialsSection = () => {
                   >
                     {t.name}
                   </div>
-                  <div className="text-xs text-muted-foreground">{t.role}</div>
+                  <div className="text-sm text-white">{t.role}</div>
                 </div>
               </div>
 
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-lg text-white leading-relaxed">
                 {t.quote}
               </p>
 

@@ -16,11 +16,11 @@ interface ProcessSectionProps {
 
 const ProcessSection: React.FC<ProcessSectionProps> = ({ data }) => {
   return (
-    <section className="relative py-20 px-4 md:px-32 bg-[#0c0c14] text-white">
+    <section className="relative py-20 px-4 md:px-16 bg-[#0c0c14] text-white">
       <div className="container mx-auto px-6 text-center">
 
         {/* Section Title */}
-        <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-3">
+        <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">
           {data.title}
         </h2>
 
@@ -37,7 +37,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ data }) => {
               className="bg-[#1a1623] border border-[#2d2633] rounded-2xl py-10 px-6 text-left shadow-lg hover:shadow-xl transition relative"
             >
               {/* Step Number */}
-              <div className="text-2xl md:text-3xl font-extrabold text-teal-300 mb-4">
+              <div className="text-4xl md:text-5xl font-extrabold text-teal-300 mb-4">
                 {step.number}
               </div>
 

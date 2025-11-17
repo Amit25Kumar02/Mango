@@ -14,6 +14,8 @@ export const Navigation = ({ itemColor = "#fff" }) => {
   const [isLabsOpen, setIsLabsOpen] = useState(false);
   const [isTrainingOpen, setIsTrainingOpen] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
+  const [showLeadership, setShowLeadership] = useState(true);
+
   const navigate = useNavigate();
   const ref = useRef(null)
 
@@ -175,11 +177,13 @@ export const Navigation = ({ itemColor = "#fff" }) => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`${isScrolled ? "" : "fixed"} top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? ' text-foreground backdrop-blur-md border-b border-primary/20'
-          : 'text-foreground'
+      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300
+    ${isScrolled
+          ? "backdrop-blur-md border-b border-primary/20 bg-white/70"
+          : "bg-transparent"
         }`}
     >
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -251,10 +255,10 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
                     </motion.span>
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${(item.label === 'Solutions' && isSolutionsOpen) ||
-                        (item.label === 'Industries' && isIndustriesOpen) ||
-                        (item.label === 'Labs' && isLabsOpen) ||
-                        (item.label === 'Training' && isTrainingOpen) ||
-                        (item.label === 'About Us' && isAboutUsOpen) ? 'rotate-180' : ''
+                      (item.label === 'Industries' && isIndustriesOpen) ||
+                      (item.label === 'Labs' && isLabsOpen) ||
+                      (item.label === 'Training' && isTrainingOpen) ||
+                      (item.label === 'About Us' && isAboutUsOpen) ? 'rotate-180' : ''
                       }`} style={{ color: isScrolled ? '#333' : itemColor }} />
                   </div>
                 ) : (
@@ -283,7 +287,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full right-[40%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-50 bg-white w-[30%]"
+              className="absolute top-full right-[40%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%]"
               onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
             >
               <div className="mx-auto px-2 sm:px-6 lg:px-8 py-8">
@@ -317,7 +321,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full right-[30%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-50 bg-white w-[30%]"
+              className="absolute top-full right-[30%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%]"
               onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
             >
               <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -350,7 +354,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full right-[20%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-50 bg-white w-[30%] overflow-y-auto max-h-[600px]"
+              className="absolute top-full right-[20%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%] overflow-y-auto max-h-[600px]"
               onClick={() => setIsLabsOpen(!isLabsOpen)}
             >
               <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -400,7 +404,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full right-[15%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-50 bg-white w-[20%]"
+              className="absolute top-full right-[20%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%]"
               onClick={() => setIsTrainingOpen(!isTrainingOpen)}
             >
               <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -433,28 +437,41 @@ export const Navigation = ({ itemColor = "#fff" }) => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full right-[10%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-50 bg-white w-[30%]"
+              className="absolute top-full right-[10%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%]"
               onClick={() => setIsAboutUsOpen(!isAboutUsOpen)}
             >
               <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div className="grid grid-cols-1 gap-3">
-                  {aboutUsItems.map((aboutItem, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
-                      onClick={() => handleItemClick('about', aboutItem.title)}
-                    >
-                      <h3 className="text-gradient-primary font-semibold text-lg mb-2 transition-colors duration-300">
-                        {aboutItem.title}
-                      </h3>
-                      <p className="text-black text-sm leading-relaxed">
-                        {aboutItem.description}
-                      </p>
-                    </motion.div>
-                  ))}
+                  {aboutUsItems
+                    .filter(item => showLeadership || item.title !== "Leadership Team")
+                    .map((aboutItem, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
+                        onClick={(e) => {
+                          e.stopPropagation();
+
+                          // Toggle Leadership on double click
+                          if (aboutItem.title === "Our Story" && e.detail === 2) {
+                            setShowLeadership(!showLeadership);
+                            return;
+                          }
+
+                          handleItemClick('about', aboutItem.title);
+                        }}
+                      >
+                        <h3 className="text-gradient-primary font-semibold text-lg mb-2 transition-colors duration-300">
+                          {aboutItem.title}
+                        </h3>
+                        <p className="text-black text-sm leading-relaxed">
+                          {aboutItem.description}
+                        </p>
+                      </motion.div>
+                    ))}
+
                 </div>
               </div>
             </motion.div>
@@ -479,8 +496,10 @@ export const Navigation = ({ itemColor = "#fff" }) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden backdrop-blur-md border-t border-primary/20 bg-white/90 rounded-b-lg mt-2 mb-4"
+            className="md:hidden backdrop-blur-md border-t border-primary/20 bg-white/90 rounded-b-lg mt-2 mb-4
+               max-h-[80vh] overflow-y-auto"
           >
+
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
                 <div key={item.label}>

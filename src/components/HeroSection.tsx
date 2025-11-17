@@ -52,16 +52,16 @@ export const HeroSection = () => {
       <section
         ref={ref}
         id="home"
-        className="relative min-h-screen flex justify-center overflow-hidden  px-4 md:px-26 lg:px-32"
+        className="relative h-screen flex justify-center overflow-hidden pt-20"
       >
         {/* Background Video */}
         {/* <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
       > */}
-        <div className="absolute inset-0 bg-blue">
+        <div className="absolute inset-0 z-0 ">
           <video
-            className="w-full h-full object-cover md:object-cover"
+            className="w-full h-full object-cover opacity-20 pointer-events-none transition-opacity duration-1000"
             src={heroBg}
             autoPlay
             muted
@@ -82,7 +82,7 @@ export const HeroSection = () => {
         {/* </div> */}
 
         {/* Main Content */}
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -115,49 +115,49 @@ export const HeroSection = () => {
                     >
                        {displayedText}
                     </motion.h1> */}
-            <motion.h1
+            <motion.h2
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, type: 'spring', stiffness: 100, duration: 0.8 }}
-              className="text-2xl md:text-5xl lg:text-5xl font-bold leading-tight md:mb-6 mt-20 lg:mt-20"
+              className="text-2xl md:text-6xl font-bold text-balance mb-2 md:mb-6 leading-tight transform-3d"
             >
-              <span className="text-foreground text-gradient-primary text-2xl sm:text-2xl md:text-5xl lg:text-5xl">
+              <span className="text-gradient-primary inline-block transform hover:scale-105 transition-all duration-500 pb-2 hover-lift">
                 {/* Transform your Business */}
                 {displayedText}
               </span>
               <br />
-            </motion.h1>
-            <motion.h3
+            </motion.h2>
+            <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, type: 'spring', stiffness: 100, duration: 0.8 }}
-              className="text-2xl md:text-3xl lg:text-3xl font-bold leading-tight my-2 md:my-4"
+              className="text-xl md:text-2xl text-muted-foreground mb-2 md:mb-4 text-balance"
             >
-              <span className="text-foreground text-xl md:text-2xl">
+              <span className="text-foreground">
                 {/* Transform your Business */}
                 (Data + AI):
               </span>
               <br />
-            </motion.h3>
-            <motion.h4
+            </motion.p>
+            <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, type: 'spring', stiffness: 100, duration: 0.8 }}
-              className="text-xl md:text-2xl lg:text-2xl font-bold leading-tight my-4 md:mb-6 md:mt-5"
+              className="text-xl md:text-2xl text-muted-foreground mb-2 md:mb-4 text-balance"
             >
-              <span className="text-foreground text-xl md:text-2xl">
+              <span className="text-foreground">
                 {/* Transform your Business */}
                 Unlocking Infinite Possibilities
               </span>
               <br />
-            </motion.h4>
+            </motion.p>
 
             {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-[14px] md:text-xl sm:text-md text-foreground max-w-2xl mx-auto mb-3 md:mb-10 leading-relaxed"
+              className="text-md md:text-lg text-white mb-2 md:mb-8 max-w-3xl mx-auto text-pretty leading-relaxed animate-fade-in-up"
             >
               We help businesses harness the power of AI — from strategy to deployment — delivering real results through innovation, compliance, and expertise. From building cutting-edge AI solutions to training tomorrow's AI leaders, we're redefining what's possible.
             </motion.p>
@@ -169,15 +169,15 @@ export const HeroSection = () => {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <Button variant="glass" size="sm" className="group hover:scale-105 transition-transform" onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}>
+              <Button variant="glass" size="lg" className="inline-flex items-center justify-center gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs hover:bg-gradient-primary h-10 rounded-md has-[>svg]:px-4 text-white hover:scale-105 animate-glow transition-all duration-300 border-glow px-8 py-3 text-lg font-semibold animate-fade-in-up" onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}>
                 Schedule a Demo
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="glass" size="sm" className="group  hover:scale-105 transition-transform" onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}>
+              <Button variant="glass" size="lg" className="inline-flex items-center justify-center gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs hover:bg-gradient-primary h-10 rounded-md has-[>svg]:px-4 text-white hover:scale-105 animate-glow transition-all duration-300 border-glow px-8 py-3 text-lg font-semibold animate-fade-in-up" onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}>
                 <Zap className="mr-2 h-5 w-5" />
                 Free Consultation
               </Button>
-              <Button variant="glass" size="sm" className="group  hover:scale-105 transition-transform" onClick={() => window.open("/about/contact")}>
+              <Button variant="glass" size="lg" className="inline-flex items-center justify-center gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs hover:bg-gradient-primary h-10 rounded-md has-[>svg]:px-4 text-white hover:scale-105 animate-glow transition-all duration-300 border-glow px-8 py-3 text-lg font-semibold animate-fade-in-up" onClick={() => window.open("/about/contact")}>
                 <User className="mr-2 h-5 w-5" />
                 Join Training Program
               </Button>
@@ -190,7 +190,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2"
+          className="absolute sm:visible-hidden bottom-6 left-1/2 -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}

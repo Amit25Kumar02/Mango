@@ -27,7 +27,7 @@ const ContactSectionAbout: React.FC<ContactProps> = ({ content }) => {
   return (
     <>
 
-      <section className="relative w-full py-24 px-4 md:px-32 bg-[#192890] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full py-24 px-4 md:px-8 bg-[#192890] flex items-center justify-center overflow-hidden">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-16">
 
           {/* LEFT SIDE */}

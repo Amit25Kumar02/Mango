@@ -64,7 +64,7 @@ export const AboutSection = () => {
     <section
       id="about"
       ref={ref}
-      className="py-10 sm:py-10 md:py-24 lg:py-24 relative overflow-hidden px-2 sm:px-2 md:px-32 lg:px-32"
+      className="py-10 md:mt-10 px-4 sm:px-6 lg:px-8"
     >
       {/* <div className="absolute inset-0">
         <video
@@ -88,7 +88,7 @@ export const AboutSection = () => {
       <div className="absolute inset-0 bg-animated-dots opacity-10" />
 
       <div className="container mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid  gap-8 lg:gap-8 items-center">
 
           {/* LEFT CONTENT */}
           <motion.div
@@ -125,9 +125,10 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 }}
-              className="text-2xl sm:text-2xl md:text-3xl font-bold text-gradient-primary mb-8 leading-snug"
+              className="text-4xl md:text-5xl font-bold text-balance mb-6 text-black"
             >
-              Empowering AI, Enterprises & Professionals with AI Excellence
+              Empowering AI, Enterprises & Professionals with 
+              <span className="text-gradient-primary">AI Excellence</span>
             </motion.p>
 
             {/* Description */}
@@ -135,9 +136,9 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
-              className="text-base sm:text-lg text-black mb-10 leading-relaxed"
+              className="text-xl text-muted-foreground max-w-4xl mx-auto text-pretty leading-relaxed mb-4"
             >
-              We partner with startups and enterprises to solve their toughest challenges...
+              We partner with startups, and enterprises to solve their toughest challenges: from accelerating Market research to building enterprise-scale AI solutions, while nurturing the next generation of AI professionals.
             </motion.p>
 
             {/* STATS */}
@@ -177,7 +178,7 @@ export const AboutSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 gap-4"
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
           >
             {features.map((feature, index) => (
               <motion.div
@@ -185,14 +186,14 @@ export const AboutSection = () => {
                 initial={{ opacity: 0, x: 80 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.4 + index * 0.15 }}
-                className="card-interactive hover-gradient p-2 sm:p-4 rounded-xl flex items-center gap-2"
+                className="card-interactive hover-gradient p-4 sm:p-6 rounded-xl flex items-center gap-2 bg-[#21253F] hover:bg-[#21253F]"
               >
                 {/* Text */}
                 <div className="flex-1">
                   <h3 className="text-lg sm:text-xl font-semibold text-gradient-primary mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-black text-[14px] md:text-base">
+                  <p className="text-white text-[14px] md:text-base">
                     {feature.description}
                   </p>
                 </div>

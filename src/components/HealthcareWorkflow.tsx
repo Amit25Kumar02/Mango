@@ -16,10 +16,10 @@ interface WorkflowProps {
 
 const HealthcareWorkflow: React.FC<WorkflowProps> = ({ title, steps }) => {
   return (
-    <section className="py-20 px-4 md:px-32 bg-[#0d0f12] text-white">
+    <section className="py-20 px-4 md:px-8 bg-[#0d0f12] text-white">
       <div className="container mx-auto px-6">
 
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gradient-primary mb-14">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-gradient-primary mb-14">
           {title}
         </h2>
 
@@ -80,7 +80,7 @@ const HealthcareWorkflow: React.FC<WorkflowProps> = ({ title, steps }) => {
                 <h4 className="mt-4 text-lg font-semibold text-gradient-primary">{step.title}</h4>
 
         
-                <p className="text-gray-400 text-[13px] mt-1 leading-relaxed max-w-[420px] z-[0]">
+                <p className="text-gray-400 text-[14px] mt-1 leading-relaxed max-w-[420px] z-[0]">
                   {step.description}
                 </p>
               </div>

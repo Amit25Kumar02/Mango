@@ -22,7 +22,7 @@ export const Challenges = () => {
   return (
     <section
       id="challeges"
-      className="relative container mx-auto px-4 sm:px-4 md:px-32 lg:px-32 py-16"
+      className="py-10 md:mt-10 px-4 sm:px-6 lg:px-8"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -32,13 +32,13 @@ export const Challenges = () => {
       >
         {/* <BackgroundParticle /> */}
         <h2
-          className="text-2xl sm:text-2xl md:text-3xl font-bold text-gradient-primary mb-6"
+          className="text-4xl sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-6"
           style={{ lineHeight: 1.15 }}
         >
           Solving IT Consulting's Biggest Challenges
         </h2>
 
-        <p className="text-[14px] sm:text-[14px] md:text-lg text-black max-w-4xl mx-auto">
+        <p className="text-xl text-black max-w-4xl mx-auto">
           IT consulting faces unique hurdles—security, scalability, and ever-changing
           tech. We break through barriers to make technology seamless for your business.
         </p>

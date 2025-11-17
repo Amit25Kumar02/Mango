@@ -16,7 +16,7 @@ interface BetaPhaseProps {
 
 const BetaPhase: React.FC<BetaPhaseProps> = ({ data }) => {
   return (
-    <section className="py-20 px-4 md:px-32 bg-[#0b0d12] text-white -mb-32">
+    <section className="py-20 px-4 md:px-8 bg-[#0b0d12] text-white -mb-32">
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
 
         {/* LEFT SIDE — TEXT CONTENT */}
@@ -35,7 +35,7 @@ const BetaPhase: React.FC<BetaPhaseProps> = ({ data }) => {
             </span>
           </div>
 
-          <h1 className="text-2xl md:text-3xl font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             EduMind AI
           </h1>
 

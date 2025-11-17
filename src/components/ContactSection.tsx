@@ -55,7 +55,7 @@ export const ContactSection = () => {
     <section
       id="contact"
       ref={ref}
-      className="py-20 relative overflow-hidden px-4 sm:px-4 md:px-32 lg:px-32"
+      className="py-10 md:mt-10 relative overflow-hidden px-4 sm:px-4 md:px-8 lg:px-8"
     >
       {/* Background Elements (kept commented out in your original) */}
       <div className="absolute inset-0">
@@ -78,7 +78,7 @@ export const ContactSection = () => {
             className="inline-flex items-center space-x-2 backdrop-blur-md border border-primary/30 rounded-full px-6 py-3 mb-6"
           >
             <MessageSquare className="h-5 w-5 text-primary" />
-            <span className="text-md font-medium text-gradient-primary">
+            <span className="text-lg font-medium text-gradient-primary">
               Contact Us
             </span>
           </motion.div>
@@ -87,7 +87,7 @@ export const ContactSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-2xl sm:text-2xl md:text-3xl font-bold mb-6 text-gradient-primary"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gradient-primary"
             style={{ lineHeight: 1.15 }}
           >
             Ready to Transform ?
@@ -97,7 +97,7 @@ export const ContactSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-base sm:text-md md:text-md text-muted-foreground max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto"
           >
             Let's discuss how our AI solutions can revolutionize your operations.
             Get in touch with our experts today.

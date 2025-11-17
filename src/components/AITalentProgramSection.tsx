@@ -33,7 +33,7 @@ export default function AITalentProgramSection() {
   ];
 
   return (
-    <section className="py-24 px-4 md:px-32 bg-gradient-to-br from-[#0B0D24] to-[#121633] text-white overflow-hidden">
+    <section className="py-10 md:mt-10 px-4 md:px-8 bg-gradient-to-br from-[#0B0D24] to-[#121633] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <motion.div
@@ -41,13 +41,13 @@ export default function AITalentProgramSection() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-2xl md:text-3xl font-extrabold leading-tight mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
             Building the Next <br />
             Generation of{" "}
             <span className="text-gradient-primary">AI Leaders</span>
           </h2>
 
-          <p className="text-gray-300 mb-4 text-[14px] leading-relaxed max-w-2xl">
+          <p className="text-gray-300 mb-4 text-xl leading-relaxed max-w-2xl">
             Our AI Talent Development Programs bridge the gap between theory and real-world
             application. Whether you're an aspiring AI professional or a corporate team, our courses provide:
           </p>
@@ -60,15 +60,15 @@ export default function AITalentProgramSection() {
                   <feature.icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-md font-semibold text-white">{feature.title}</h4>
-                  <p className="text-gray-400 text-sm">{feature.description}</p>
+                  <h4 className="text-lg font-semibold text-white">{feature.title}</h4>
+                  <p className="text-gray-400 text-lg">{feature.description}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Technologies */}
-          <h4 className="font-semibold text-md mb-4 text-white">
+          <h4 className="font-semibold text-xl mb-4 text-white">
             Technologies We Teach:
           </h4>
           <div className="flex flex-wrap gap-2 mb-4">

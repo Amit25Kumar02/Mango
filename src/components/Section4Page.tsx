@@ -34,7 +34,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
     const section = content.section4;
 
     return (
-        <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16">
+        <section className="relative container mx-auto px-4 sm:px-4 lg:px-8 py-16">
 
             {/* Title */}
             <motion.div
@@ -43,11 +43,11 @@ const Section4Page: React.FC<Props> = ({ content }) => {
                 transition={{ duration: 0.8 }}
                 className="text-center mb-12"
             >
-                <h2 className="text-2xl md:text-3xl font-bold text-gradient-primary mb-4">
+                <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-4">
                     {section.title}
                 </h2>
 
-                <p className="text-md text-black max-w-4xl mx-auto">
+                <p className="text-xl text-black max-w-4xl mx-auto">
                     {section.description}
                 </p>
             </motion.div>

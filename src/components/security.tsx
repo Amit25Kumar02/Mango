@@ -28,7 +28,7 @@ const SecuritySection: React.FC<Props> = ({ content }) => {
   const security = content.security;
 
   return (
-    <section className="relative w-full px-4 sm:px-4 lg:px-32 py-16">
+    <section className="relative w-full px-4 sm:px-4 lg:px-8 py-16">
       {/* Title + Description */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -37,7 +37,7 @@ const SecuritySection: React.FC<Props> = ({ content }) => {
         className="text-center mb-14"
       >
         <h2
-          className="text-2xl sm:text-2xl md:text-3xl font-bold text-gradient-primary mb-4"
+          className="text-4xl sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-4"
           style={{ lineHeight: 1.2 }}
         >
           {security.title}
