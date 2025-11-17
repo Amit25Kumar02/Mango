@@ -21,7 +21,7 @@ export const FooterLinks = () => {
               technology and expert guidance.
             </p>
             <div className="flex items-center gap-4 text-foreground/80">
-              <a href="https://www.linkedin.com/company/mangoanalytics-ai//" aria-label="LinkedIn" className="hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/company/mango-analytics-ai/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BfHblrj0TSw2c16mBPFMgKQ%3D%3D& " aria-label="LinkedIn" className="hover:text-primary transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
               <a href="https://www.facebook.com/profile.php?id=61562263534607" aria-label="Facebook" className="hover:text-primary transition-colors">
