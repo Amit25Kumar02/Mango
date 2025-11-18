@@ -36,7 +36,7 @@ export default function CorporateTrainingHero({
           {/* TITLE */}
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
             <span className="text-white">Upskilling</span>{" "}
-            <span className="text-yellow-500">enterprise teams</span>
+            <span className="text-gradient-primary">enterprise teams</span>
           </h1>
 
           {/* DESCRIPTION */}
