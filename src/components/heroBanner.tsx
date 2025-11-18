@@ -13,9 +13,8 @@ const HeroBanner = ({ content }: any) => {
   return (
     <section className="container mx-auto px-4 sm:px-4 lg:px-8 py-12 z-10">
       <div
-        className={`grid grid-cols-1 ${
-          hasRightColumn ? "lg:grid-cols-2" : "lg:grid-cols-1"
-        } gap-10 items-center`}
+        className={`grid grid-cols-1 ${hasRightColumn ? "lg:grid-cols-2" : "lg:grid-cols-1"
+          } gap-10 items-center`}
       >
         {/* LEFT SECTION */}
         <motion.div
@@ -24,6 +23,12 @@ const HeroBanner = ({ content }: any) => {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center text-center"
         >
+          {content.domain && (
+            <p className="font-bold text-yellow-500 border rounded-2xl px-4 py-1 
+      border-yellow-500 mb-6 leading-tight mx-auto w-fit">
+              {content.domain}
+            </p>
+          )}
           {/* Title */}
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-6 leading-tight">
             {content.title}
@@ -41,9 +46,8 @@ const HeroBanner = ({ content }: any) => {
                 <Button
                   key={index}
                   variant={index === 0 ? "hero" : "cyber"}
-                  className={`flex items-center justify-center ${
-                    index === 0 ? "text-white" : "text-black"
-                  } w-full sm:w-auto`}
+                  className={`flex items-center justify-center ${index === 0 ? "text-white" : "text-black"
+                    } w-full sm:w-auto`}
                 >
                   {item}
                 </Button>

@@ -66,10 +66,10 @@ const logos = [
 export const BrandMarquee = ({data=[]}) => {
   const items = data.length > 0 ? data : useMemo(() => [...logos, ...logos, ...logos], []);
   return (
+        // <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary text-center mb-14" style={{ lineHeight: 1.15 }}>Our Technical Expertise</h2>
     <section id="clients" aria-label="brand-marquee" className="relative py-0 overflow-hidden -skew-y-4 md:-skew-y-3 mb-20 mt-20">
       <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/85 via-emerald-500 to-emerald-500/85" />
       <div className="absolute inset-0 pointer-events-none" style={{ boxShadow: 'inset 0 0 0 2px rgba(255,255,255,0.15)' }} />
-
       <div className="relative">
         <div className="marquee flex items-center whitespace-nowrap">
           {items.map((item, idx) => (

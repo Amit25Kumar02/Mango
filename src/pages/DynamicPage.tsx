@@ -59,6 +59,8 @@ import LeadershipSection from '@/components/LeadershipSection';
 import CareersSection from '@/components/CareersSection';
 import ContactSectionAbout from '@/components/ContactSectionAbout';
 import ProcessSection from '@/components/ProcessSection';
+import CorporateTrainingHero from "@/components/CorporateTrainingHero";
+
 
 
 const DynamicPage = () => {
@@ -1503,7 +1505,7 @@ const DynamicPage = () => {
           title: "Join the Education Revolution",
           subtitle: "Be among the first to experience the future of personalized learning with EduMind AI."
         },
-        domain: "Education",
+        // domain: "Education",
         status: 'Beta Testing',
 
       },
@@ -1912,10 +1914,11 @@ const DynamicPage = () => {
 
       },
       'training/corporate-training': {
+        corporateHero:{
         domain: "Corporate Training",
         title: 'Upskilling enterprise teams',
         subtitle: 'AI-powered patient data integration and predictive health analytics.',
-        description: 'Transform your organization with comprehensive AI training programs designed for enterprise teams. From leadership strategy to hands-on technical implementation, our curriculum covers upskilling for technical teams, executive leadership, and business units. Engage with practical workshops, real-world case studies, and role-based certifications aligned to your company’s needs. Partner with us to ensure measurable ROI, boost AI adoption, and empower your teams with the latest tools and frameworks in machine learning, data science, and AI-powered business transformation.',
+        description: 'Transform your organization with comprehensive AI training programs designed for enterprise teams. From leadership strategy to hands-on technical implementation.',
         features: [
           'Patient Data Integration',
           'Predictive Health Analytics',
@@ -1927,6 +1930,7 @@ const DynamicPage = () => {
           "Schedule Consultation",
           "Download Brochure"
         ],
+        },
         section3: {
           title: "Why Choose Our Corporate Training",
           description: "We understand the unique challenges of enterprise AI adoption and provide solutions that deliver real business value",
@@ -1999,7 +2003,7 @@ const DynamicPage = () => {
 
       },
       'training/waitlist-signup': {
-        domain: "Corporate Training",
+        domain: "Early Access",
         title: 'Get early access to our programs',
         subtitle: 'AI-powered patient data integration and predictive health analytics.',
         description: 'Join our exclusive waitlist to be the first to know about new AI training programs, get priority enrollment, and unlock special early bird pricing',
@@ -2203,6 +2207,8 @@ const DynamicPage = () => {
         {content.GreenTrackHero && <GreenTrackHero data={content.GreenTrackHero} />}
 
         {content.AnalyticsHero && <AnalyticsHero content={content.AnalyticsHero} />}
+
+        {content.corporateHero && <CorporateTrainingHero content={content.corporateHero} />}
 
         {/* {content.} */}
 
