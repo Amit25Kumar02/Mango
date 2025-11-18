@@ -86,7 +86,7 @@ export const ServicesSection = () => {
         ... your full animation block untouched ...
       </div> */}
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-32 relative">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -110,10 +110,11 @@ export const ServicesSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-4xl md:text-5xl text-balance font-bold text-gradient-primary mb-4"
+            className="text-4xl md:text-5xl text-balance font-bold mb-4"
           >
-            <span className="text-gradient-primary font-bold ">
-              From Idea to Impact – Our Services
+            <span className="text-black font-bold ">
+              From Idea to Impact – 
+              <span className="text-gradient-primary">Our Services</span>
             </span>
             <br />
             {/* for Every Business Need */}

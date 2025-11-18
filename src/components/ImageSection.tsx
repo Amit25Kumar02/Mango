@@ -21,7 +21,7 @@ const ImageSection: React.FC<ImageSectionProps> = ({ content }) => {
   const section = content.imageSection;
 
   return (
-    <section className="relative w-full py-16 px-4 sm:px-4 md:px-8">
+    <section className="relative w-full py-16 px-4 sm:px-4 md:px-16 lg:px-16">
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
    
@@ -40,7 +40,7 @@ const ImageSection: React.FC<ImageSectionProps> = ({ content }) => {
         >
         
           <h2
-            className="text-4xl lg:text-5xl md:text-5xl font-bold text-gradient-primary mb-5"
+            className="text-3xl lg:text-4xl md:text-4xl font-bold text-gradient-primary mb-5"
             style={{ lineHeight: 1.15 }}
           >
             {section.title}
@@ -57,9 +57,9 @@ const ImageSection: React.FC<ImageSectionProps> = ({ content }) => {
             {section.features?.map((feature, i) => (
               <span
                 key={i}
-                className="text-black flex text-left items-center gap-2"
+                className="text-black flex text-left items-center text-sm gap-2"
               >
-                <Tick className="w-5 h-5 text-green-600" />
+                <Tick className="w-5 h-5 text-green-600 " />
                 {feature}
               </span>
             ))}

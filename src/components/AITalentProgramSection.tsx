@@ -33,15 +33,15 @@ export default function AITalentProgramSection() {
   ];
 
   return (
-    <section className="py-10 md:mt-10 px-4 md:px-8 bg-gradient-to-br from-[#0B0D24] to-[#121633] text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="py-10 md:mt-10 px-4 md:px-32 bg-gradient-to-br from-[#0B0D24] to-[#121633] text-white overflow-hidden">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mb-4">
             Building the Next <br />
             Generation of{" "}
             <span className="text-gradient-primary">AI Leaders</span>

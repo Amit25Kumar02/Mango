@@ -75,7 +75,7 @@ const DynamicPage = () => {
     const contentMap: Record<string, any> = {
       // Solutions
       "solutions/ai-product-development": {
-        tag: "AI & IT Consulting",
+        domain: "AI & IT Consulting",
         title: "Where strategic AI vision meets IT excellence",
         highlight: ["strategic", "AI", "vision", "IT", "excellence"],
         subtitle: "Guiding digital transformation with expert insight.",
@@ -378,6 +378,7 @@ const DynamicPage = () => {
       },
 
       'solutions/machine-learning-solutions': {
+        domain:"Machine Learning Solutions",
         title: 'The fastest and most powerful platform for building ML products',
         subtitle: 'Custom ML models, computer vision, NLP, and predictive analytics for your business.',
         // bannerImage: startup,
@@ -505,6 +506,7 @@ const DynamicPage = () => {
         },
       },
       'solutions/compliance-and-security': {
+        domain:"Compliance & Security",
         title: 'Seamless Compliance and Security at Every Step',
         // bannerImage: security,
         subtitle: 'HIPAA, FDA, and EMA-ready AI systems from day one.',
@@ -578,8 +580,9 @@ const DynamicPage = () => {
         }
       },
       'solutions/ai-talent-development': {
+        domain:"AI Talent Development",
         title: 'Where AI expertise meets human potential.',
-        // bannerImage: talent,
+        bannerImage: talent,
         subtitle: 'Train, certify, and place AI professionals and corporate teams.',
         description: 'We are a collective of world-class AI professionals united by our deep tech knowledge, our human-centric mindset and a passion for developing the next generation of AI talent.',
         features: [
@@ -703,6 +706,7 @@ const DynamicPage = () => {
 
       // Industries
       'industries/it-consulting-business': {
+        domain:"IT Consulting Excellence",
         title: 'Where elite tech talent meets strategic innovation.',        // bannerImage: talent,
         subtitle: 'Elite IT talent placement, technical consulting, and team augmentation services.',
         description: 'Elite IT talent placement, technical consulting, and team augmentation services that transform your technology capabilities and accelerate business growth.',
@@ -746,8 +750,9 @@ const DynamicPage = () => {
         }
       },
       'industries/medical-and-healthcare': {
+        domain:"Healthcare Innovation",
         title: 'AI Meets Compassion',
-        // bannerImage: healthcare,
+        bannerImage: healthcare,
         subtitle: 'Elite IT talent placement, technical consulting, and team augmentation services for the healthcare sector.',
         description: 'Predictive patient analytics, advanced diagnostics, AI-powered medical imaging, automated patient triage, remote monitoring, workflow optimization, and healthcare AI solutions that improve patient outcomes while ensuring regulatory compliance across the care continuum.',
         companies: [
@@ -798,10 +803,11 @@ const DynamicPage = () => {
       },
 
       'industries/startups-and-enterprises': {
-        // bannerImage: startup,
-        title: 'From Vision to Scale',
+        domain:"Scale & Innovation",
+        bannerImage: startup,
+        title: 'Where ambitious vision meets scalable execution',
         subtitle: 'Scalable AI products & cloud-native platforms for businesses of all sizes.',
-        description: 'Scalable AI products and cloud-native platforms that grow with your business, from startup MVP to enterprise-grade solutions. We accelerate your path from idea to market with rapid prototyping, robust architecture, and seamless enterprise integration. Whether you’re launching your first product or modernizing legacy systems, our solutions ensure you’re ready for hyper-growth, leveraging best-in-class AI technologies and cloud platforms for resilience, innovation, and speed-to-market.',
+        description: 'Scalable AI products and cloud-native platforms that grow with your business, from startup MVP to enterprise-grade solutions.',
         features: [
           'Scalable AI Products',
           'Cloud-Native Platforms',
@@ -851,7 +857,7 @@ const DynamicPage = () => {
       'labs/food-haven': {
         // bannerImage: delivery,
         title: 'Food Haven',
-        domain: "Heal Tech",
+        domain: "Coming Soon ,Heal Tech",
         subtitle: 'AI-powered healthy lifestyle food delivery platform with personalized nutrition.',
         description: 'AI-powered healthy lifestyle food delivery platform with personalized nutrition recommendations and smart meal planning.',
         features: [
@@ -977,7 +983,7 @@ const DynamicPage = () => {
       },
       'labs/mango-boutique': {
         // bannerImage: shopping,
-        domain: "E-commerce",
+        domain: "Coming Soon ,E-commerce",
         title: 'Mango Boutique',
         subtitle: 'Immersive VR shopping experience with AI-powered style recommendations.',
         description: 'Immersive VR shopping experience with AI-powered style recommendations that revolutionizes online retail through virtual reality and personalized fashion intelligence.',
@@ -1129,7 +1135,7 @@ const DynamicPage = () => {
       'labs/drivemesafe': {
         title: 'DriveMeSafe',
         // bannerImage: taxi,
-        domain: "Transportation",
+        domain: "Coming Soon ,Transportation",
         subtitle: 'Community-driven ride-sharing platform prioritizing family safety, real-time protection, and trusted connections.',
         description: 'Community-driven ride-sharing platform focused on family safety with comprehensive verification, real-time monitoring, and neighborhood trust networks..',
         features: [
@@ -1696,7 +1702,7 @@ const DynamicPage = () => {
 
       'labs/healthsync': {
         // bannerImage: healthcare,
-        domain: "Healthcare",
+        domain: "Coming Soon ,Healthcare",
         title: 'HealthSync',
         subtitle: 'AI-powered patient data integration and predictive health analytics.',
         description: 'AI-powered patient data integration and predictive health analytics platform that transforms healthcare delivery through intelligent data unification and proactive care insights.',
@@ -2247,7 +2253,7 @@ const DynamicPage = () => {
         {/* Services Grid Section */}
         {content.section3 && <ThirdBanner data={content.section3} />}
 
-        {content.formSection && <section className="relative container mx-auto px-4 sm:px-4 lg:px-8 py-16 z-9999">
+        {content.formSection && <section className="relative container mx-auto px-4 sm:px-4 md:px- lg:px-32 py-16 z-9999">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -2255,7 +2261,7 @@ const DynamicPage = () => {
             className="text-center mb-12"
           >
             {/* <BackgroundParticle /> */}
-            <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.formSection.title}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.formSection.title}</h2>
             <p className="text-xl text-black max-w-4xl mx-auto">
               {content.formSection.subtitle}
             </p>
@@ -2337,7 +2343,7 @@ const DynamicPage = () => {
               </form>
               {/* Upcoming Programs Section */}
               <div className="bg-white rounded-2xl mt-5 mb-5 py-8 px-4 md:px-4 w-[50%]">
-                <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-8">Upcoming Programs</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary mb-8">Upcoming Programs</h2>
                 <div className="flex flex-col gap-7">
                   {/* Program 1 */}
                   <div className="rounded-xl border border-gray-200 bg-white px-6 py-6 relative flex flex-col gap-2 shadow-sm">
@@ -2389,7 +2395,7 @@ const DynamicPage = () => {
 
         {content.section5 && (
           <section className="bg-[#0b0d17] text-white py-20">
-            <div className="container mx-auto px-4 md:px-8 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div className="container mx-auto px-4 md:px-8 lg:px-32 flex flex-col md:flex-row items-center gap-12">
               {/* Left Side: Text */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -2397,7 +2403,7 @@ const DynamicPage = () => {
                 transition={{ duration: 0.8 }}
                 className="flex-1 space-y-8"
               >
-                <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary">
+                <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary">
                   {content.section5.title}
                 </h2>
                 <p className="text-lg text-gray-300 max-w-lg">
@@ -2443,7 +2449,7 @@ const DynamicPage = () => {
                 <img
                   src={content.section5.image}
                   alt="AI Success Story"
-                  className="rounded-2xl shadow-lg w-full md:w-[90%] lg:w-[85%] mx-auto"
+                  className="rounded-2xl shadow-lg w-full md:w-[90%] lg:w-[88%] mx-auto"
                 />
               </motion.div>
             </div>
@@ -2451,21 +2457,21 @@ const DynamicPage = () => {
         )}
 
         {/* <SuccessStoriesSection/> */}
-        {content.section42 && <section className="relative container mx-auto px-4 sm:px-4 lg:px-8 py-16">
+        {content.section42 && <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-12 "
           >
             {/* <BackgroundParticle /> */}
-            <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.section42.title}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.section42.title}</h2>
             <p className="text-lg text-black max-w-4xl mx-auto">
               {content.section42.description}
             </p>
           </motion.div>
 
-          <div className={`grid grid-cols-1 lg:grid-cols-${content.section42.data.length > 4 ? 3 : content.section42.data.length} gap-8`}>
+          <div className={`grid grid-cols-1 lg:grid-cols-${content.section42.data.length > 4 ? 2 : content.section42.data.length} gap-12`}>
 
             {content?.section42?.data?.map((story, index) => (
               <motion.div
@@ -2473,18 +2479,18 @@ const DynamicPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className="rounded-xl p-6 border border-primary/40"
+                className="rounded-xl p-6 border border-primary/40 bg-[#21253F] hover:bg-[#21253F]"
               >
 
-                <p className="text-xl font-bold text-gradient-primary mb-4">{story.company}</p>
+                <p className="text-2xl font-bold text-center text-gradient-primary mb-4">{story.company}</p>
 
                 <div className="space-y-4">
                   <div>
-                    <p className="text-black text-sm leading-relaxed">{story.challenge}. {story.solution}</p>
+                    <p className="text-white text-md text-center leading-relaxed">{story.challenge}. {story.solution}</p>
                   </div>
 
                   <div className='flex flex-col'>
-                    {story?.results?.map((d) => <span className='text-black text-sm flex'><Tick />{d}</span>)}
+                    {story?.results?.map((d) => <span className='text-white text-sm flex'><Tick />{d}</span>)}
                   </div>
                   {story?.button && <Button variant='hero' className='text-white w-[100%]'>{story?.button}</Button>}
                 </div>
@@ -2563,14 +2569,14 @@ const DynamicPage = () => {
 
         {/* Technologies Section */}
         {content?.technologies && (
-          <section className="container mx-auto px-4 sm:px-4 lg:px-8 py-16">
+          <section className="container mx-auto px-4 sm:px-4 lg:px-32 py-16">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.technologies.title}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.technologies.title}</h2>
               <p className="text-lg text-black max-w-4xl mx-auto">
                 We leverage the most advanced analytics tools and platforms to deliver exceptional results
               </p>
@@ -2590,7 +2596,7 @@ const DynamicPage = () => {
                   transition={{ delay: 0.3 + index * 0.05 }}
                   className="bg-gradient-primary rounded-lg px-6 py-4 border border-primary/20 hover:border-primary/40 transition-colors duration-300 text-center"
                 >
-                  <span className="text-white font-medium text-sm">{tech}</span>
+                  <span className="text-white font-medium text-lg">{tech}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -2602,7 +2608,7 @@ const DynamicPage = () => {
 
       {content.contact && <ContactSectionAbout content={{ contact: content.contact }} />}
 
-      {content?.footerMain && <section className="relative container mx-auto px-4 sm:px-4 lg:px-8 py-12">
+      {content?.footerMain && <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-12">
         {/* <BackgroundParticle /> */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -2610,8 +2616,8 @@ const DynamicPage = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.footerMain.title}</h2>
-          <p className="text-lg text-black max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.footerMain.title}</h2>
+          <p className="text-lg text-black max-w-3xl mx-auto">
             {content.footerMain.subtitle}
           </p>
           <div className='flex gap-2 md:gap-5 justify-center mt-5'>

@@ -22,7 +22,7 @@ export const Challenges = () => {
   return (
     <section
       id="challeges"
-      className="py-10 md:mt-10 px-4 sm:px-6 lg:px-8"
+      className="py-10 md:mt-10 px-4 sm:px-6 lg:px-32"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -32,10 +32,10 @@ export const Challenges = () => {
       >
         {/* <BackgroundParticle /> */}
         <h2
-          className="text-4xl sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-6"
+          className="text-3xl sm:text-3xl md:text-5xl font-bold text-black mb-6"
           style={{ lineHeight: 1.15 }}
         >
-          Solving IT Consulting's Biggest Challenges
+          Solving <span className='text-gradient-primary'> IT Consulting's</span> Biggest Challenges
         </h2>
 
         <p className="text-xl text-black max-w-4xl mx-auto">
@@ -53,19 +53,19 @@ export const Challenges = () => {
             transition={{ delay: index * 0.2 }}
             className="rounded-xl p-6 border border-primary/40 bg-[#21253F]"
           >
-            <p className="text-lg font-bold text-gradient-primary mb-4">
+            <p className="text-lg font-bold md:pr-12 text-gradient-primary mb-4">
               {story.title}
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-4 md:pr-12">
               <div>
-                <p className="text-[14px]">
+                <p className="text-[14px] ">
                   {story.desc}
                 </p>
               </div>
 
               <div>
-                <p className="text-gradient-primary text-sm leading-relaxed">
+                <p className="text-secondary text-sm leading-relaxed">
                   {story.lastLine}
                 </p>
               </div>

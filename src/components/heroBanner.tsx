@@ -5,13 +5,17 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 
 const HeroBanner = ({ content }: any) => {
+
+  const applyExtraPadding =
+    !content.bannerImage && !content.developmentProgress;
+
   const hasRightColumn =
     content.bannerImage ||
     content.title === "Upskilling enterprise teams" ||
     content.developmentProgress;
 
   return (
-    <section className="container mx-auto px-4 sm:px-4 lg:px-8 py-12 z-10">
+    <section className="container mx-auto px-4 sm:px-4 md:px-16 lg:px-32 py-12 z-10">
       <div
         className={`grid grid-cols-1 ${hasRightColumn ? "lg:grid-cols-2" : "lg:grid-cols-1"
           } gap-10 items-center`}
@@ -21,21 +25,44 @@ const HeroBanner = ({ content }: any) => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center text-center"
+          className={`flex flex-col items-center text-center ${applyExtraPadding ? "md:px-4" : ""
+            }`}
         >
+          {/* Domain Tag */}
           {content.domain && (
-            <p className="font-bold text-yellow-500 border rounded-2xl px-4 py-1 
-      border-yellow-500 mb-6 leading-tight mx-auto w-fit">
-              {content.domain}
-            </p>
+            <div className={`flex flex-wrap justify-center gap-6 mb-6 ${applyExtraPadding ? "md:px-8" : ""}`}>
+              {content.domain.split(",").map((tag: string, i: number) => {
+                const colors = [
+                  "text-green-500 border-green-500",   
+                  "text-yellow-500 border-yellow-500", 
+                ];
+
+                return (
+                  <span
+                    key={i}
+                    className={`rounded-2xl px-2  border ${colors[i] || "text-primary border-primary"}`}
+                  >
+                    {tag.trim()}
+                  </span>
+                );
+              })}
+            </div>
           )}
+
+
           {/* Title */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-6 leading-tight">
+          <h1
+            className={`text-2xl sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-6 leading-tight ${applyExtraPadding ? "md:px-2" : "text-start"
+              }`}
+          >
             {content.title}
           </h1>
 
           {/* Description */}
-          <p className="text-[14px] sm:text-[14px] md:text-lg text-black leading-relaxed ">
+          <p
+            className={`text-[14px] sm:text-[14px] md:text-lg text-black leading-relaxed ${applyExtraPadding ? "md:px-4" : "text-start"
+              }`}
+          >
             {content.description}
           </p>
 
@@ -54,29 +81,9 @@ const HeroBanner = ({ content }: any) => {
               ))}
             </div>
           )}
-
-          {/* Companies */}
-          {content?.companies?.length > 0 && (
-            <div className="text-sm text-black mb-10 mt-8 flex flex-col items-center">
-              <p className="mb-3 text-primary tracking-wide font-medium">
-                TRUSTED BY EXECUTIVES AT
-              </p>
-
-              <div className="flex flex-wrap justify-center gap-2">
-                {content.companies.map((d: string, i: number) => (
-                  <span
-                    key={i}
-                    className="border border-primary/40 rounded-full px-3 py-2 text-sm sm:text-sm"
-                  >
-                    {d}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
         </motion.div>
 
-        {/* ✅ RIGHT COLUMN — SPECIAL TRAINING CARD */}
+        {/* RIGHT COLUMN — SPECIAL TRAINING CARD */}
         {content.title === "Upskilling enterprise teams" ? (
           <motion.div
             initial={{ opacity: 0, x: 40 }}
@@ -95,7 +102,10 @@ const HeroBanner = ({ content }: any) => {
                 "Progress tracking and analytics",
                 "Ongoing support and mentorship",
               ].map((item, index) => (
-                <li key={index} className="flex items-center gap-3 text-gray-300">
+                <li
+                  key={index}
+                  className="flex items-center gap-3 text-gray-300"
+                >
                   <CheckCircle size={18} className="text-yellow-400" />
                   {item}
                 </li>
@@ -122,7 +132,7 @@ const HeroBanner = ({ content }: any) => {
           )
         )}
 
-        {/* DEVELOPMENT PROGRESS (KEEP AS-IS) */}
+        {/* DEVELOPMENT PROGRESS */}
         {content.developmentProgress && (
           <div className="mx-auto w-full max-w-xl rounded-xl bg-gradient-to-br from-[#263a4d] to-[#29193d] p-6 shadow-lg border border-primary/20">
             <div className="flex justify-between items-center mb-3">
@@ -175,6 +185,26 @@ const HeroBanner = ({ content }: any) => {
           </div>
         )}
       </div>
+
+      {/* COMPANIES LIST */}
+      {content?.companies?.length > 0 && (
+        <div className="text-sm text-black mb-10 mt-16 flex flex-col items-center">
+          <p className="mb-3 text-primary tracking-wide font-medium">
+            TRUSTED BY EXECUTIVES AT
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-2">
+            {content.companies.map((d: string, i: number) => (
+              <span
+                key={i}
+                className="border border-primary/40 rounded-full px-3 py-2 text-sm sm:text-sm"
+              >
+                {d}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 };

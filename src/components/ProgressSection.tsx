@@ -29,7 +29,7 @@ const ProgressSection: React.FC<Props> = ({ content }) => {
     const progress = content.progress;
 
     return (
-        <section className="relative container mx-auto px-4 sm:px-4 lg:px-16 py-16">
+        <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16">
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ const ProgressSection: React.FC<Props> = ({ content }) => {
             >
                 {/* Title */}
                 <h2
-                    className="text-4xl sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-6"
+                    className="text-3xl sm:text-3xl md:text-4xl font-bold text-gradient-primary mb-6"
                     style={{ lineHeight: 1.15 }}
                 >
                     {progress.title}

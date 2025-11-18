@@ -287,7 +287,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full right-[40%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%]"
+              className="absolute top-full right-[40%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%] overflow-y-auto max-h-[500px]"
               onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
             >
               <div className="mx-auto px-2 sm:px-6 lg:px-8 py-8">
@@ -354,7 +354,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full right-[20%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%] overflow-y-auto max-h-[600px]"
+              className="absolute top-full right-[20%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%] overflow-y-auto max-h-[500px]"
               onClick={() => setIsLabsOpen(!isLabsOpen)}
             >
               <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -437,7 +437,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full right-[10%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%]"
+              className="absolute top-full right-[10%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%] overflow-y-auto max-h-[500px]"
               onClick={() => setIsAboutUsOpen(!isAboutUsOpen)}
             >
               <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -496,10 +496,8 @@ export const Navigation = ({ itemColor = "#fff" }) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden backdrop-blur-md border-t border-primary/20 bg-white/90 rounded-b-lg mt-2 mb-4
-               max-h-[80vh] overflow-y-auto"
+            className="md:hidden backdrop-blur-md border-t border-primary/20 bg-white/90 rounded-b-lg mt-2 mb-4"
           >
-
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
                 <div key={item.label}>

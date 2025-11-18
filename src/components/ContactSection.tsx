@@ -55,7 +55,7 @@ export const ContactSection = () => {
     <section
       id="contact"
       ref={ref}
-      className="py-10 md:mt-10 relative overflow-hidden px-4 sm:px-4 md:px-8 lg:px-8"
+      className="py-10 md:mt-10 relative overflow-hidden px-4 sm:px-4 md:px-32 lg:px-32"
     >
       {/* Background Elements (kept commented out in your original) */}
       <div className="absolute inset-0">
@@ -87,7 +87,7 @@ export const ContactSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gradient-primary"
+            className="text-3xl sm:text-3xl md:text-4xl font-bold mb-6 text-gradient-primary"
             style={{ lineHeight: 1.15 }}
           >
             Ready to Transform ?

@@ -22,7 +22,7 @@ const Icons: any = {
 
 const AnalyticsHero = ({ content }: any) => {
   return (
-    <section className="w-full bg-[#0c0f1a] text-white py-16 md:py-20 px-4 sm:px-4 md:px-8 -mb-32">
+    <section className="w-full bg-[#0c0f1a] text-white py-16 md:py-20 px-4 sm:px-4 md:px-32 -mb-32">
       <div className="container mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
         {/* LEFT CONTENT */}
@@ -71,7 +71,7 @@ const AnalyticsHero = ({ content }: any) => {
           </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-4 md:gap-10 mt-14">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-4 md:gap-6 mt-14">
             {content.stats.map((stat: any, i: number) => (
               <div key={i} className="text-center">
                 <p className="text-2xl font-extrabold text-cyan-400">{stat.value}</p>

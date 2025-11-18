@@ -23,11 +23,11 @@ const TrustedOrganizations: React.FC<TrustedOrganizationsProps> = ({
   metrics,
 }) => {
   return (
-    <section className="py-20 px-4 md:px-8 bg-[#0e0e11] text-white text-center">
+    <section className="py-20 px-4 md:px-32 bg-[#0e0e11] text-white text-center">
       <div className="container mx-auto px-6">
 
         {/* TITLE */}
-        <h2 className="text-4xl md:text-5xl text-gradient-primary font-bold mb-4">
+        <h2 className="text-4xl md:text-4xl text-gradient-primary font-bold mb-4">
           Trusted by Leading Organizations
         </h2>
 
@@ -40,9 +40,9 @@ const TrustedOrganizations: React.FC<TrustedOrganizationsProps> = ({
           {organizations.map((item, index) => (
             <div
               key={index}
-              className="bg-[#111215] border border-[#26272b] rounded-2xl p-10 shadow-lg"
+              className="bg-[#111215] border border-[#26272b] rounded-2xl py-10 px-2 shadow-lg"
             >
-              <div className="text-5xl font-extrabold text-yellow-400 mb-2">
+              <div className="text-4xl font-extrabold text-yellow-400 mb-2">
                 {item.value}
               </div>
               <div className="text-xl font-semibold">{item.title}</div>
@@ -55,7 +55,7 @@ const TrustedOrganizations: React.FC<TrustedOrganizationsProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {metrics.map((metric, index) => (
             <div key={index}>
-              <div className="text-5xl font-extrabold text-yellow-400 mb-2">
+              <div className="text-4xl font-extrabold text-yellow-400 mb-2">
                 {metric.value}
               </div>
               <p className="text-gray-300 max-w-xs mx-auto leading-relaxed">

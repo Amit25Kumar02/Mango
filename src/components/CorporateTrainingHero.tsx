@@ -18,7 +18,7 @@ export default function CorporateTrainingHero({
   content: CorporateHeroContent;
 }) {
   return (
-    <section className="w-full bg-[#0a0a0c] py-20 px-6 lg:px-32 text-white">
+    <section className="w-full bg-[#0a0a0c] py-20 px-6 md:px-8 lg:px-16 text-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         {/* LEFT SIDE */}
@@ -34,7 +34,7 @@ export default function CorporateTrainingHero({
           </div>
 
           {/* TITLE */}
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
             <span className="text-white">Upskilling</span>{" "}
             <span className="text-yellow-500">enterprise teams</span>
           </h1>

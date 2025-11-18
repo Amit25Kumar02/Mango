@@ -63,7 +63,7 @@ export const TestimonialsSection = () => {
     <section
       id="team"
       ref={ref}
-      className="relative py-14 md:mt-10 px-4 sm:px-4 md:px-8 lg:px-8 overflow-hidden"
+      className="relative py-14 md:mt-10 px-4 sm:px-4 md:px-8 lg:px-32 overflow-hidden"
     >
       {/* Quotes background */}
       <div className="pointer-events-none absolute inset-0">
@@ -87,10 +87,11 @@ export const TestimonialsSection = () => {
           </span>
 
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gradient-primary"
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-black"
             style={{ lineHeight: 1.15 }}
           >
-            Trusted By Modern Teams
+            Trusted By
+            <span className='text-gradient-primary'> Modern Teams </span>
           </h2>
         </motion.div>
 
@@ -133,7 +134,7 @@ export const TestimonialsSection = () => {
                 />
                 <div>
                   <div
-                    className="font-semibold text-gradient-primary"
+                    className="font-semibold text-xl text-gradient-primary"
                     style={
                       {
                         // color: '#19288F'

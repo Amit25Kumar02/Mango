@@ -64,7 +64,7 @@ export const AboutSection = () => {
     <section
       id="about"
       ref={ref}
-      className="py-10 md:mt-10 px-4 sm:px-6 lg:px-8"
+      className="py-10 md:mt-10 px-4 sm:px-6 lg:px-32 relative overflow-hidden"
     >
       {/* <div className="absolute inset-0">
         <video
@@ -124,22 +124,22 @@ export const AboutSection = () => {
 
 
             {/* Main Title */}
-            <motion.p
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 }}
-              className="text-4xl md:text-5xl font-bold text-balance text-center mb-6 text-black"
+              className="text-3xl md:text-4xl md:px-8 font-bold text-balance text-center mb-6 text-black"
             >
               Empowering AI, Enterprises & Professionals with
-              <span className="text-gradient-primary">AI Excellence</span>
-            </motion.p>
+              <span className="text-gradient-primary"> AI Excellence</span>
+            </motion.h2>
 
             {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
-              className="text-xl text-muted-foreground max-w-4xl mx-auto text-pretty leading-relaxed mb-4"
+              className="text-xl text-muted-foreground max-w-4xl mx-auto text-center text-pretty leading-relaxed mb-4"
             >
               We partner with startups, and enterprises to solve their toughest challenges: from accelerating Market research to building enterprise-scale AI solutions, while nurturing the next generation of AI professionals.
             </motion.p>
@@ -183,32 +183,38 @@ export const AboutSection = () => {
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 md:grid-cols-2 gap-4"
           >
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 80 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 0.4 + index * 0.15 }}
-                className="card-interactive hover-gradient p-4 sm:p-6 rounded-xl flex items-center gap-2 bg-[#21253F] hover:bg-[#21253F]"
-              >
-                {/* Text */}
-                <div className="flex-1">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gradient-primary mb-1">
-                    {feature.title}
-                  </h3>
-                  <p className="text-white text-[14px] md:text-base">
-                    {feature.description}
-                  </p>
-                </div>
+            {features.map((feature, index) => {
+              const Icon = feature.icon; 
 
-                {/* Icon */}
-                <div className="relative flex items-center justify-center h-12 w-12 sm:h-16 sm:w-16 rounded-lg bg-gradient-primary">
-                  <div className="absolute inset-0 rounded-lg bg-gradient-primary animate-pulse-glow opacity-30" />
-                  <feature.icon className="h-7 w-7 sm:h-10 sm:w-10 text-white" />
-                </div>
-              </motion.div>
-            ))}
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 80 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.7, delay: 0.4 + index * 0.15 }}
+                  className="p-6 rounded-xl bg-[#21253F] hover:bg-[#293061] transition-all duration-300 flex flex-col items-center text-center gap-4"
+                >
+                  {/* ICON */}
+                  <div className="relative flex items-center justify-center h-14 w-14 sm:h-16 sm:w-16 rounded-lg bg-gradient-primary shadow-md">
+                    <div className="absolute inset-0 rounded-lg bg-gradient-primary animate-pulse-glow opacity-30" />
+                    <Icon className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
+                  </div>
+
+                  {/* TEXT */}
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-semibold text-gradient-primary mb-2">
+                      {feature.title}
+                    </h3>
+
+                    <p className="text-white text-sm md:text-base">
+                      {feature.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </motion.div>
+
 
         </div>
       </div>

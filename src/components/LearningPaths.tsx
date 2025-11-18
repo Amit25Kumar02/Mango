@@ -21,57 +21,59 @@ interface LearningPathsProps {
 
 const LearningPaths: React.FC<LearningPathsProps> = ({ data }) => {
   return (
-    <section className="py-20 px-4 md:px-8 bg-[#0d0d0f] text-white">
+    <section className="py-20 px-4 md:px-16 lg:px-32 bg-[#0d0d0f] text-white">
       <div className="container mx-auto px-6">
 
         {/* Title */}
-        <h2 className="text-4xl md:text-5xl text-gradient-primary font-bold text-center mb-3">
+        <h2 className="text-3xl md:text-4xl text-gradient-primary font-bold text-center mb-3">
           {data.title}
         </h2>
-
-        <p className="text-gray-400 text-center mb-12">
-          {data.subtitle}
-        </p>
+        <p className="text-gray-400 text-center mb-12">{data.subtitle}</p>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {data.items.map((item, index) => (
             <div
               key={index}
-              className="bg-[#1b1b1e] border border-[#2a2a2d] rounded-2xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.3)]"
+              className="
+                bg-[#1b1b1e] border border-[#2a2a2d] 
+                rounded-2xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.3)]
+                flex flex-col justify-between h-full
+              "
             >
-              {/* Badge */}
-              <span className="text-sm px-3 py-1 rounded-full bg-yellow-700/20 text-yellow-400 border border-yellow-600/30">
-                {item.courses} Courses
-              </span>
+              <div>
+                {/* Badge */}
+                <span className="text-sm px-3 py-1 rounded-full bg-yellow-700/20 text-yellow-400 border border-yellow-600/30">
+                  {item.courses} Courses
+                </span>
 
-              {/* Title */}
-              <h3 className="text-xl font-semibold text-gradient-primary mt-4">
-                {item.title}
-              </h3>
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-gradient-primary mt-4">
+                  {item.title}
+                </h3>
 
-              {/* Description */}
-              <p className="text-gray-400 text-lg mt-2 leading-relaxed">
-                {item.description}
-              </p>
+                {/* Description */}
+                <p className="text-gray-400 text-lg mt-2 leading-relaxed">
+                  {item.description}
+                </p>
 
-              {/* Info row */}
-              <div className="flex items-center gap-6 mt-6 text-gray-300 text-lg">
-                <div className="flex items-center gap-2">
-                  <Clock className="text-gray-400" size={16} />
+                {/* Duration */}
+                <div className="flex items-center gap-2 mt-6 text-gray-300 text-base">
+                  <Clock size={16} className="text-gray-400" />
                   {item.duration}
                 </div>
 
+                {/* Certificate */}
                 {item.certificate && (
-                  <div className="flex items-center gap-2">
-                    <Award className="text-gray-400" size={16} />
+                  <div className="flex items-center gap-2 text-gray-300 text-base mt-3">
+                    <Award size={16} className="text-gray-400" />
                     Certificate
                   </div>
                 )}
               </div>
 
-              {/* Button */}
-              <button className="w-full mt-6 border border-[#3a3a3d] hover:bg-[#222225] transition py-2 rounded-xl text-sm font-medium">
+              {/* Button (always bottom) */}
+              <button className="w-full mt-6 border border-[#3a3a3d] bg-gradient-primary hover:bg-[#222225] transition py-2 rounded-xl text-sm font-medium">
                 View Track Details
               </button>
             </div>

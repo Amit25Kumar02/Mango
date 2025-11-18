@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 const SecondBanner = ({ data }) => {
-  return <section className="mx-auto px-4 sm:px-4 lg:px-8 py-16 z-9999" style={{
+  return <section className="mx-auto px-4 sm:px-4 md:px-16 lg:px-32 py-16 z-9999" style={{
     background: '#21253F',
   }}>
     <motion.div
@@ -9,7 +9,7 @@ const SecondBanner = ({ data }) => {
       transition={{ duration: 0.8 }}
       className="text-center mb-12"
     >
-      <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }} >{data.title}</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }} >{data.title}</h2>
     </motion.div>
 
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -17,7 +17,7 @@ const SecondBanner = ({ data }) => {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="space-y-8"
+        className="space-y-7"
       >
 
         {data.items.map((step, index) => (
@@ -43,7 +43,7 @@ const SecondBanner = ({ data }) => {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="rounded-2xl p-8 border border-white/40"
+        className="rounded-2xl h-fit p-8 border border-white/40"
       >
         <h3 className="text-2xl font-bold text-gradient-primary mb-8">{data.framework.title}</h3>
 
