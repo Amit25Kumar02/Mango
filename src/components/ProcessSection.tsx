@@ -34,7 +34,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ data }) => {
           {data.steps.map((step, index) => (
             <div
               key={index}
-              className="bg-[#1a1623] border border-[#2d2633] rounded-2xl h-fit py-10 px-8 text-left shadow-lg hover:shadow-xl transition relative"
+              className="bg-[#1a1623] border border-[#2d2633] rounded-2xl py-10 px-8 text-left shadow-lg hover:shadow-xl transition relative"
             >
               {/* Step Number */}
               <div className="text-4xl md:text-5xl font-extrabold text-teal-300 mb-4">
