@@ -496,7 +496,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden backdrop-blur-md border-t border-primary/20 bg-white/90 rounded-b-lg mt-2 mb-4"
+            className="md:hidden backdrop-blur-md border-t border-primary/20 bg-white/90 rounded-b-lg mt-2 mb-4 overflow-y-auto max-h-[500px]"
           >
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
@@ -549,7 +549,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                 </div>
               ))}
               <Button
-                className="w-full bg-teal-500 hover:bg-teal-600 text-white"
+                className="w-full bg-gradient-primary text-white"
                 size="lg"
                 onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}
               >
