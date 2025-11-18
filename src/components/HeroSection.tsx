@@ -190,7 +190,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute sm:visible-hidden bottom-6 left-1/2 -translate-x-1/2"
+          className="absolute hidden md:block bottom-6 left-1/2 -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}
@@ -213,6 +213,7 @@ export const HeroSection = () => {
             </svg>
           </motion.div>
         </motion.div>
+
 
 
       </section>
