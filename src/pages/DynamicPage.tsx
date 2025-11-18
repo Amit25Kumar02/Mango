@@ -582,7 +582,7 @@ const DynamicPage = () => {
       'solutions/ai-talent-development': {
         domain:"AI Talent Development",
         title: 'Where AI expertise meets human potential.',
-        bannerImage: talent,
+        // bannerImage: talent,
         subtitle: 'Train, certify, and place AI professionals and corporate teams.',
         description: 'We are a collective of world-class AI professionals united by our deep tech knowledge, our human-centric mindset and a passion for developing the next generation of AI talent.',
         features: [
@@ -752,7 +752,7 @@ const DynamicPage = () => {
       'industries/medical-and-healthcare': {
         domain:"Healthcare Innovation",
         title: 'AI Meets Compassion',
-        bannerImage: healthcare,
+        // bannerImage: healthcare,
         subtitle: 'Elite IT talent placement, technical consulting, and team augmentation services for the healthcare sector.',
         description: 'Predictive patient analytics, advanced diagnostics, AI-powered medical imaging, automated patient triage, remote monitoring, workflow optimization, and healthcare AI solutions that improve patient outcomes while ensuring regulatory compliance across the care continuum.',
         companies: [
@@ -804,7 +804,7 @@ const DynamicPage = () => {
 
       'industries/startups-and-enterprises': {
         domain:"Scale & Innovation",
-        bannerImage: startup,
+        // bannerImage: startup,
         title: 'Where ambitious vision meets scalable execution',
         subtitle: 'Scalable AI products & cloud-native platforms for businesses of all sizes.',
         description: 'Scalable AI products and cloud-native platforms that grow with your business, from startup MVP to enterprise-grade solutions.',

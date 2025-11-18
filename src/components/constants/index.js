@@ -101,6 +101,7 @@ const Trainingprograms = [
       'AI strategy and implementation',
       'Hands-on project experience'
     ],
+     solution: "",
     timeline: "12 weeks"
   },
   {

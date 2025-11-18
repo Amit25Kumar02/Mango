@@ -102,7 +102,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
 
                                 {/* Timeline */}
                                 {story.timeline && (
-                                    <p className="text-sm font-semibold text-gray-800 mt-3">
+                                    <p className="text-sm font-semibold text-white mt-3">
                                         <span className="font-bold">Timeline:</span> {story.timeline}
                                     </p>
                                 )}
