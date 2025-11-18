@@ -857,7 +857,7 @@ const DynamicPage = () => {
       'labs/food-haven': {
         // bannerImage: delivery,
         title: 'Food Haven',
-        domain: "Coming Soon ,Heal Tech",
+        domain: "Coming Soon ,Health Tech",
         subtitle: 'AI-powered healthy lifestyle food delivery platform with personalized nutrition.',
         description: 'AI-powered healthy lifestyle food delivery platform with personalized nutrition recommendations and smart meal planning.',
         features: [
