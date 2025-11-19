@@ -393,6 +393,8 @@ const Startup2 = [
 const featuredPrograms = [
   {
     icon: 'wand',
+    category: "Beginner",
+    timeline: "4 weeks",
     company: 'AI Fundamentals - ($299)',
     challenge: 'Master the core concepts of artificial intelligence and machine learning',
     results: [
@@ -408,6 +410,8 @@ const featuredPrograms = [
   },
   {
     icon: 'rocket',
+       category: "Intermediate",
+    timeline: "8 weeks",
     company: 'Machine Learning Engineering - ($799)',
     challenge: 'Build production-ready ML systems and deploy models at scale',
     results: [
@@ -422,6 +426,8 @@ const featuredPrograms = [
   },
   {
     icon: 'camera',
+    category: "Executive",
+    timeline: "6 weeks",
     company: 'AI Leadership & Strategy - ($1,299)',
     challenge: 'Strategic AI implementation for business leaders and executives.',
     results: [
@@ -539,5 +545,104 @@ const OurValues = [
     ],
   },
 ]
+const LabsData = [
+  {
+    icon: "activity",
+    category: "Health Tech",
+    timeline: "Coming Soon",
+    company: "Food Haven",
+    challenge:
+      "AI-powered healthy lifestyle food delivery platform with personalized nutrition",
+    results: ["Personalized Nutrition", "AI Recipe Generation", "Health Tracking"],
+     button: [{label:"View Details", link:"/labs/food-haven"}],
+    expected: "Q2 2025",
+    slug: "food-haven"
+  },
+  {
+    icon: "shopping-bag",
+    category: "E-commerce",
+    timeline: "Coming Soon",
+    company: "Mango Boutique",
+    challenge:
+      "Immersive VR shopping experience with AI-powered style recommendations",
+    results: ["VR Shopping", "AI Style Assistant", "Virtual Try-On"],
+      button: [{label:"View Details",link:"/labs/mango-boutique"}],
+    expected: "Q3 2025",
+    slug: "mango-boutique"
+  },
+  {
+    icon: "car",
+    category: "Transportation",
+    timeline: "Coming Soon",
+    company: "DriveMeSafe",
+    challenge:
+      "Community-driven ride-sharing platform focused on family safety",
+    results: ["Safety Scoring", "Family Verification", "Real-time Tracking"],
+      button: [{label:"View Details",link:"/labs/drivemesafe"}],
+    expected: "Q4 2025",
+    slug: "drivemesafe"
+  },
+  {
+    icon: "book-open",
+    category: "Education",
+    timeline: "Beta Testing",
+    company: "EduMind AI",
+    challenge:
+      "Personalized learning platform with adaptive AI tutoring systems",
+    results: ["Adaptive Learning", "AI Tutoring", "Progress Analytics"],
+      button: [{label:"View Details",link:"/labs/edumind-ai"}],
+    expected: "Q1 2025",
+    slug: "edumind-ai"
+  },
+  {
+    icon: "leaf",
+    category: "Sustainability",
+    timeline: "In Development",
+    company: "GreenTrack",
+    challenge:
+      "Carbon footprint tracking and sustainability optimization for businesses",
+    results: ["Carbon Tracking", "Sustainability Metrics", "ESG Reporting"],
+    button: [{label:"View Details",link:"/labs/greentrack"}],
+    expected: "Q1 2025",
+    slug: "greentrack"
+  },
+  {
+    icon: "stethoscope",
+    category: "Healthcare",
+    timeline: "Coming Soon",
+    company: "HealthSync",
+    challenge:
+      "AI-powered patient data integration and predictive health analytics",
+    results: ["Data Integration", "Predictive Analytics", "HIPAA Compliance"],
+     button: [{label:"View Details",link:"/labs/healthsync"}],
+    expected: "Q3 2025",
+    // button: "View Details"
+  },
+  // {
+  //   icon: "trending-up",
+  //   category: "FinTech",
+  //   timeline: "Stealth Mode",
+  //   company: "AssetWise AI",
+  //   challenge:
+  //     "Intelligent asset management platform for optimized portfolios and risk analysis",
+  //   results: ["Portfolio Optimization", "Risk Analytics", "Market Prediction"],
+  //   button: [{lable:"View Details",link:"/labs/food-haven"}],
+  //   expected: "Q4 2025",
+  //   slug: "assetwise-ai"
+  // },
+  // {
+  //   icon: "heart",
+  //   category: "Health & Wellness",
+  //   timeline: "Stealth Mode",
+  //   company: "VitaCoach AI",
+  //   challenge:
+  //     "AI-powered personal health coach adapting to user lifestyle for better wellness",
+  //   results: ["Habit Tracking", "Personalized Coaching", "Wellness Analytics"],
+  //   button: "View Details",
+  //   expected: "Q1 2026",
+  //   slug: "vitacoach-ai"
+  // }
+];
 
-export { successStories, FlagshipModels, Trainingprograms, ItConsulting, Healthcare, Healthcare2, Startup, Startup2, featuredPrograms, TrainingPrograms, OurValues }
+
+export { successStories, FlagshipModels, Trainingprograms, ItConsulting, Healthcare, Healthcare2, Startup, Startup2, featuredPrograms, TrainingPrograms, OurValues, LabsData }

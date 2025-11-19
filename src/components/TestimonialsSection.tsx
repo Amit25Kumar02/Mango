@@ -63,7 +63,7 @@ export const TestimonialsSection = () => {
     <section
       id="team"
       ref={ref}
-      className="relative py-14 md:mt-10 px-4 sm:px-4 md:px-8 lg:px-32 overflow-hidden"
+      className="relative py-14 md:mt-10 px-4 sm:px-4 md:px-8 lg:px-40 overflow-hidden"
     >
       {/* Quotes background */}
       <div className="pointer-events-none absolute inset-0">
@@ -87,7 +87,7 @@ export const TestimonialsSection = () => {
           </span>
 
           <h2
-            className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-black"
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black"
             style={{ lineHeight: 1.15 }}
           >
             Trusted By

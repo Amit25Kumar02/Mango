@@ -15,7 +15,7 @@ const HeroBanner = ({ content }: any) => {
     content.developmentProgress;
 
   return (
-    <section className="container mx-auto px-4 sm:px-4 md:px-16 lg:px-32 py-12 z-10">
+    <section className="container mx-auto px-4 sm:px-4 md:px-16 lg:px-48 py-12 z-10">
       <div
         className={`grid grid-cols-1 ${hasRightColumn ? "lg:grid-cols-2" : "lg:grid-cols-1"
           } gap-10 items-center`}
@@ -40,7 +40,7 @@ const HeroBanner = ({ content }: any) => {
                 return (
                   <span
                     key={i}
-                    className={`rounded-2xl px-2  border ${colors[i] || "text-primary border-primary"}`}
+                    className={`rounded-2xl px-2 border ${colors[i] || "text-gradient-primary border-primary"}`}
                   >
                     {tag.trim()}
                   </span>

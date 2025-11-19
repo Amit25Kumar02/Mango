@@ -64,7 +64,7 @@ export const AboutSection = () => {
     <section
       id="about"
       ref={ref}
-      className="py-10 md:mt-10 px-4 sm:px-6 lg:px-32 relative overflow-hidden"
+      className="py-10 md:mt-10 px-4 sm:px-6 lg:px-40 relative overflow-hidden"
     >
       {/* <div className="absolute inset-0">
         <video
@@ -128,7 +128,7 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 }}
-              className="text-3xl md:text-4xl md:px-8 font-bold text-balance text-center mb-6 text-black"
+              className="text-3xl md:text-5xl md:px-16 font-bold text-balance text-center mb-6 text-black"
             >
               Empowering AI, Enterprises & Professionals with
               <span className="text-gradient-primary"> AI Excellence</span>

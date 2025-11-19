@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 import BackgroundParticle from "@/components/backgroundWrapper"
 // inport Section5Img from "@/assets/ai-talent.jpg"
 import BrandMarquee from '@/components/BrandMarquee';
-import { successStories, FlagshipModels, Trainingprograms, ItConsulting, Healthcare, Healthcare2, Startup, Startup2, featuredPrograms, TrainingPrograms, OurValues } from "../components/constants"
+import { successStories, FlagshipModels, Trainingprograms, ItConsulting, Healthcare, Healthcare2, Startup, Startup2, featuredPrograms, TrainingPrograms, OurValues ,LabsData} from "../components/constants"
 import { Tick, Progres } from '@/components/ui/tick';
 import graph from "@/assets/graph.jpg"
 import security from "@/assets/security.jpg"
@@ -378,7 +378,7 @@ const DynamicPage = () => {
       },
 
       'solutions/machine-learning-solutions': {
-        domain:"Machine Learning Solutions",
+        domain: "Machine Learning Solutions",
         title: 'The fastest and most powerful platform for building ML products',
         subtitle: 'Custom ML models, computer vision, NLP, and predictive analytics for your business.',
         // bannerImage: startup,
@@ -506,7 +506,7 @@ const DynamicPage = () => {
         },
       },
       'solutions/compliance-and-security': {
-        domain:"Compliance & Security",
+        domain: "Compliance & Security",
         title: 'Seamless Compliance and Security at Every Step',
         // bannerImage: security,
         subtitle: 'HIPAA, FDA, and EMA-ready AI systems from day one.',
@@ -580,7 +580,7 @@ const DynamicPage = () => {
         }
       },
       'solutions/ai-talent-development': {
-        domain:"AI Talent Development",
+        domain: "AI Talent Development",
         title: 'Where AI expertise meets human potential.',
         // bannerImage: talent,
         subtitle: 'Train, certify, and place AI professionals and corporate teams.',
@@ -706,7 +706,7 @@ const DynamicPage = () => {
 
       // Industries
       'industries/it-consulting-business': {
-        domain:"IT Consulting Excellence",
+        domain: "IT Consulting Excellence",
         title: 'Where elite tech talent meets strategic innovation.',        // bannerImage: talent,
         subtitle: 'Elite IT talent placement, technical consulting, and team augmentation services.',
         description: 'Elite IT talent placement, technical consulting, and team augmentation services that transform your technology capabilities and accelerate business growth.',
@@ -750,7 +750,7 @@ const DynamicPage = () => {
         }
       },
       'industries/medical-and-healthcare': {
-        domain:"Healthcare Innovation",
+        domain: "Healthcare Innovation",
         title: 'AI Meets Compassion',
         // bannerImage: healthcare,
         subtitle: 'Elite IT talent placement, technical consulting, and team augmentation services for the healthcare sector.',
@@ -803,7 +803,7 @@ const DynamicPage = () => {
       },
 
       'industries/startups-and-enterprises': {
-        domain:"Scale & Innovation",
+        domain: "Scale & Innovation",
         // bannerImage: startup,
         title: 'Where ambitious vision meets scalable execution',
         subtitle: 'Scalable AI products & cloud-native platforms for businesses of all sizes.',
@@ -854,6 +854,18 @@ const DynamicPage = () => {
       },
 
       // Labs
+      'labs/labs': {
+        title: "MangoAnalytics Labs",
+        description: "Innovations in progress — shaping the future, one breakthrough at a time.",
+        buttons: ["View All Projects", "Join Beta Program"],
+        companies: ["TechCorp", "InnovateLab", "FutureVentures", "NextGen", "AIStartup"],
+ section4:{
+   title: "Innovation Pipeline",
+   description: "Cutting-edge AI projects across multiple industries",
+   data: LabsData
+  },
+      },
+
       'labs/food-haven': {
         // bannerImage: delivery,
         title: 'Food Haven',
@@ -1480,7 +1492,7 @@ const DynamicPage = () => {
             }
           ]
         },
-        marketOpportunity : {
+        marketOpportunity: {
           title: "Beta Testing Results",
           subtitle: "Real results from our closed beta program with students and educators",
           items: [
@@ -1920,22 +1932,22 @@ const DynamicPage = () => {
 
       },
       'training/corporate-training': {
-        corporateHero:{
-        domain: "Corporate Training",
-        title: 'Upskilling enterprise teams',
-        subtitle: 'AI-powered patient data integration and predictive health analytics.',
-        description: 'Transform your organization with comprehensive AI training programs designed for enterprise teams. From leadership strategy to hands-on technical implementation.',
-        features: [
-          'Patient Data Integration',
-          'Predictive Health Analytics',
-          'Health Trend Analysis',
-          'Risk Assessment',
-          'Care Coordination'
-        ],
-        buttons: [
-          "Schedule Consultation",
-          "Download Brochure"
-        ],
+        corporateHero: {
+          domain: "Corporate Training",
+          title: 'Upskilling enterprise teams',
+          subtitle: 'AI-powered patient data integration and predictive health analytics.',
+          description: 'Transform your organization with comprehensive AI training programs designed for enterprise teams. From leadership strategy to hands-on technical implementation.',
+          features: [
+            'Patient Data Integration',
+            'Predictive Health Analytics',
+            'Health Trend Analysis',
+            'Risk Assessment',
+            'Care Coordination'
+          ],
+          buttons: [
+            "Schedule Consultation",
+            "Download Brochure"
+          ],
         },
         section3: {
           title: "Why Choose Our Corporate Training",
@@ -2457,7 +2469,7 @@ const DynamicPage = () => {
         )}
 
         {/* <SuccessStoriesSection/> */}
-        {content.section42 && <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16">
+        {content.section42 && <section className="relative container mx-auto px-4 sm:px-4 lg:px-44 py-16">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -2466,7 +2478,7 @@ const DynamicPage = () => {
           >
             {/* <BackgroundParticle /> */}
             <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.section42.title}</h2>
-            <p className="text-lg text-black max-w-4xl mx-auto">
+            <p className="text-lg text-black max-w-2xl mx-auto">
               {content.section42.description}
             </p>
           </motion.div>

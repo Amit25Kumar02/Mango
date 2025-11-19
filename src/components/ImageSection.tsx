@@ -21,7 +21,7 @@ const ImageSection: React.FC<ImageSectionProps> = ({ content }) => {
   const section = content.imageSection;
 
   return (
-    <section className="relative w-full py-16 px-4 sm:px-4 md:px-16 lg:px-16">
+    <section className="relative w-full py-16 px-4 sm:px-4 md:px-16 lg:px-48">
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
    

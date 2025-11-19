@@ -23,7 +23,7 @@ const TrustedOrganizations: React.FC<TrustedOrganizationsProps> = ({
   metrics,
 }) => {
   return (
-    <section className="py-20 px-4 md:px-32 bg-[#0e0e11] text-white text-center">
+    <section className="py-20 px-4 md:px-48 bg-[#0e0e11] text-white text-center">
       <div className="container mx-auto px-6">
 
         {/* TITLE */}
@@ -36,26 +36,26 @@ const TrustedOrganizations: React.FC<TrustedOrganizationsProps> = ({
         </p>
 
         {/* TOP CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-20">
           {organizations.map((item, index) => (
             <div
               key={index}
-              className="bg-[#111215] border border-[#26272b] rounded-2xl py-10 px-2 shadow-lg"
+              className="bg-[#111215] border border-[#26272b] rounded-2xl py-10  shadow-lg"
             >
-              <div className="text-4xl font-extrabold text-yellow-400 mb-2">
+              <div className="text-3xl font-extrabold text-gradient-primary mb-2">
                 {item.value}
               </div>
-              <div className="text-xl font-semibold">{item.title}</div>
-              <div className="text-gray-400 text-lg mt-1">{item.subtitle}</div>
+              <div className="text-lg font-semibold">{item.title}</div>
+              <div className="text-gray-400 text-md mt-1">{item.subtitle}</div>
             </div>
           ))}
         </div>
 
         {/* BOTTOM METRICS */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {metrics.map((metric, index) => (
             <div key={index}>
-              <div className="text-4xl font-extrabold text-yellow-400 mb-2">
+              <div className="text-3xl font-extrabold text-gradient-primary mb-2">
                 {metric.value}
               </div>
               <p className="text-gray-300 max-w-xs mx-auto leading-relaxed">

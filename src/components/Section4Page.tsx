@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle as Tick } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface Section4Item {
     icon?: React.ElementType;
@@ -29,12 +30,13 @@ interface Props {
 }
 
 const Section4Page: React.FC<Props> = ({ content }) => {
+    const navigate = useNavigate();
     if (!content?.section4) return null;
 
     const section = content.section4;
 
     return (
-        <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-16">
+        <section className="relative container mx-auto px-4 sm:px-4 lg:px-44 py-16">
 
             {/* Title */}
             <motion.div
@@ -72,7 +74,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
                             {(story.category || story.timeline) && (
                                 <div className="flex justify-between items-center mb-4">
                                     {story.category && (
-                                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-primary/20 text-primary">
+                                        <span className="text-xs font-semibold px-3 py-1 rounded-full border border-gradient-primary bg-gradient-primary/20 text-gradient-primary">
                                             {story.category}
                                         </span>
                                     )}
@@ -112,20 +114,30 @@ const Section4Page: React.FC<Props> = ({ content }) => {
 
                         {story.button && (
                             <div className="mt-6">
+
                                 {(
                                     Array.isArray(story.button)
                                         ? story.button
-                                        : [{ label: story.button }]
+                                        : typeof story.button === "string"
+                                            ? [{ label: story.button }]
+                                            : [story.button]
                                 ).map((btn, i) => (
                                     <Button
                                         key={i}
                                         className="bg-gradient-primary text-white font-semibold w-full"
+                                        onClick={() => {
+                                            if (btn.link) {
+                                                window.scrollTo({ top: 0, behavior: "smooth" });
+                                                navigate(btn.link);
+                                                }
+                                        }}
                                     >
                                         {btn.label || btn}
                                     </Button>
                                 ))}
                             </div>
                         )}
+
                     </motion.div>
                 ))}
             </div>

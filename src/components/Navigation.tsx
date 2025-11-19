@@ -393,10 +393,22 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                     </motion.div>
                   ))}
                 </div>
-                <div className='flex gap-2 justify-between mt-4'>
-                  <Button className='bg-gradient-primary py-2 px-4'>Join Beta Waitlist</Button>
-                  <Button className='text-black bg-white border hover:bg-gradient-primary py-2 px-4'>Learn More</Button>
+                <div className="flex gap-2 justify-between mt-4">
+                  <Button
+                    onClick={() => window.open("/training/waitlist-signup", "_self")}
+                    className="bg-gradient-primary py-2 px-4"
+                  >
+                    Join Beta Waitlist
+                  </Button>
+
+                  <Button
+                    onClick={() => window.open("/labs/labs", "_self")}
+                    className="text-black bg-white border hover:bg-gradient-primary py-2 px-4"
+                  >
+                    Learn More
+                  </Button>
                 </div>
+
               </div>
             </motion.div>
           )}

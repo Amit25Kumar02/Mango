@@ -55,7 +55,7 @@ export const ContactSection = () => {
     <section
       id="contact"
       ref={ref}
-      className="py-10 md:mt-10 relative overflow-hidden px-4 sm:px-4 md:px-32 lg:px-32"
+      className="py-10 md:mt-10 relative overflow-hidden px-4 sm:px-4 md:px-32 lg:px-40"
     >
       {/* Background Elements (kept commented out in your original) */}
       <div className="absolute inset-0">

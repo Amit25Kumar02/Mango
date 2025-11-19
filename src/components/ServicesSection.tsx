@@ -73,7 +73,7 @@ export const ServicesSection = () => {
     <section
       id="services"
       ref={ref}
-      className="py-10 md:mt-10 px-4 sm:px-6 lg:px-8"
+      className="py-10 md:mt-10 px-4 sm:px-6 lg:px-16"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">

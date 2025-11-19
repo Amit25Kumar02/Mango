@@ -1,6 +1,6 @@
 import {motion} from "framer-motion"
 const ThirdBanner = ({data}) =>{
-    return <section className="relative container mx-auto px-4 sm:px-4 md:px-16 lg:px-32 py-16">
+    return <section className="relative container mx-auto px-4 sm:px-4 md:px-16 lg:px-44 py-16">
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
@@ -24,13 +24,13 @@ const ThirdBanner = ({data}) =>{
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 }}
-          className=" rounded-xl p-6 border border-primary/30 hover:border-primary/80 transition-colors duration-300 group cursor-pointer bg-[#21253F] hover:bg-[#21253F]"
+          className=" rounded-xl p-6 border flex flex-col items-center text-center border-primary/30 hover:border-primary/80 transition-colors duration-300 group cursor-pointer bg-[#21253F] hover:bg-[#21253F]"
         >
           <div className={`w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mb-4`}>
-            <service.icon className="w-6 h-6 text-gradient-primary" />
+            <service.icon className="w-6 h-6 " />
           </div>
-          <h3 className="text-lg font-bold text-gradient-primary mb-3">{service.title}</h3>
-          <p className="text-white text-sm mb-4 leading-relaxed">{service.description}</p>
+          <h3 className="text-lg font-bold text-center text-gradient-primary mb-3">{service.title}</h3>
+          <p className="text-white text-center text-sm mb-4 leading-relaxed">{service.description}</p>
           
         </motion.div>
       ))}

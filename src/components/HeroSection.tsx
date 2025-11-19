@@ -1,222 +1,224 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles, User, Zap } from 'lucide-react';
-// import heroBg from '@/assets/hero-bg.jpg';
-import heroBg from '@/assets/herovideo.mp4';
-import CountingNumber from './ui/countingNumber';
-import TypingText from './ui/TypingText';
-import poster from "@/assets/poster.jpg"
+"use client";
 
+import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Zap, User } from "lucide-react";
+import heroBg from "@/assets/herovideo.mp4";
+import poster from "@/assets/poster.jpg";
 
 export const HeroSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const statsRef = useRef(null);
-  const statsInView = useInView(statsRef, { once: true });
+  const [loaded, setLoaded] = useState(false);
 
-  const texts = [
-    { main: "Connecting the Dots - Building the Future", second: "AI Innovation" },
-    // {main: "Technology Meets Nature", second: "AI"},
-    // {main: "Empowering Traditions with Innovation", second:"AI transformation"},
-    // {main: "Breaking Barriers, Reaching New Heights"},
-    // {main: "Scaling Heights, Building Dreams"}
-  ];
-
-  const [displayedText, setDisplayedText] = useState("Redefining Intelligence");
-  const [textIndex, setTextIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [loaded, setLoaded] = useState(false)
-
-  // useEffect(() => {
-  //   if (textIndex < texts.length) {
-  //     const currentText = texts[textIndex].main;
-  //     if (charIndex < currentText.length) {
-  //       const timer = setTimeout(() => {
-  //         setDisplayedText((prev) => prev + currentText[charIndex]);
-  //         setCharIndex((prev) => prev + 1);
-  //       }, 50); // Adjust typing speed here
-  //       return () => clearTimeout(timer);
-  //     } else {
-  //       const timer = setTimeout(() => {
-  //         setTextIndex((prev) => (prev + 1) % texts.length); // Loop back to the start
-  //         setCharIndex(0);
-  //         setDisplayedText(""); // Clear text for next one
-  //       }, 500); // Pause before showing the next text
-  //       return () => clearTimeout(timer);
-  //     }
-  //   }
-  // }, [textIndex, charIndex, texts]);
   return (
-    <>
-      <section
-        ref={ref}
-        id="home"
-        className="relative h-screen flex justify-center overflow-hidden pt-20"
-      >
-        {/* Background Video */}
-        {/* <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      > */}
-        <div className="absolute inset-0 z-0 ">
-          <video
-            className="w-full h-full object-cover opacity-20 pointer-events-none transition-opacity duration-1000"
-            src={heroBg}
-            autoPlay
-            muted
-            preload="metadata"
-            poster={poster}
-            onLoadedData={() => setLoaded(true)}
-            style={{
-              opacity: loaded ? 0.8 : 0,
-              transition: "opacity 0.2s ease-in-out",
-            }}
-            loop
-            playsInline
-            aria-hidden="true"
-          />
+    <section
+      ref={ref}
+      id="home"
+      className="relative h-screen flex items-center justify-center overflow-hidden pt-20"
+    >
 
-          <div className="absolute inset-0 pointer-events-none bg-black/20 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-        </div>
-        {/* </div> */}
 
-        {/* Main Content */}
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-5xl mx-auto"
-          >
-            {/* Badge */}
-            {/* <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex items-center space-x-2 bg-surface/20 backdrop-blur-md border border-primary/30 rounded-full px-6 py-3 mb-8"
-          >
-            <Sparkles className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium text-gradient-primary">
-              Next-Generation AI Solutions
-            </span>
-          </motion.div> */}
+      <div className="absolute inset-0 z-0">
 
-            {/* Main Heading */}
-            {/* <motion.h1 
-                      className="text-5xl md:text-7xl font-bold mb-6 text-glow text-black"
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ 
-                        duration: 1.2,
-                        type: "spring",
-                        stiffness: 100 
-                      }}
-                    >
-                       {displayedText}
-                    </motion.h1> */}
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, type: 'spring', stiffness: 100, duration: 0.8 }}
-              className="text-2xl md:text-6xl font-bold text-balance mb-2 md:mb-6 leading-tight transform-3d"
-            >
-              <span className="text-gradient-primary inline-block transform hover:scale-105 transition-all duration-500 pb-2 hover-lift">
-                {/* Transform your Business */}
-                {displayedText}
-              </span>
-              <br />
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, type: 'spring', stiffness: 100, duration: 0.8 }}
-              className="text-xl md:text-2xl text-muted-foreground mb-2 md:mb-4 text-balance"
-            >
-              <span className="text-foreground">
-                {/* Transform your Business */}
-                (Data + AI):
-              </span>
-              <br />
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, type: 'spring', stiffness: 100, duration: 0.8 }}
-              className="text-xl md:text-2xl text-muted-foreground mb-2 md:mb-4 text-balance"
-            >
-              <span className="text-foreground">
-                {/* Transform your Business */}
-                Unlocking Infinite Possibilities
-              </span>
-              <br />
-            </motion.p>
+        {/*  Video Background */}
+        <video
+          className="w-full h-full object-cover opacity-20 pointer-events-none transition-opacity duration-1000"
+          src={heroBg}
+          poster={poster}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          onLoadedData={() => setLoaded(true)}
+          style={{
+            opacity: loaded ? 0.8 : 0,
+          }}
+        />
 
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-md md:text-lg text-white mb-2 md:mb-8 max-w-3xl mx-auto text-pretty leading-relaxed animate-fade-in-up"
-            >
-              We help businesses harness the power of AI — from strategy to deployment — delivering real results through innovation, compliance, and expertise. From building cutting-edge AI solutions to training tomorrow's AI leaders, we're redefining what's possible.
-            </motion.p>
 
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            >
-              <Button variant="glass" size="lg" className="inline-flex items-center justify-center gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs hover:bg-gradient-primary h-10 rounded-md has-[>svg]:px-4 text-white hover:scale-105 animate-glow transition-all duration-300 border-glow px-8 py-3 text-lg font-semibold animate-fade-in-up" onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}>
-                Schedule a Demo
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button variant="glass" size="lg" className="inline-flex items-center justify-center gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs hover:bg-gradient-primary h-10 rounded-md has-[>svg]:px-4 text-white hover:scale-105 animate-glow transition-all duration-300 border-glow px-8 py-3 text-lg font-semibold animate-fade-in-up" onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}>
-                <Zap className="mr-2 h-5 w-5" />
-                Free Consultation
-              </Button>
-              <Button variant="glass" size="lg" className="inline-flex items-center justify-center gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs hover:bg-gradient-primary h-10 rounded-md has-[>svg]:px-4 text-white hover:scale-105 animate-glow transition-all duration-300 border-glow px-8 py-3 text-lg font-semibold animate-fade-in-up" onClick={() => window.open("/about/contact")}>
-                <User className="mr-2 h-5 w-5" />
-                Join Training Program
-              </Button>
-            </motion.div>
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-5"
+          style={{
+            backgroundImage:
+              "url('/futuristic-human-and-ai-robot-hands-reaching-towar.jpg')",
+          }}
+        ></div>
 
-          </motion.div>
+        {/*  Gradient Overlay */}
+        <div className="absolute inset-0 pointer-events-none bg-black/20 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+
+        <div className="absolute left-10 top-1/4 opacity-20">
+          <svg width="200" height="150">
+            <defs>
+              <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#3b82f6" />
+                <stop offset="50%" stopColor="#06b6d4" />
+                <stop offset="100%" stopColor="#10b981" />
+              </linearGradient>
+            </defs>
+
+            {[30, 50, 70, 90, 60, 80].map((h, i) => (
+              <rect
+                key={i}
+                x={20 + i * 25}
+                y={130 - h}
+                width="15"
+                height={h}
+                fill="url(#chartGradient)"
+                className="animate-bar-grow"
+                style={{ animationDelay: `${i * 0.2}s` }}
+              />
+            ))}
+          </svg>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute hidden md:block bottom-6 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="p-2 rounded-lg bg-black/20 backdrop-blur-md shadow-[0_0_20px_rgba(200,200,200,0.4)]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#FFD447"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="mx-auto"
-            >
-              <path d="M6 9l6 6 6-6" />
+        <div className="absolute right-10 top-1/3 opacity-20">
+          <svg width="180" height="180">
+            <defs>
+              <linearGradient id="networkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#3b82f6" />
+                <stop offset="100%" stopColor="#10b981" />
+              </linearGradient>
+            </defs>
+
+            <circle
+              cx="90"
+              cy="90"
+              r="12"
+              fill="url(#networkGradient)"
+              className="animate-node-pulse"
+            ></circle>
+            <circle
+              cx="40"
+              cy="40"
+              r="8"
+              fill="url(#networkGradient)"
+              className="animate-node-pulse"
+            ></circle>
+            <circle
+              cx="140"
+              cy="40"
+              r="8"
+              fill="url(#networkGradient)"
+              className="animate-node-pulse"
+            ></circle>
+          </svg>
+        </div>
+
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10">
+          <div className="relative w-40 h-40">
+            <svg width="160" height="160" className="animate-spin-slow">
+              <circle cx="80" cy="80" r="70" stroke="#3b82f6" strokeWidth="2" fill="none" />
             </svg>
-          </motion.div>
+
+            <svg
+              width="160"
+              height="160"
+              className="absolute inset-0 animate-spin-slow"
+              style={{ animationDelay: "1s", animationDirection: "reverse" }}
+            >
+              <circle cx="80" cy="80" r="50" stroke="#10b981" strokeWidth="2" fill="none" />
+            </svg>
+
+            <svg
+              width="160"
+              height="160"
+              className="absolute inset-0 animate-spin-slow"
+              style={{ animationDelay: "2s" }}
+            >
+              <circle cx="80" cy="80" r="30" stroke="#06b6d4" strokeWidth="2" fill="none" />
+            </svg>
+          </div>
+        </div>
+
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/5 left-1/5 w-2 h-2 bg-blue-500 rounded-full animate-data-point" />
+          <div className="absolute top-1/4 left-3/4 w-1.5 h-1.5 bg-cyan-500 rounded-full animate-data-point" />
+          <div className="absolute top-2/3 left-1/4 w-2.5 h-2.5 bg-green-500 rounded-full animate-data-point" />
+        </div>
+      </div>
+
+      <div className="relative z-10 text-center max-w-4xl md:max-w-3xl lg:max-w-4xl mx-auto px-4">
+
+        {/* Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-[27px] md:text-6xl font-bold leading-tight mt-0 md:-mt-14 text-white text-balance"
+        >
+          <span className="text-gradient-primary">Redefining Intelligence</span>
+        </motion.h1>
+
+        {/* Sub-title */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-lg md:text-2xl mt-2 md:mt-8 text-white/80"
+        >
+          (Data + AI): <br />
+          <span className="text-white">Unlocking Infinite Possibilities</span>
+        </motion.p>
+
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="text-md mdLtext-lg text-white/90 max-w-3xl mx-auto mt-2 md:mt-6"
+        >
+          We help businesses harness the power of AI — from strategy to deployment — delivering real results through innovation, compliance, and expertise. From building cutting-edge AI solutions to training tomorrow's AI leaders, we're redefining what's possible.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8"
+        >
+          <Button variant="glass" size="sm" className="px-8 py-3 text-lg bg-white/20 hover:bg-gradient-primary text-white rounded-lg hover:scale-105 transition">
+            Schedule a Demo <ArrowRight size={18} />
+          </Button>
+
+          <Button variant="glass" size="sm" className="px-8 py-3 text-lg bg-white/20 hover:bg-gradient-primary backdrop-blur border border-white/30 text-white hover:scale-105">
+            <Zap size={18} /> Free Consultation
+          </Button>
+
+          <Button variant="glass" size="sm" className="px-8 py-3 text-lg bg-white/20 hover:bg-gradient-primary backdrop-blur border border-white/30 text-white hover:scale-105">
+            <User size={18} /> Join Training Program
+          </Button>
         </motion.div>
+      </div>
 
-
-
-      </section>
-    </>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute hidden md:block bottom-8 left-1/2 -translate-x-1/2 text-white/70"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <svg
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
