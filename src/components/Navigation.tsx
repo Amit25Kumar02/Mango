@@ -158,10 +158,10 @@ export const Navigation = ({ itemColor = "#fff" }) => {
       title: 'Our Story',
       description: 'Learn about our journey, mission, and vision for the future of AI and technology.'
     },
-    {
-      title: 'Leadership Team',
-      description: 'Meet the experts and leaders driving innovation at MangoAnalytics.'
-    },
+    // {
+    //   title: 'Leadership Team',
+    //   description: 'Meet the experts and leaders driving innovation at MangoAnalytics.'
+    // },
     {
       title: 'Careers',
       description: 'Join our team and be part of the next generation of AI solutions.'

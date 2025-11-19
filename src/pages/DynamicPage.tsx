@@ -55,7 +55,7 @@ import Section4Page from '@/components/Section4Page';
 import SecuritySection from '@/components/security';
 import ImageSection from '@/components/ImageSection';
 import ProgressSection from '@/components/ProgressSection';
-import LeadershipSection from '@/components/LeadershipSection';
+// import LeadershipSection from '@/components/LeadershipSection';
 import CareersSection from '@/components/CareersSection';
 import ContactSectionAbout from '@/components/ContactSectionAbout';
 import ProcessSection from '@/components/ProcessSection';

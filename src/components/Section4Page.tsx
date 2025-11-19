@@ -38,7 +38,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
     return (
         <section className="relative container mx-auto px-4 sm:px-4 lg:px-44 py-16">
 
-            {/* Title */}
+            {/* Section Title */}
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -49,12 +49,10 @@ const Section4Page: React.FC<Props> = ({ content }) => {
                     {section.title}
                 </h2>
 
-                <p className="text-xl text-black max-w-3xl mx-auto">
-                    {section.description}
-                </p>
+                <p className="text-xl text-black max-w-3xl mx-auto">{section.description}</p>
             </motion.div>
 
-            {/* Cards Grid */}
+            {/* Grid */}
             <div
                 className={`grid grid-cols-1 lg:grid-cols-${section.data.length > 4 ? 3 : section.data.length
                     } gap-6`}
@@ -64,80 +62,74 @@ const Section4Page: React.FC<Props> = ({ content }) => {
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.2 }}
-                        className="rounded-xl p-6 border border-primary/40 bg-[#21253F] hover:bg-[#21253F] backdrop-blur-md 
-                     hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                        transition={{ delay: index * 0.12 }}
+                        className="rounded-xl p-6 border border-primary/40 bg-[#21253F] 
+                       hover:bg-[#21253F] backdrop-blur-md hover:shadow-lg 
+                       transition-all duration-300 h-full flex flex-col"
                     >
-                        {/* TOP CONTENT */}
-                        <div>
-                            {/* Category */}
-                            {(story.category || story.timeline) && (
-                                <div className="flex justify-between items-center mb-4">
-                                    {story.category && (
-                                        <span className="text-xs font-semibold px-3 py-1 rounded-full border border-gradient-primary bg-gradient-primary/20 text-gradient-primary">
-                                            {story.category}
-                                        </span>
-                                    )}
+                        {/* TOP Content */}
+                        <div className="flex-1 flex flex-col">
+
+                            {/* CATEGORY — only shows if available */}
+                            {story.category && (
+                                <div className="mb-3">
+                                    <span className="text-xs font-semibold px-3 py-1 rounded-full border bg-gradient-primary/20 text-gradient-primary">
+                                        {story.category}
+                                    </span>
                                 </div>
                             )}
 
-                            {/* Company */}
-                            <p className="text-xl font-bold text-gradient-primary mb-4">
+                            {/* COMPANY — perfectly aligned */}
+                            <p className="text-xl font-bold text-gradient-primary mb-3 min-h-[60px] flex items-center">
                                 {story.company}
                             </p>
 
-                            {/* Challenge + Solution */}
-                            <div className="space-y-4">
-                                <p className="text-white text-sm leading-relaxed">
+                            {/* DESCRIPTION — fixed equal height */}
+                            <div className="flex-1 min-h-0 mb-3">
+                                <p className="text-white  text-sm leading-relaxed h-full overflow-hidden">
                                     {story.challenge}. {story.solution}
                                 </p>
-
-                                {/* Results */}
-                                <div className="flex flex-col gap-1">
-                                    {story.results.map((result, i) => (
-                                        <span key={i} className="text-white text-sm flex items-center gap-2">
-                                            <Tick className="w-4 h-4 text-green-500" />
-                                            {result}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                {/* Timeline */}
-                                {story.timeline && (
-                                    <p className="text-sm font-semibold text-white mt-3">
-                                        <span className="font-bold">Timeline:</span> {story.timeline}
-                                    </p>
-                                )}
                             </div>
-                        </div>
 
-
-                        {story.button && (
-                            <div className="mt-6">
-
-                                {(
-                                    Array.isArray(story.button)
-                                        ? story.button
-                                        : typeof story.button === "string"
-                                            ? [{ label: story.button }]
-                                            : [story.button]
-                                ).map((btn, i) => (
-                                    <Button
-                                        key={i}
-                                        className="bg-gradient-primary text-white font-semibold w-full"
-                                        onClick={() => {
-                                            if (btn.link) {
-                                                window.scrollTo({ top: 0, behavior: "smooth" });
-                                                navigate(btn.link);
-                                                }
-                                        }}
-                                    >
-                                        {btn.label || btn}
-                                    </Button>
+                            {/* RESULTS — fixed equal height */}
+                            <div className="flex flex-col gap-2 mb-2 min-h-[110px]">
+                                {story.results.map((result, i) => (
+                                    <span key={i} className="text-white text-sm flex items-start gap-2">
+                                        <Tick className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                        <span className="leading-tight ">{result}</span>
+                                    </span>
                                 ))}
                             </div>
-                        )}
 
+                            {/* TIMELINE — no extra space if missing */}
+                            {story.timeline && (
+                                <p className="text-sm font-semibold text-white h-5">
+                                    <span className="font-bold">Timeline:</span> {story.timeline}
+                                </p>
+                            )}
+                        </div>
+
+                        {/* BUTTONS */}
+                        {story.button && (
+                            <div className="mt-6">
+                                {(Array.isArray(story.button) ? story.button : [story.button]).map(
+                                    (btn, i) => (
+                                        <Button
+                                            key={i}
+                                            className="bg-gradient-primary text-white font-semibold w-full"
+                                            onClick={() => {
+                                                if (btn.link) {
+                                                    window.scrollTo({ top: 0, behavior: "smooth" });
+                                                    navigate(btn.link);
+                                                }
+                                            }}
+                                        >
+                                            {btn.label || btn}
+                                        </Button>
+                                    )
+                                )}
+                            </div>
+                        )}
                     </motion.div>
                 ))}
             </div>
