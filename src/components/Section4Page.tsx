@@ -35,7 +35,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
 
   const section = content.section4;
 
-  // 📌 Dynamic tallest height
+
   const descRefs = React.useRef<HTMLParagraphElement[]>([]);
   const [maxHeight, setMaxHeight] = React.useState<number>(0);
 
@@ -44,12 +44,12 @@ const Section4Page: React.FC<Props> = ({ content }) => {
     setMaxHeight(Math.max(...heights));
   };
 
-  // 🔥 Calculate when content loads
+ 
   React.useEffect(() => {
     calculateHeights();
   }, [content]);
 
-  // 🔥 Recalculate on window resize (VERY IMPORTANT for responsive)
+  
   React.useEffect(() => {
     const handleResize = () => {
       setTimeout(() => calculateHeights(), 100);
@@ -102,7 +102,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
               )}
 
               {/* Company */}
-              <p className="text-xl font-bold text-gradient-primary mb-3 min-h-[60px] flex items-center">
+              <p className="text-xl font-bold text-gradient-primary mb-3 min-h-[100px] flex items-center">
                 {story.company}
               </p>
 
