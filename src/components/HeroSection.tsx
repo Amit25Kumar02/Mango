@@ -6,10 +6,12 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, User } from "lucide-react";
 import heroBg from "@/assets/herovideo.mp4";
 import poster from "@/assets/poster.jpg";
+import { useNavigate } from "react-router-dom";
 
 export const HeroSection = () => {
   const ref = useRef(null);
   const [loaded, setLoaded] = useState(false);
+    const navigate = useNavigate();
 
   return (
     <section
@@ -181,15 +183,21 @@ export const HeroSection = () => {
           transition={{ delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8"
         >
-          <Button variant="glass" size="sm" className="px-8 py-3 text-lg bg-white/20 hover:bg-gradient-primary text-white rounded-lg hover:scale-105 transition">
+          <Button
+           onClick={() => navigate("questionnaire/demo")}
+           variant="glass" size="sm" className="px-8 py-3 text-lg bg-white/20 hover:bg-gradient-primary text-white rounded-lg hover:scale-105 transition">
             Schedule a Demo <ArrowRight size={18} />
           </Button>
 
-          <Button variant="glass" size="sm" className="px-8 py-3 text-lg bg-white/20 hover:bg-gradient-primary backdrop-blur border border-white/30 text-white hover:scale-105">
+          <Button
+           onClick={() => navigate("questionnaire/consultation")}
+           variant="glass" size="sm" className="px-8 py-3 text-lg bg-white/20 hover:bg-gradient-primary backdrop-blur border border-white/30 text-white hover:scale-105">
             <Zap size={18} /> Free Consultation
           </Button>
 
-          <Button variant="glass" size="sm" className="px-8 py-3 text-lg bg-white/20 hover:bg-gradient-primary backdrop-blur border border-white/30 text-white hover:scale-105">
+          <Button
+           onClick={() => navigate("questionnaire/training")}
+           variant="glass" size="sm" className="px-8 py-3 text-lg bg-white/20 hover:bg-gradient-primary backdrop-blur border border-white/30 text-white hover:scale-105">
             <User size={18} /> Join Training Program
           </Button>
         </motion.div>

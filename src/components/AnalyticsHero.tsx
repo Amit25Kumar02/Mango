@@ -11,6 +11,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { useNavigate } from "react-router-dom";
 
 // Dynamic icon map
 const Icons: any = {
@@ -21,13 +22,14 @@ const Icons: any = {
 };
 
 const AnalyticsHero = ({ content }: any) => {
+  const navigate = useNavigate();
   return (
     <section className="w-full bg-[#0c0f1a] text-white py-16 md:py-20 px-4 sm:px-4 md:px-32 -mb-32">
       <div className="container mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
         {/* LEFT CONTENT */}
         <div className="text-center lg:text-left">
-          
+
           {/* Tag */}
           <span className="px-4 py-1 text-sm rounded-full bg-[#1b2538] text-cyan-300 border border-cyan-400/20 inline-block">
             {content.tag}
@@ -38,11 +40,10 @@ const AnalyticsHero = ({ content }: any) => {
             {content.title.split(" ").map((word: string, i: number) => (
               <span
                 key={i}
-                className={`${
-                  content.highlight.includes(word.replace(/[^a-zA-Z]/g, ""))
+                className={`${content.highlight.includes(word.replace(/[^a-zA-Z]/g, ""))
                     ? "text-cyan-400"
                     : ""
-                }`}
+                  }`}
               >
                 {word + " "}
               </span>
@@ -56,18 +57,22 @@ const AnalyticsHero = ({ content }: any) => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center lg:justify-start">
-            {content.buttons?.map((btn: string, index: number) => (
+            {content.buttons?.map((btn: any, index: number) => (
               <button
                 key={index}
-                className={`px-2 py-2  rounded-xl font-semibold transition flex items-center justify-center gap-2 w-full sm:w-auto ${
-                  index === 0
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  if (btn.link) navigate(btn.link);
+                }}
+                className={`px-2 py-2 rounded-xl font-semibold transition flex items-center justify-center gap-2 w-full sm:w-auto ${index === 0
                     ? "bg-cyan-500 hover:bg-cyan-600 text-white"
                     : "bg-[#141a28] hover:bg-[#1c2335] border border-cyan-500/30 text-cyan-300"
-                }`}
+                  }`}
               >
-                {btn} <ArrowRight size={18} />
+                {btn.label || btn} <ArrowRight size={18} />
               </button>
             ))}
+
           </div>
 
           {/* Stats */}

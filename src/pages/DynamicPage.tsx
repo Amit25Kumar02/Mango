@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 import BackgroundParticle from "@/components/backgroundWrapper"
 // inport Section5Img from "@/assets/ai-talent.jpg"
 import BrandMarquee from '@/components/BrandMarquee';
-import { successStories, FlagshipModels, Trainingprograms, ItConsulting, Healthcare, Healthcare2, Startup, Startup2, featuredPrograms, TrainingPrograms, OurValues ,LabsData} from "../components/constants"
+import { successStories, FlagshipModels, Trainingprograms, ItConsulting, Healthcare, Healthcare2, Startup, Startup2, featuredPrograms, TrainingPrograms, OurValues, LabsData } from "../components/constants"
 import { Tick, Progres } from '@/components/ui/tick';
 import graph from "@/assets/graph.jpg"
 import security from "@/assets/security.jpg"
@@ -60,6 +60,7 @@ import CareersSection from '@/components/CareersSection';
 import ContactSectionAbout from '@/components/ContactSectionAbout';
 import ProcessSection from '@/components/ProcessSection';
 import CorporateTrainingHero from "@/components/CorporateTrainingHero";
+import TrainingProgram from '@/components/AITrainingPage';
 
 
 
@@ -73,6 +74,406 @@ const DynamicPage = () => {
     const routeKey = `${category}/${item}`;
 
     const contentMap: Record<string, any> = {
+
+      "questionnaire/training": {
+        domain: "AI Training Program",
+        title: "Join Our AI Training Program",
+        description: "Transform your career or team with comprehensive AI training. Get personalized learning paths designed for your goals and experience level.",
+
+        benefits: {
+          title: "Program Benefits",
+          list: [
+            "Comprehensive curriculum",
+            "Expert instructors",
+            "Industry certification",
+            "Career advancement"
+          ],
+          cta: "Join Training Program",
+          ctaSubtitle: "Tell us about your background so we can recommend the best program for you."
+        },
+        form: {
+          title: "Join Training Program",
+          fields: [
+            {
+              label: "First Name",
+              name: "firstName",
+              type: "text",
+              placeholder: "John",
+              required: true
+            },
+            {
+              label: "Last Name",
+              name: "lastName",
+              type: "text",
+              placeholder: "Doe",
+              required: true
+            },
+            {
+              label: "Email",
+              name: "email",
+              type: "email",
+              placeholder: "john@email.com",
+              required: true
+            },
+            {
+              label: "Current Role",
+              name: "role",
+              type: "text",
+              placeholder: "Data Analyst, Developer, Manager..."
+            },
+            {
+              label: "Experience Level",
+              name: "experienceLevel",
+              type: "select",
+              placeholder: "Select Experience Level ",
+              options: [
+                "Beginner (No AI/ML experience)",
+                "Intermediate (Some exposure)",
+                "Advanced (Regular use)",
+                "Expert (Deep expertise)"
+              ],
+              required: true
+            },
+            {
+              label: "Training Type",
+              name: "trainingType",
+              type: "select",
+              placeholder: "What type of training?",
+              options: [
+                "Individual Training",
+                "Corporate Team Training",
+                "Both Options",
+              ],
+              required: true
+            },
+            {
+              label: "Areas of Interest",
+              name: "interests",
+              type: "checkbox-group",
+              required: true,
+              options: [
+                "Machine Learning Fundamentals",
+                "Deep Learning",
+                "Natural Language Processing",
+                "Computer Vision",
+                "Data Science",
+                "AI Strategy & Leadership",
+                "MLOps & Deployment",
+                "AI Ethics & Governance"
+              ]
+            },
+            {
+              label: "Learning Format Preference",
+              name: "format",
+              type: "select",
+              placeholder: "How do you prefer to learn?",
+              options: [
+                "Online/Virtual",
+                "In-Person",
+                "Hybrid (Both)",
+                "Self-Paced"
+              ]
+            },
+            {
+              label: "Timeline",
+              name: "timeline",
+              type: "select",
+              placeholder: "When would you like to start?",
+              options: [
+                "Immediately",
+                "Within 1 Month",
+                "Within 3 Months",
+                "Later This Year"
+              ]
+            },
+            {
+              label: "Goals & Expectations",
+              name: "goals",
+              type: "textarea",
+              placeholder: "What do you hope to achieve through this training? Any specific skills you’re targeting?"
+            }
+          ],
+          submitButton: "Join Training Program"
+        }
+      },
+      "questionnaire/consultation": {
+        domain: "Free Consultation",
+        title: "Get Expert AI Strategy Guidance",
+        description:
+          "Book a complimentary strategic consultation with our AI experts. We'll assess your current state and provide actionable recommendations.",
+
+        benefits: {
+          title: "What You'll Receive",
+          list: [
+            "60-minute strategy session",
+            "AI opportunity assessment",
+            "Custom recommendations",
+            "Implementation roadmap"
+          ],
+          cta: "Book Free Consultation",
+          ctaSubtitle:
+            "Help us understand your business so we can provide the most valuable insights."
+        },
+
+        form: {
+          title: "Book Free Consultation",
+          fields: [
+            {
+              label: "First Name",
+              name: "firstName",
+              type: "text",
+              placeholder: "John",
+              required: true
+            },
+            {
+              label: "Last Name",
+              name: "lastName",
+              type: "text",
+              placeholder: "Doe",
+              required: true
+            },
+            {
+              label: "Business Email",
+              name: "email",
+              type: "email",
+              placeholder: "john@company.com",
+              required: true
+            },
+            {
+              label: "Company",
+              name: "company",
+              type: "text",
+              placeholder: "Your Company",
+              required: true
+            },
+            {
+              label: "Industry",
+              name: "industry",
+              type: "select",
+              placeholder: "Select industry",
+              options: [
+                "Healthcare",
+                "Financial Services",
+                "Retail & E-commerce",
+                "Manufacturing",
+                "Technology",
+                "Consulting",
+                "Education",
+                "Other"
+              ],
+              required: true
+            },
+            {
+              label: "Your Role",
+              name: "role",
+              type: "select",
+              placeholder: "Select your role",
+              options: [
+                "CEO/President",
+                "CTO/Chief Technology Officer",
+                "CDO/Chief Data Officer",
+                "VP/Director",
+                "Manager",
+                "Data Analyst/Scientist",
+                "Consultant",
+                "Other"
+              ],
+              required: true
+            },
+            {
+              label: "Primary Business Challenge",
+              name: "challenge",
+              type: "select",
+              placeholder: "What's your biggest challenge?",
+              options: [
+                "Need better data insights",
+                "Process automation",
+                "Improve customer experience",
+                "Operational efficiency",
+                "Competitive advantage",
+                "Cost reduction",
+                "Drive innovation",
+                "Regulatory compliance"
+              ],
+              required: true
+            },
+            {
+              label: "Current Data & AI Initiatives",
+              name: "initiatives",
+              type: "checkbox-group",
+              options: [
+                "Business Intelligence",
+                "Predictive Analytics",
+                "Machine Learning",
+                "Process Automation",
+                "Customer Analytics",
+                "None currently"
+              ]
+            },
+            {
+              label: "Budget Range (Annual)",
+              name: "budget",
+              type: "select",
+              placeholder: "Select budget range",
+              options: [
+                "Under $50K",
+                "$50K - $100K",
+                "$100K - $250K",
+                "$250K - $500K",
+                "$500K - $1M",
+                "Over $1M",
+                "Not sure yet",
+              ]
+            },
+            {
+              label: "Goals for This Consultation",
+              name: "goals",
+              type: "textarea",
+              placeholder:
+                "What specific outcomes are you hoping to achieve? What questions do you need answered?"
+            }
+          ],
+
+          submitButton: "Book Free Consultation"
+        }
+      },
+      "questionnaire/demo": {
+        domain: "Schedule Demo",
+        title: "See MangoAnalytics in Action",
+        description:
+          "Get a personalized demo tailored to your business needs. Our experts will show you how our AI solutions can transform your operations.",
+
+        benefits: {
+          title: "What You'll Get",
+          list: [
+            "30-minute personalized demo",
+            "Direct access to our AI experts",
+            "Custom use case analysis",
+            "Immediate ROI assessment"
+          ],
+          cta: "Schedule Your Demo",
+          ctaSubtitle: "Tell us about your needs so we can customize the demo for you."
+        },
+
+        form: {
+          title: "Schedule Your Demo",
+          fields: [
+            {
+              label: "First Name",
+              name: "firstName",
+              type: "text",
+              placeholder: "John",
+              required: true
+            },
+            {
+              label: "Last Name",
+              name: "lastName",
+              type: "text",
+              placeholder: "Doe",
+              required: true
+            },
+            {
+              label: "Business Email",
+              name: "email",
+              type: "email",
+              placeholder: "john@company.com",
+              required: true
+            },
+            {
+              label: "Company",
+              name: "company",
+              type: "text",
+              placeholder: "Your Company",
+              required: true
+            },
+            {
+              label: "Job Title",
+              name: "jobTitle",
+              type: "text",
+              placeholder: "CEO, CTO, Data Scientist..."
+            },
+            {
+              label: "Company Size",
+              name: "companySize",
+              type: "select",
+              placeholder: "Select company size",
+              options: [
+                "Startup (1-10 employees)",
+                "Small Business (11-50 employees)",
+                "Medium Business (51-200 employees)",
+                "Large Business (201-1000 employees)",
+                "Enterprise (1001+ employees)"
+              ],
+              required: true
+            },
+            {
+              label: "Primary Interest",
+              name: "primaryInterest",
+              type: "select",
+              placeholder: "What interest you most?",
+              options: [
+                "Data Analytics & Insights",
+                "Machine Learning Solutions",
+                "AI & IT Consulting",
+                "AI Product Development",
+                "AI Talent Development",
+                "Compliance & Security",
+                "Multiple Solutions",
+              ],
+              required: true
+            },
+            {
+              label: "Current AI Maturity Level",
+              name: "aiMaturity",
+              type: "select",
+              placeholder: "Where are you in your AI journey?",
+              options: [
+                "Just exploring AI possibilities",
+                "Planning AI implementation",
+                "Running AI pilots/experiments",
+                "Scaling existing AI solutions",
+                "Mature AI operations",
+              ]
+            },
+            {
+              label: "Preferred Demo Focus",
+              name: "demoFocus",
+              type: "checkbox-group",
+              options: [
+                "Platform Overview",
+                "Custom Use Cases",
+                "ROI Analysis",
+                "Implementation Process",
+                "Security & Compliance",
+                "Integration Capabilities"
+              ]
+            },
+            {
+              label: "Timeline for Implementation",
+              name: "timeline",
+              type: "select",
+              placeholder: "Where are you looking to implement?",
+              options: [
+                "Immediate (within 1 month)",
+                "Short-term (1-3 months)",
+                "Medium-term (3-6 months)",
+                "Long-term (6+ months)",
+                "Just exploring options"
+              ]
+            },
+            {
+              label: "Additional Information",
+              name: "additionalInfo",
+              type: "textarea",
+              placeholder:
+                "Tell us about your specific challenges, goals, or questions you'd like addressed during the demo..."
+            }
+          ],
+
+          submitButton: "Schedule My Demo"
+        }
+      },
+
       // Solutions
       "solutions/ai-product-development": {
         domain: "AI & IT Consulting",
@@ -82,8 +483,12 @@ const DynamicPage = () => {
         // bannerImage: aiandit,
         description:
           "We are a collective of world-class strategists and IT experts bound together by our deep tech knowledge, infrastructure expertise, and passion for guiding organizations through comprehensive AI and IT transformation.",
+        // buttons: [
+        //   "Schedule Strategy & IT Assessment",
+        //   "Download AI & IT Readiness Guide",
+        // ],
         buttons: [
-          "Schedule Strategy & IT Assessment",
+          { label: "Schedule Strategy & IT Assessment", link: "/questionnaire/consultation" },
           "Download AI & IT Readiness Guide",
         ],
         companies: [
@@ -236,7 +641,11 @@ const DynamicPage = () => {
           bannerImage: graph,
           description:
             "Unlock the hidden potential in your data with our advanced analytics platform. From complex data processing to intuitive visualizations, we turn information into competitive advantage.",
-          buttons: ["Start Your Analytics Journey", "View Case Studies"],
+          // buttons: ["Start Your Analytics Journey", "View Case Studies"],
+          buttons: [
+            { label: "Start Your Analytics Journey", link: "/questionnaire/demo" },
+            "View Case Studies"
+          ],
           stats: [
             { value: "500%", label: "Faster Insights" },
             { value: "99.9%", label: "Data Accuracy" },
@@ -518,8 +927,12 @@ const DynamicPage = () => {
           'Data Security Protocols',
           'Audit Trail Management'
         ],
+        // buttons: [
+        //   "Start Compliant Build",
+        //   "View Compliance Framework",
+        // ],
         buttons: [
-          "Start Compliant Build",
+          { label: "Start Compliant Build", link: "/questionnaire/consultation" },
           "View Compliance Framework",
         ],
         companies: [
@@ -859,11 +1272,11 @@ const DynamicPage = () => {
         description: "Innovations in progress — shaping the future, one breakthrough at a time.",
         buttons: ["View All Projects", "Join Beta Program"],
         companies: ["TechCorp", "InnovateLab", "FutureVentures", "NextGen", "AIStartup"],
- section4:{
-   title: "Innovation Pipeline",
-   description: "Cutting-edge AI projects across multiple industries",
-   data: LabsData
-  },
+        section4: {
+          title: "Innovation Pipeline",
+          description: "Cutting-edge AI projects across multiple industries",
+          data: LabsData
+        },
       },
 
       'labs/food-haven': {
@@ -1158,7 +1571,7 @@ const DynamicPage = () => {
           'Emergency Response System'
         ],
         buttons: [
-          "Safety Network",
+          "Join Safety Network",
           "Learn About Safety",
         ],
         developmentProgress: {
@@ -1890,9 +2303,13 @@ const DynamicPage = () => {
           { title: "Global", subtitle: "Participants from 30+ Countries", },
         ],
         buttons: [
-          "Browse All Programs",
+          { label: "Browse All Programs", link: "/questionnaire/training" },
           "Download Curriculum"
         ],
+        // buttons: [
+        //   "Browse All Programs",
+        //   "Download Curriculum"
+        // ],
         section4: {
           title: "Featured Programs",
           description: "Comprehensive courses designed to take you from beginner to expert in AI and machine learning",
@@ -2218,6 +2635,9 @@ const DynamicPage = () => {
       <main className="pt-20">
 
         {/* <BackgroundParticle /> */}
+
+
+
         {/* Beta Phase Section */}
         {content.betaPhase && <BetaPhase data={content.betaPhase} />}
 
@@ -2232,6 +2652,15 @@ const DynamicPage = () => {
 
         {/* Hero Section */}
         <HeroBanner content={content} />
+        {content.benefits && content.form && (
+          <TrainingProgram
+            data={{
+              benefits: content.benefits,
+              form: content.form
+            }}
+          />
+        )}
+
 
         {/* Healthcare Workflow Section */}
         {content.healthcareWorkflow && <HealthcareWorkflow title={content.healthcareWorkflow.title} steps={content.healthcareWorkflow.steps} />}
@@ -2512,7 +2941,7 @@ const DynamicPage = () => {
         </section>}
 
         {/* Leadership Team Section */}
-        {content.leadership && (<LeadershipSection content={{ leadership: content.leadership }} />)}
+        {/* {content.leadership && (<LeadershipSection content={{ leadership: content.leadership }} />)} */}
 
 
         {/* Our Journey Timeline Section */}
@@ -2600,7 +3029,7 @@ const DynamicPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto"
             >
-              {content.technologies.items.map((tech: string, index: number) => (
+              {content?.technologies?.items?.map((tech: string, index: number) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -2611,6 +3040,7 @@ const DynamicPage = () => {
                   <span className="text-white font-medium text-lg">{tech}</span>
                 </motion.div>
               ))}
+
             </motion.div>
           </section>
         )}

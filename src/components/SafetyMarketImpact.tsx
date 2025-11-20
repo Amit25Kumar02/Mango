@@ -37,7 +37,7 @@ const SafetyMarketImpact: React.FC<SafetyMarketImpactProps> = ({ data }) => {
               key={index}
               className="bg-[#070606]/60 border border-[#070606] rounded-xl py-8 px-6 text-center shadow-[0_0_30px_rgba(255,115,0,0.08)] hover:shadow-[0_0_35px_rgba(255,115,0,0.15)] transition"
             >
-              <div className={`text-4xl md:text-5xl font-extrabold mb-2 ${item.color ?? "text-orange-500"}`}>
+              <div className={`text-4xl md:text-5xl font-extrabold mb-2 text-gradient-primary`}>
                 {item.percentage}
               </div>
 
@@ -45,7 +45,7 @@ const SafetyMarketImpact: React.FC<SafetyMarketImpactProps> = ({ data }) => {
                 {item.title}
               </div>
 
-              <div className={`text-sm ${item.color ?? "text-orange-500"}`}>
+              <div className={`text-sm text-gradient-primary`}>
                 {item.subText}
               </div>
             </div>

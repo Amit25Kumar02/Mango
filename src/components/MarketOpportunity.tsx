@@ -36,7 +36,7 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({ data }) => {
               key={index}
               className="bg-[#22152c]/60 border border-[#3a2448] rounded-2xl py-10 px-6 text-center shadow-[0_0_30px_rgba(162,89,255,0.08)] hover:shadow-[0_0_35px_rgba(162,89,255,0.15)] transition"
             >
-              <div className="text-4xl md:text-5xl font-extrabold text-purple-300 mb-2">
+              <div className="text-4xl md:text-5xl font-extrabold text-gradient-primary mb-2">
                 {item.percentage}
               </div>
 
@@ -44,7 +44,7 @@ const MarketOpportunity: React.FC<MarketOpportunityProps> = ({ data }) => {
                 {item.title}
               </div>
 
-              <div className="text-sm text-purple-400">
+              <div className="text-sm text-gradient-primary">
                 {item.subText}
               </div>
             </div>

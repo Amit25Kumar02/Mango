@@ -182,7 +182,7 @@ const ContactSectionAbout: React.FC<ContactProps> = ({ content }) => {
               },
               {
                 country: "Nepal",
-                addr: "Kathmandu, Nepal",
+                addr: "Bhimsengola, Kathmandu, Nepal",
                 phone: "+977-9840003778",
                 email: "info@mangoanalytics.ai",
               },

@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const HeroBanner = ({ content }: any) => {
+  const  navigate= useNavigate();
 
   const applyExtraPadding =
     !content.bannerImage && !content.developmentProgress;
@@ -33,8 +35,8 @@ const HeroBanner = ({ content }: any) => {
             <div className={`flex flex-wrap justify-center gap-6 mb-6 ${applyExtraPadding ? "md:px-8" : ""}`}>
               {content.domain.split(",").map((tag: string, i: number) => {
                 const colors = [
-                  "text-green-500 border-green-500",   
-                  "text-yellow-500 border-yellow-500", 
+                  "text-green-500 border-green-500",
+                  "text-yellow-500 border-yellow-500",
                 ];
 
                 return (
@@ -69,18 +71,25 @@ const HeroBanner = ({ content }: any) => {
           {/* Buttons */}
           {content?.buttons?.length > 0 && (
             <div className="flex flex-col sm:flex-row gap-4 mb-8 mt-8 justify-center w-full">
-              {content.buttons.map((item: string, index: number) => (
+              {content.buttons.map((item: any, index: number) => (
                 <Button
                   key={index}
+                  onClick={() => {
+                    if (item.link) {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      navigate(item.link);
+                    }
+                  }}
                   variant={index === 0 ? "hero" : "cyber"}
                   className={`flex items-center justify-center ${index === 0 ? "text-white" : "text-black"
                     } w-full sm:w-auto`}
                 >
-                  {item}
+                  {item.label || item}
                 </Button>
               ))}
             </div>
           )}
+
         </motion.div>
 
         {/* RIGHT COLUMN — SPECIAL TRAINING CARD */}

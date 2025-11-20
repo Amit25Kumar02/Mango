@@ -406,7 +406,9 @@ const featuredPrograms = [
 
 
     ],
-    button: "Enroll Now"
+    button:[
+      {label:"Enroll Now",link:"/questionnaire/training"}
+    ]
   },
   {
     icon: 'rocket',
@@ -422,7 +424,9 @@ const featuredPrograms = [
       'Real-world capstone project'
 
     ],
-    button: "Enroll Now"
+      button:[
+      {label:"Enroll Now",link:"/questionnaire/training"}
+    ]
   },
   {
     icon: 'camera',
@@ -438,7 +442,9 @@ const featuredPrograms = [
       'Case studies from Fortune 500'
 
     ],
-    button: "Enroll Now"
+       button:[
+      {label:"Enroll Now",link:"/questionnaire/training"}
+    ]
   },
 ]
 const TrainingPrograms = [
