@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface CorporateHeroContent {
   domain: string;
@@ -17,6 +18,7 @@ export default function CorporateTrainingHero({
 }: {
   content: CorporateHeroContent;
 }) {
+  const navigate = useNavigate();
   return (
     <section className="w-full bg-[#0a0a0c] py-20 px-6 md:px-8 lg:px-60 text-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -46,15 +48,20 @@ export default function CorporateTrainingHero({
 
           {/* BUTTONS */}
           <div className="flex flex-wrap gap-4 pt-4">
-            {content.buttons?.map((btn, idx) => (
+            {content.buttons?.map((btn: any, idx) => (
               <Button
+                onClick={() => {
+                  if (btn.link) {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    navigate(btn.link);
+                  }
+                }}
                 key={idx}
                 variant={idx === 0 ? "hero" : "cyber"}
-                className={`px-6 py-3 ${
-                  idx === 0 ? "text-white" : "text-white"
-                }`}
+                className={`px-6 py-3 ${idx === 0 ? "text-white" : "text-white"
+                  }`}
               >
-                {btn}
+                {btn.label || btn}
               </Button>
             ))}
           </div>

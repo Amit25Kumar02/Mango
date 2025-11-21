@@ -1,9 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import { Briefcase, Key, Gift } from "lucide-react";
-import trainingImg from "../assets/ai-training-session-with-diverse-professionals-lea.jpg"; 
+import trainingImg from "../assets/ai-training-session-with-diverse-professionals-lea.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function AITalentProgramSection() {
+  const navigate = useNavigate();
   const features = [
     {
       icon: Gift,
@@ -84,10 +86,22 @@ export default function AITalentProgramSection() {
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-2 mt-4">
-            <button className="bg-yellow-500 text-white text-[14px] font-semibold px-4 py-2 rounded-lg hover:bg-yellow-400 transition-all">
+            <button
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" })
+                navigate("/questionnaire/training")
+              }
+              }
+              className="bg-gradient-primary text-white text-[14px] font-semibold px-4 py-2 rounded-lg hover:bg-yellow-400 transition-all">
               Join Our Training Program
             </button>
-            <button className="border border-yellow-500 text-yellow-400 text-[14px] px-4 py-2 rounded-lg hover:bg-yellow-500 hover:text-white transition-all">
+            <button
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" })
+                navigate("/about/our-story")
+              }
+              }
+              className="border border-yellow-500 text-yellow-400 text-[14px] px-4 py-2 rounded-lg hover:bg-gradient-primary hover:text-white transition-all">
               Sign Up for Waitlist
             </button>
           </div>

@@ -13,8 +13,10 @@ import {
   Database,
   Shield,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const ServicesSection = () => {
+  const navigate = useNavigate();
   const ref = useRef(null);
   const isInView = useInView(ref);
 
@@ -101,9 +103,13 @@ export const ServicesSection = () => {
             className="inline-flex items-center space-x-2 backdrop-blur-md border border-primary/30 rounded-full px-6 py-3 mb-6"
           >
             <Sparkles className="h-5 w-5 text-primary" />
-            <span className="text-md font-medium text-gradient-primary">
+            <button
+             onClick={() =>{
+                  navigate("/about/our-story")}
+                }
+             className="text-md font-medium text-gradient-primary">
               Our Services
-            </span>
+            </button>
           </motion.div>
 
           <motion.h2
@@ -159,7 +165,7 @@ export const ServicesSection = () => {
                     {service.title}
                   </h3>
 
-                  <p className="relative text-white-foreground text-pretty">
+                  <p className="relative text-white/55 text-pretty">
                     {service.description}
                   </p>
 

@@ -15,8 +15,10 @@ import {
   Calendar,
 } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
+import { useNavigate } from "react-router-dom";
 
 export const ContactSection = () => {
+  const navigate = useNavigate();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [state, handleSubmit] = useForm("mblpeebv");
@@ -78,9 +80,15 @@ export const ContactSection = () => {
             className="inline-flex items-center space-x-2 backdrop-blur-md border border-primary/30 rounded-full px-6 py-3 mb-6"
           >
             <MessageSquare className="h-5 w-5 text-primary" />
-            <span className="text-lg font-medium text-gradient-primary">
+            <button
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" })
+                navigate("/about/contact")
+              }
+              }
+              className="text-lg font-medium text-gradient-primary">
               Contact Us
-            </span>
+            </button>
           </motion.div>
 
           <motion.h2
@@ -259,17 +267,40 @@ export const ContactSection = () => {
                       </p>
 
                       {/* Render email as mailto link (keeps original info.value also clickable) */}
-                      {index === 0 ? (
-                        <p className="text-primary text-sm md:text-md">
-                          <a href={`mailto:${info.value}`} className="underline">
-                            {info.value}
-                          </a>
-                        </p>
-                      ) : (
-                        <p className="text-primary text-sm md:text-md">
+                      {info.title === "Email Us" && (
+                        <p
+                          className="text-primary text-sm md:text-md cursor-pointer underline"
+                          onClick={() => window.location.href = `mailto:${info.value}`}
+                        >
                           {info.value}
                         </p>
                       )}
+
+                      {info.title === "Call Us" && (
+                        <p
+                          className="text-primary text-sm md:text-md cursor-pointer underline"
+                          onClick={() => window.location.href = `tel:${info.value.replace(/\D/g, "")}`}
+                        >
+                          {info.value}
+                        </p>
+                      )}
+
+                      {info.title === "Visit Us" && (
+                        <p
+                          className="text-primary text-sm md:text-md cursor-pointer underline"
+                          onClick={() =>
+                            window.open(
+                              `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                                info.value
+                              )}`,
+                              "_blank"
+                            )
+                          }
+                        >
+                          {info.value}
+                        </p>
+                      )}
+
                     </div>
                   </div>
                 </motion.div>

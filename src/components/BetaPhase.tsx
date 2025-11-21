@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 interface BetaPhaseItem {
   value: string | number;
@@ -15,6 +16,7 @@ interface BetaPhaseProps {
 }
 
 const BetaPhase: React.FC<BetaPhaseProps> = ({ data }) => {
+  const navigate = useNavigate();
   return (
     <section className="py-20 px-4 md:px-8 bg-[#0b0d12] text-white -mb-32">
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -46,11 +48,19 @@ const BetaPhase: React.FC<BetaPhaseProps> = ({ data }) => {
 
           {/* BUTTONS */}
           <div className="flex gap-4">
-            <button className="px-2 md:px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-xl font-semibold">
+            <button
+                onClick={() =>{
+                  navigate("/questionnaire/training")}
+                }
+             className="px-2 md:px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-xl font-semibold">
               Join Beta Program
             </button>
 
-            <button className="px-2 md:px-6 py-2 bg-[#14161b] border border-[#2a2d33] hover:bg-[#1b1d23] rounded-xl font-semibold text-blue-300">
+            <button
+                onClick={() =>{
+                  navigate("/questionnaire/demo")}
+                } 
+            className="px-2 md:px-6 py-2 bg-[#14161b] border border-[#2a2d33] hover:bg-[#1b1d23] rounded-xl font-semibold text-blue-300">
               Try Demo
             </button>
           </div>

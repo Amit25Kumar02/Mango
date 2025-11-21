@@ -489,7 +489,7 @@ const DynamicPage = () => {
         // ],
         buttons: [
           { label: "Schedule Strategy & IT Assessment", link: "/questionnaire/consultation" },
-          "Download AI & IT Readiness Guide",
+          {label:"Download AI & IT Readiness Guide", link:"/questionnaire/demo"},
         ],
         companies: [
           "Fortune 500",
@@ -644,7 +644,7 @@ const DynamicPage = () => {
           // buttons: ["Start Your Analytics Journey", "View Case Studies"],
           buttons: [
             { label: "Start Your Analytics Journey", link: "/questionnaire/demo" },
-            "View Case Studies"
+            {label:"View Case Studies", link:  "/questionnaire/demo"},
           ],
           stats: [
             { value: "500%", label: "Faster Insights" },
@@ -817,8 +817,8 @@ const DynamicPage = () => {
           ]
         },
         buttons: [
-          "Start Building ML Solutions",
-          "View ML Pricing"
+         {label: "Start Building ML Solutions", link: "/questionnaire/demo"},
+         {label:"View ML Pricing", link: "/questionnaire/demo"},
         ],
         section2: {
           title: "Our Strategic AI & IT Approach",
@@ -933,7 +933,7 @@ const DynamicPage = () => {
         // ],
         buttons: [
           { label: "Start Compliant Build", link: "/questionnaire/consultation" },
-          "View Compliance Framework",
+          { label: "View Compliance Framework", link: "/questionnaire/demo"},
         ],
         companies: [
           "HealthTech",
@@ -1006,8 +1006,8 @@ const DynamicPage = () => {
           'Mentorship Programs'
         ],
         buttons: [
-          "Explore Programs",
-          "Join our Community"
+          { label:"Explore Programs", link: "/questionnaire/demo"},
+          { label:"Join our Community", link: "/questionnaire/demo"},
         ],
         companies: [
           "TechCorp",
@@ -1138,8 +1138,8 @@ const DynamicPage = () => {
           'Technology Strategy'
         ],
         buttons: [
-          "Start Your Project",
-          "View Case Studies",
+          { label:"Start Your Project", link: "/questionnaire/demo"},
+          { label:"View Case Studies", link:  "/questionnaire/demo"},
         ],
         section4: {
           title: "Our IT consulting services span every stage of your transformation",
@@ -1183,8 +1183,8 @@ const DynamicPage = () => {
           'Technology Strategy'
         ],
         buttons: [
-          "Transform Patient Care",
-          "View healthcare Cases",
+          { label:"Transform Patient Care", link: "/questionnaire/demo"},
+          { label:"View healthcare Cases", link:  "/questionnaire/demo"},
         ],
         section4: {
           title: "AI solutions that improve patient outcomes",
@@ -1251,8 +1251,8 @@ const DynamicPage = () => {
           "Spotify"
         ],
         buttons: [
-          "Scale your Vision",
-          "View Success Stories",
+          { label:"Scale your Vision", link:  "/questionnaire/demo"},
+          { label:"View Success Stories", link:"/questionnaire/demo"},
         ],
         section4: {
           title: "End-to-end IT consulting for your transformation",
@@ -1293,8 +1293,8 @@ const DynamicPage = () => {
           'Nutrition Analytics'
         ],
         buttons: [
-          "Join Waitlist",
-          "View Demo",
+          {label:"Join Waitlist", link: "/questionnaire/demo"},
+          {label:"View Demo", link: "/questionnaire/demo"},
         ],
         developmentProgress: {
           percentage: 52,
@@ -1420,8 +1420,8 @@ const DynamicPage = () => {
           'Social Shopping Features'
         ],
         buttons: [
-          "Join Early Access",
-          "Experience Demo",
+          {label:"Join Early Access",link: "/questionnaire/demo"},
+          {label:"Experience Demo", link: "/questionnaire/demo"},
         ],
         developmentProgress: {
           percentage: 32,
@@ -1571,8 +1571,8 @@ const DynamicPage = () => {
           'Emergency Response System'
         ],
         buttons: [
-          "Join Safety Network",
-          "Learn About Safety",
+         { label:"Join Safety Network", link: "/questionnaire/demo"},
+          {label:"Learn About Safety", link: "/questionnaire/demo"},
         ],
         developmentProgress: {
           percentage: 28,
@@ -2139,8 +2139,8 @@ const DynamicPage = () => {
           'Care Coordination'
         ],
         buttons: [
-          "Request Healthcare Demo",
-          "HIPAA Compliance",
+          {label:"Request Healthcare Demo", link: "/questionnaire/demo"},
+          {label:"HIPAA Compliance", link:  "about/our-story"},
         ],
         developmentProgress: {
           percentage: 45,
@@ -2304,7 +2304,8 @@ const DynamicPage = () => {
         ],
         buttons: [
           { label: "Browse All Programs", link: "/questionnaire/training" },
-          "Download Curriculum"
+          { label: "Download Curriculum", link: "/questionnaire/demo" },
+          
         ],
         // buttons: [
         //   "Browse All Programs",
@@ -2362,8 +2363,8 @@ const DynamicPage = () => {
             'Care Coordination'
           ],
           buttons: [
-            "Schedule Consultation",
-            "Download Brochure"
+            {label:"Schedule Consultation",link: "/questionnaire/demo"},
+            {label:"Download Brochure", link: "/questionnaire/demo"},
           ],
         },
         section3: {
@@ -2498,52 +2499,53 @@ const DynamicPage = () => {
           subtitle: "Join the growing number of enterprises that trust MangoAnalytics to deliver AI solutions that drive real results."
         },
         buttons: [
-          "Learn about our mission",
-          "Meet our team",
+          {label:"Learn about our mission", link:"/about/contact"},
+          {label:"Meet our team", link:"/about/contact"},
+          
         ],
       },
-      'about/leadership-team': {
-        title: 'Leadership Team',
-        subtitle: 'Meet the experts and leaders driving innovation at MangoAnalytics.',
-        description: 'Meet the visionary leaders driving AI innovation and transformation. Our team combines deep technical expertise with strategic business acumen to deliver exceptional results for our clients. Every member is dedicated to pushing the boundaries of what’s possible with artificial intelligence, fostering a culture of curiosity, ambitious problem-solving, and ethical leadership.',
-        leadership: {
-          highlight: "Our leadership team represents decades of combined experience in artificial intelligence, enterprise software, life sciences, and consulting.",
-          members: [
-            {
-              name: 'Dr. Asha Patel',
-              role: 'Chief Executive Officer',
-              bio: 'Dr. Patel is a serial AI entrepreneur with 20+ years in health technology and digital transformation. She leads our vision for responsible, world-class AI innovation.',
-              image: '/images/team/asha_patel.jpg',
-              linkedin: 'https://www.linkedin.com/in/ashapatel/'
-            },
-            {
-              name: 'Vikram Desai',
-              role: 'Chief Technology Officer',
-              bio: 'Vikram brings deep expertise in machine learning, cloud infrastructure, and enterprise SaaS, guiding our technical strategy and R&D initiatives.',
-              image: '/images/team/vikram_desai.jpg',
-              linkedin: 'https://www.linkedin.com/in/vikramdesai/'
-            },
-            {
-              name: 'Elena Martinez',
-              role: 'Chief Operating Officer',
-              bio: 'Elena specializes in scaling high-performing teams and delivers operational excellence, ensuring we meet our growth and client success goals.',
-              image: '/images/team/elena_martinez.jpg',
-              linkedin: 'https://www.linkedin.com/in/elenamartinez/'
-            },
-            {
-              name: 'Dr. Tom Reynolds',
-              role: 'VP of AI & Life Sciences',
-              bio: 'Tom leverages expertise in bioinformatics and AI to drive innovations that impact patient outcomes and compliance in regulated industries.',
-              image: '/images/team/tom_reynolds.jpg',
-              linkedin: 'https://www.linkedin.com/in/tomreynolds/'
-            }
-          ]
-        },
-        footerMain: {
-          title: "Join Our Mission",
-          subtitle: "We're always looking for exceptional talent to join our team. Help us build the future of AI-powered business transformation."
-        },
-      },
+      // 'about/leadership-team': {
+      //   title: 'Leadership Team',
+      //   subtitle: 'Meet the experts and leaders driving innovation at MangoAnalytics.',
+      //   description: 'Meet the visionary leaders driving AI innovation and transformation. Our team combines deep technical expertise with strategic business acumen to deliver exceptional results for our clients. Every member is dedicated to pushing the boundaries of what’s possible with artificial intelligence, fostering a culture of curiosity, ambitious problem-solving, and ethical leadership.',
+      //   leadership: {
+      //     highlight: "Our leadership team represents decades of combined experience in artificial intelligence, enterprise software, life sciences, and consulting.",
+      //     members: [
+      //       {
+      //         name: 'Dr. Asha Patel',
+      //         role: 'Chief Executive Officer',
+      //         bio: 'Dr. Patel is a serial AI entrepreneur with 20+ years in health technology and digital transformation. She leads our vision for responsible, world-class AI innovation.',
+      //         image: '/images/team/asha_patel.jpg',
+      //         linkedin: 'https://www.linkedin.com/in/ashapatel/'
+      //       },
+      //       {
+      //         name: 'Vikram Desai',
+      //         role: 'Chief Technology Officer',
+      //         bio: 'Vikram brings deep expertise in machine learning, cloud infrastructure, and enterprise SaaS, guiding our technical strategy and R&D initiatives.',
+      //         image: '/images/team/vikram_desai.jpg',
+      //         linkedin: 'https://www.linkedin.com/in/vikramdesai/'
+      //       },
+      //       {
+      //         name: 'Elena Martinez',
+      //         role: 'Chief Operating Officer',
+      //         bio: 'Elena specializes in scaling high-performing teams and delivers operational excellence, ensuring we meet our growth and client success goals.',
+      //         image: '/images/team/elena_martinez.jpg',
+      //         linkedin: 'https://www.linkedin.com/in/elenamartinez/'
+      //       },
+      //       {
+      //         name: 'Dr. Tom Reynolds',
+      //         role: 'VP of AI & Life Sciences',
+      //         bio: 'Tom leverages expertise in bioinformatics and AI to drive innovations that impact patient outcomes and compliance in regulated industries.',
+      //         image: '/images/team/tom_reynolds.jpg',
+      //         linkedin: 'https://www.linkedin.com/in/tomreynolds/'
+      //       }
+      //     ]
+      //   },
+      //   footerMain: {
+      //     title: "Join Our Mission",
+      //     subtitle: "We're always looking for exceptional talent to join our team. Help us build the future of AI-powered business transformation."
+      //   },
+      // },
       'about/careers': {
         title: 'Join Our Mission',
         subtitle: 'Join our team and be part of the next generation of AI solutions.',
@@ -2570,8 +2572,9 @@ const DynamicPage = () => {
           subtitle: "Don't see a perfect fit? We're always interested in hearing from exceptional talent. Send us your resume and let's start a conversation."
         },
         buttons: [
-          "See open roles",
-          "Learn more about us"
+          {label:"See open roles", link:"/about/contact"},
+          {label:"Learn more about us", link:"/about/contact"},
+          
         ],
         careers: {}
       },
@@ -3018,7 +3021,7 @@ const DynamicPage = () => {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.technologies.title}</h2>
-              <p className="text-lg text-black max-w-4xl mx-auto">
+              <p className="text-lg text-black/80 max-w-4xl mx-auto">
                 We leverage the most advanced analytics tools and platforms to deliver exceptional results
               </p>
             </motion.div>
@@ -3037,7 +3040,7 @@ const DynamicPage = () => {
                   transition={{ delay: 0.3 + index * 0.05 }}
                   className="bg-gradient-primary rounded-lg px-6 py-4 border border-primary/20 hover:border-primary/40 transition-colors duration-300 text-center"
                 >
-                  <span className="text-white font-medium text-lg">{tech}</span>
+                  <span className="text-white/80 font-medium text-lg">{tech}</span>
                 </motion.div>
               ))}
 

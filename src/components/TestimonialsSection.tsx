@@ -80,11 +80,11 @@ export const TestimonialsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-10"
         >
-          <span className="inline-flex items-center space-x-2 backdrop-blur-md border border-primary/30 rounded-full px-4 py-2 mb-4 text-sm">
+          {/* <span className="inline-flex items-center space-x-2 backdrop-blur-md border border-primary/30 rounded-full px-4 py-2 mb-4 text-sm">
             <span className="text-lg font-medium text-gradient-primary">
               What Our Clients Have to Say About Us
             </span>
-          </span>
+          </span> */}
 
           <h2
             className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black"
@@ -143,11 +143,11 @@ export const TestimonialsSection = () => {
                   >
                     {t.name}
                   </div>
-                  <div className="text-sm text-white">{t.role}</div>
+                  <div className="text-sm text-white/80">{t.role}</div>
                 </div>
               </div>
 
-              <p className="text-lg text-white leading-relaxed">
+              <p className="text-md text-white/55 leading-relaxed">
                 {t.quote}
               </p>
 

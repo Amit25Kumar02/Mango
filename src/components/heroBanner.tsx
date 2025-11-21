@@ -81,7 +81,7 @@ const HeroBanner = ({ content }: any) => {
                     }
                   }}
                   variant={index === 0 ? "hero" : "cyber"}
-                  className={`flex items-center justify-center ${index === 0 ? "text-white" : "text-black"
+                  className={`flex items-center justify-center ${index === 0 ? "text-white" : "hover:bg-gradient-primary hover:text-white text-black"
                     } w-full sm:w-auto`}
                 >
                   {item.label || item}

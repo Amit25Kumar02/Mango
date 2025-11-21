@@ -140,9 +140,10 @@ const ContactSectionAbout: React.FC<ContactProps> = ({ content }) => {
                   <option value="" disabled selected>
                     Select an option
                   </option>
-                  <option>AI Solution & Strategy</option>
-                  <option>AI Talent / CTO-as-a-Service</option>
-                  <option>Consulting / Partnership</option>
+                  <option>Solutions</option>
+                  <option>Industries</option>
+                  <option>Labs</option>
+                  <option>Training</option>
                   <option>Other</option>
                 </select>
               </div>
@@ -170,8 +171,8 @@ const ContactSectionAbout: React.FC<ContactProps> = ({ content }) => {
             {[
               {
                 country: "USA",
-                addr: "220 E. Main Street, Branford, CT-06405, USA",
-                phone: "203-208-3916",
+                addr: "220 E Main St, Branford, CT 06405, United States",
+                phone: "+1-203-208-3916",
                 email: "info@mangoanalytics.ai",
               },
               {
@@ -194,26 +195,34 @@ const ContactSectionAbout: React.FC<ContactProps> = ({ content }) => {
                 <h3 className="font-semibold text-xl text-black mb-2">{loc.country}</h3>
 
                 <div className="mt-3 mb-4 text-black/90 text-sm space-y-1">
-                  <div className="flex items-center">
+                  <div className="flex items-center cursor-pointer"
+                    onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.addr)}`, "_blank")}>
                     <svg width="18" height="18" className="mr-2 text-green-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path d="M17.657 16.657L13 21.314l-4.657-4.657A8 8 0 1 1 17.657 16.657z" />
                       <circle cx="12" cy="11" r="3" />
                     </svg>
                     {loc.addr}
                   </div>
-                  <div className="flex items-center">
+
+                  <div className="flex items-center cursor-pointer"
+                    onClick={() => window.location.href = `tel:${loc.phone}`}>
                     <svg width="18" height="18" className="mr-2 text-black/40" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.72 19.72 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.14.81.39 1.59.75 2.3a2 2 0 0 1-.45 2.11l-1.27 1.28a16 16 0 0 0 6.06 6.06l1.28-1.27a2 2 0 0 1 2.11-.45c.71.36 1.49.61 2.3.75a2 2 0 0 1 1.72 2z" />
                     </svg>
                     {loc.phone}
                   </div>
-                  <div className="flex items-center break-all">
+
+                  <a
+                    href={`mailto:${loc.email}`}
+                    className="flex items-center break-all cursor-pointer"
+                  >
                     <svg width="18" height="18" className="mr-2 text-black/40" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path d="M4 4h16v16H4z" />
                       <path d="M22 6.5l-9.5 7.5L3 6.5" />
                     </svg>
                     {loc.email}
-                  </div>
+                  </a>
+
                 </div>
 
                 <a

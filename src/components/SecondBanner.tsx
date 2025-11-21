@@ -33,7 +33,7 @@ const SecondBanner = ({ data }) => {
             </div> */}
             <div>
               <h3 className="text-xl font-bold text-gradient-primary mb-2">{step.title}</h3>
-              <p className="text-white text-[14px] md:text-lg leading-relaxed">{step.description}</p>
+              <p className="text-white/55 text-[14px] md:text-lg leading-relaxed">{step.description}</p>
             </div>
           </motion.div>
         ))}

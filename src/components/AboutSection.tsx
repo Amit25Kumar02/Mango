@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { Brain, Target, Rocket, Shield } from "lucide-react";
 import CountingNumber from "./ui/countingNumber";
 import heroBg from "@/assets/code14.mp4";
+import { useNavigate } from "react-router-dom";
 
 // const CountingNumber = ({ target, suffix = "", duration = 1200, isInView }: {
 //   target: number;
@@ -45,6 +46,7 @@ import heroBg from "@/assets/code14.mp4";
 // };
 
 export const AboutSection = () => {
+  const navigate = useNavigate();
   // Refs for animation triggers
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -116,9 +118,15 @@ export const AboutSection = () => {
                 transition={{ delay: 0.2 }}
                 className="backdrop-blur-md border border-primary/30 rounded-full px-4 py-2 mb-6"
               >
-                <span className="text-md font-medium text-gradient-primary">
+                <button
+                onClick={() =>{
+                   window.scrollTo({ top: 0, behavior: "smooth" })
+                  navigate("/about/our-story")}
+                }
+                
+                 className="text-md font-medium text-gradient-primary">
                   About Mango Analytics
-                </span>
+                </button>
               </motion.div>
             </div>
 
@@ -181,7 +189,7 @@ export const AboutSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            className="grid grid-cols-1 md:grid-cols-4 gap-4"
           >
             {features.map((feature, index) => {
               const Icon = feature.icon; 
@@ -206,7 +214,7 @@ export const AboutSection = () => {
                       {feature.title}
                     </h3>
 
-                    <p className="text-white text-sm md:text-base">
+                    <p className="text-white/55 text-sm md:text-base">
                       {feature.description}
                     </p>
                   </div>

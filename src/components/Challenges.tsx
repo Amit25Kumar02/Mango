@@ -59,7 +59,7 @@ export const Challenges = () => {
           Solving <span className="text-gradient-primary">IT Consulting's</span> Biggest Challenges
         </h2>
 
-        <p className="text-xl text-black max-w-4xl mx-auto">
+        <p className="text-xl text-black/80 max-w-4xl mx-auto">
           IT consulting faces unique hurdles—security, scalability, and ever-changing
           tech. We break through barriers to make technology seamless for your business.
         </p>
@@ -87,14 +87,14 @@ export const Challenges = () => {
             <p
               ref={(el) => el && (descRefs.current[index] = el)}
               style={{ minHeight: `${maxDescHeight}px` }}
-              className="text-[14px] leading-relaxed text-white"
+              className="text-[14px] leading-relaxed text-white/55"
             >
               {story.desc}
             </p>
 
             {/* LAST LINE at bottom */}
             <div className=" pt-2">
-              <p className="text-secondary text-sm leading-relaxed">
+              <p className="text-secondary/55 text-sm leading-relaxed">
                 {story.lastLine}
               </p>
             </div>

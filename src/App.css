@@ -5,6 +5,9 @@
   text-align: center;
   
 }
+*{
+  scroll-behavior: smooth !important;
+}
 /* .line {
   height: 2px;
   background: linear-gradient(to right, #7f5af0, #9d7ff9);

@@ -121,7 +121,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
                                     style={{
                                         height: maxDescHeight ? `${maxDescHeight}px` : "auto",
                                     }}
-                                    className="text-white text-sm leading-relaxed overflow-hidden"
+                                    className="text-white/55 text-sm leading-relaxed overflow-hidden"
                                 >
                                     {story.challenge}. {story.solution}
                                 </p>
@@ -130,7 +130,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
                             {/* RESULTS */}
                             <div className="flex flex-col h-full gap-2 mb-3">
                                 {story.results.map((result, i) => (
-                                    <span key={i} className="text-white text-sm flex gap-2">
+                                    <span key={i} className="text-white/55 text-sm flex gap-2">
                                         <Tick className="w-4 h-4 text-green-500 mt-0.5" />
                                         {result}
                                     </span>
@@ -139,7 +139,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
 
                             {/* TIMELINE */}
                             {story.timeline && (
-                                <p className="text-sm font-semibold text-white mt-1">
+                                <p className="text-sm font-semibold text-white/80 mt-1">
                                     <span className="font-bold">Timeline:</span> {story.timeline}
                                 </p>
                             )}

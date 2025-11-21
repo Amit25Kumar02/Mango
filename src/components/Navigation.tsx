@@ -17,6 +17,8 @@ export const Navigation = ({ itemColor = "#fff" }) => {
   const [showLeadership, setShowLeadership] = useState(true);
 
   const navigate = useNavigate();
+  const navRef = useRef<HTMLDivElement>(null);
+
   const ref = useRef(null)
 
   // Helper function to generate route paths
@@ -46,6 +48,23 @@ export const Navigation = ({ itemColor = "#fff" }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setIsSolutionsOpen(false);
+        setIsIndustriesOpen(false);
+        setIsLabsOpen(false);
+        setIsTrainingOpen(false);
+        setIsAboutUsOpen(false);
+        setIsMobileMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
 
   const navItems = [
     { label: 'Solutions', href: '#solutions', hasDropdown: true },
@@ -174,7 +193,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
 
 
   return (
-    <motion.nav
+    <motion.nav ref={navRef}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300

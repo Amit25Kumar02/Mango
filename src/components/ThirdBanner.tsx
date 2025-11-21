@@ -20,7 +20,7 @@ const ThirdBanner = ({ data }) => {
           {data.title}
         </h2>
 
-        <p className="text-lg md:px-16 lg:px-32 text-black max-w-4xl mx-auto">
+        <p className="text-lg md:px-16 lg:px-32 text-black/80 max-w-4xl mx-auto">
           {data.description}
         </p>
       </motion.div>
@@ -63,7 +63,7 @@ const ThirdBanner = ({ data }) => {
             </h3>
 
             {/* DESCRIPTION — same height for alignment */}
-            <p className="text-white text-sm leading-relaxed mb-4 min-h-[80px]">
+            <p className="text-white/55 text-sm leading-relaxed mb-4 min-h-[80px]">
               {service.description}
             </p>
 
