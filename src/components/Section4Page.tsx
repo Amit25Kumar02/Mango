@@ -108,7 +108,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
                                 style={{
                                     minHeight: maxCompanyHeight ? `${maxCompanyHeight}px` : "auto",
                                 }}
-                                className="text-xl font-bold text-gradient-primary mb-2 flex items-center"
+                                className="text-xl font-bold text-gradient-primary mb-2  flex items-center"
                             >
                                 {story.company}
                             </p>
@@ -128,7 +128,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
                             </div>
 
                             {/* RESULTS */}
-                            <div className="flex flex-col h-full gap-2 mb-3">
+                            <div className="flex flex-col h-full gap-2">
                                 {story.results.map((result, i) => (
                                     <span key={i} className="text-white/55 text-sm flex gap-2">
                                         <Tick className="w-4 h-4 text-green-500 mt-0.5" />

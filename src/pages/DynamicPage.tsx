@@ -140,9 +140,12 @@ const DynamicPage = () => {
               type: "select",
               placeholder: "What type of training?",
               options: [
-                "Individual Training",
-                "Corporate Team Training",
-                "Both Options",
+                "Machine Learning Engineering Training",
+                "AI Leadership & Strategy Training",
+                "Gen AI Training",
+                "MLOps Training",
+                "Python Fullstack Training",
+                "Corporate Training"
               ],
               required: true
             },
@@ -412,13 +415,28 @@ const DynamicPage = () => {
               type: "select",
               placeholder: "What interest you most?",
               options: [
-                "Data Analytics & Insights",
-                "Machine Learning Solutions",
-                "AI & IT Consulting",
                 "AI Product Development",
-                "AI Talent Development",
+                "Data Analytics",
+                "Machine Learning Solutions",
                 "Compliance & Security",
-                "Multiple Solutions",
+                "AI Talent Development",
+                "IT Consulting",
+                "Medical & Healthcare",
+                "Startup & Enterprises",
+                "Food Haven",
+                "Mango Boutique",
+                "DriveMeSafe",
+                "EduMindAI",
+                "GreenTrack",
+                "HealthSync",
+                "AI Fundamentals - Academic",
+                "Machine Learning Engineering Training",
+                "AI Leadership & Strategy Training",
+                "Gen AI Training",
+                "MLOps Training",
+                "Python Fullstack Training",
+                "Corporate Training",
+
               ],
               required: true
             },
@@ -489,7 +507,7 @@ const DynamicPage = () => {
         // ],
         buttons: [
           { label: "Schedule Strategy & IT Assessment", link: "/questionnaire/consultation" },
-          {label:"Download AI & IT Readiness Guide", link:"/questionnaire/demo"},
+          { label: "Download AI & IT Readiness Guide", link: "/questionnaire/demo" },
         ],
         companies: [
           "Fortune 500",
@@ -644,7 +662,7 @@ const DynamicPage = () => {
           // buttons: ["Start Your Analytics Journey", "View Case Studies"],
           buttons: [
             { label: "Start Your Analytics Journey", link: "/questionnaire/demo" },
-            {label:"View Case Studies", link:  "/questionnaire/demo"},
+            { label: "View Case Studies", link: "/questionnaire/demo" },
           ],
           stats: [
             { value: "500%", label: "Faster Insights" },
@@ -817,8 +835,8 @@ const DynamicPage = () => {
           ]
         },
         buttons: [
-         {label: "Start Building ML Solutions", link: "/questionnaire/demo"},
-         {label:"View ML Pricing", link: "/questionnaire/demo"},
+          { label: "Start Building ML Solutions", link: "/questionnaire/demo" },
+          { label: "View ML Pricing", link: "/questionnaire/demo" },
         ],
         section2: {
           title: "Our Strategic AI & IT Approach",
@@ -933,7 +951,7 @@ const DynamicPage = () => {
         // ],
         buttons: [
           { label: "Start Compliant Build", link: "/questionnaire/consultation" },
-          { label: "View Compliance Framework", link: "/questionnaire/demo"},
+          { label: "View Compliance Framework", link: "/questionnaire/demo" },
         ],
         companies: [
           "HealthTech",
@@ -1006,8 +1024,8 @@ const DynamicPage = () => {
           'Mentorship Programs'
         ],
         buttons: [
-          { label:"Explore Programs", link: "/questionnaire/demo"},
-          { label:"Join our Community", link: "/questionnaire/demo"},
+          { label: "Explore Programs", link: "/questionnaire/demo" },
+          { label: "Join our Community", link: "/questionnaire/demo" },
         ],
         companies: [
           "TechCorp",
@@ -1138,8 +1156,8 @@ const DynamicPage = () => {
           'Technology Strategy'
         ],
         buttons: [
-          { label:"Start Your Project", link: "/questionnaire/demo"},
-          { label:"View Case Studies", link:  "/questionnaire/demo"},
+          { label: "Start Your Project", link: "/questionnaire/demo" },
+          { label: "View Case Studies", link: "/questionnaire/demo" },
         ],
         section4: {
           title: "Our IT consulting services span every stage of your transformation",
@@ -1183,8 +1201,8 @@ const DynamicPage = () => {
           'Technology Strategy'
         ],
         buttons: [
-          { label:"Transform Patient Care", link: "/questionnaire/demo"},
-          { label:"View healthcare Cases", link:  "/questionnaire/demo"},
+          { label: "Transform Patient Care", link: "/questionnaire/demo" },
+          { label: "View healthcare Cases", link: "/questionnaire/demo" },
         ],
         section4: {
           title: "AI solutions that improve patient outcomes",
@@ -1251,8 +1269,8 @@ const DynamicPage = () => {
           "Spotify"
         ],
         buttons: [
-          { label:"Scale your Vision", link:  "/questionnaire/demo"},
-          { label:"View Success Stories", link:"/questionnaire/demo"},
+          { label: "Scale your Vision", link: "/questionnaire/demo" },
+          { label: "View Success Stories", link: "/questionnaire/demo" },
         ],
         section4: {
           title: "End-to-end IT consulting for your transformation",
@@ -1293,8 +1311,8 @@ const DynamicPage = () => {
           'Nutrition Analytics'
         ],
         buttons: [
-          {label:"Join Waitlist", link: "/questionnaire/demo"},
-          {label:"View Demo", link: "/questionnaire/demo"},
+          { label: "Join Waitlist", link: "/questionnaire/demo" },
+          { label: "View Demo", link: "/questionnaire/demo" },
         ],
         developmentProgress: {
           percentage: 52,
@@ -1420,8 +1438,8 @@ const DynamicPage = () => {
           'Social Shopping Features'
         ],
         buttons: [
-          {label:"Join Early Access",link: "/questionnaire/demo"},
-          {label:"Experience Demo", link: "/questionnaire/demo"},
+          { label: "Join Early Access", link: "/questionnaire/demo" },
+          { label: "Experience Demo", link: "/questionnaire/demo" },
         ],
         developmentProgress: {
           percentage: 32,
@@ -1571,8 +1589,8 @@ const DynamicPage = () => {
           'Emergency Response System'
         ],
         buttons: [
-         { label:"Join Safety Network", link: "/questionnaire/demo"},
-          {label:"Learn About Safety", link: "/questionnaire/demo"},
+          { label: "Join Safety Network", link: "/questionnaire/demo" },
+          { label: "Learn About Safety", link: "/questionnaire/demo" },
         ],
         developmentProgress: {
           percentage: 28,
@@ -2139,8 +2157,8 @@ const DynamicPage = () => {
           'Care Coordination'
         ],
         buttons: [
-          {label:"Request Healthcare Demo", link: "/questionnaire/demo"},
-          {label:"HIPAA Compliance", link:  "about/our-story"},
+          { label: "Request Healthcare Demo", link: "/questionnaire/demo" },
+          { label: "HIPAA Compliance", link: "about/our-story" },
         ],
         developmentProgress: {
           percentage: 45,
@@ -2305,7 +2323,7 @@ const DynamicPage = () => {
         buttons: [
           { label: "Browse All Programs", link: "/questionnaire/training" },
           { label: "Download Curriculum", link: "/questionnaire/demo" },
-          
+
         ],
         // buttons: [
         //   "Browse All Programs",
@@ -2363,8 +2381,8 @@ const DynamicPage = () => {
             'Care Coordination'
           ],
           buttons: [
-            {label:"Schedule Consultation",link: "/questionnaire/demo"},
-            {label:"Download Brochure", link: "/questionnaire/demo"},
+            { label: "Schedule Consultation", link: "/questionnaire/demo" },
+            { label: "Download Brochure", link: "/questionnaire/demo" },
           ],
         },
         section3: {
@@ -2499,9 +2517,9 @@ const DynamicPage = () => {
           subtitle: "Join the growing number of enterprises that trust MangoAnalytics to deliver AI solutions that drive real results."
         },
         buttons: [
-          {label:"Learn about our mission", link:"/about/contact"},
-          {label:"Meet our team", link:"/about/contact"},
-          
+          { label: "Learn about our mission", link: "/about/contact" },
+          { label: "Meet our team", link: "/about/contact" },
+
         ],
       },
       // 'about/leadership-team': {
@@ -2572,9 +2590,9 @@ const DynamicPage = () => {
           subtitle: "Don't see a perfect fit? We're always interested in hearing from exceptional talent. Send us your resume and let's start a conversation."
         },
         buttons: [
-          {label:"See open roles", link:"/about/contact"},
-          {label:"Learn more about us", link:"/about/contact"},
-          
+          { label: "See open roles", link: "/about/contact" },
+          { label: "Learn more about us", link: "/about/contact" },
+
         ],
         careers: {}
       },

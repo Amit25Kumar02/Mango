@@ -140,11 +140,28 @@ const ContactSectionAbout: React.FC<ContactProps> = ({ content }) => {
                   <option value="" disabled selected>
                     Select an option
                   </option>
-                  <option>Solutions</option>
-                  <option>Industries</option>
-                  <option>Labs</option>
-                  <option>Training</option>
-                  <option>Other</option>
+                  <option>AI Product Development</option>
+                  <option>Data Analytics</option>
+                  <option>Machine Learning Solutions</option>
+                  <option>Compliance and Security</option>
+                  <option>AI Talent Development</option>
+                  <option>IT Consulting</option>
+                  <option>Medical and Healthcare</option>
+                  <option>Startup and Enterprises</option>
+                  <option>Food Haven</option>
+                  <option>Mango Boutique</option>
+                  <option>DriveMeSafe</option>
+                  <option>EduMindAI</option>
+                  <option>GreenTrack</option>
+                  <option>HealthSync</option>
+                  <option>AI Fundamentals - Academic</option>
+                  <option>Machine Learning Engineering Training</option>
+                  <option>AI Leadership and Strategy Training</option>
+                  <option>Gen AI Training</option>
+                  <option>MLOps Training</option>
+                  <option>Python Fullstack Training</option>
+                  <option>Corporate Training</option>
+
                 </select>
               </div>
 
@@ -183,7 +200,7 @@ const ContactSectionAbout: React.FC<ContactProps> = ({ content }) => {
               },
               {
                 country: "Nepal",
-                addr: "Bhimsengola, Kathmandu, Nepal",
+                addr: "M8WV+XG9,Bhimsengola marg,Kathmandu 44600, Nepal",
                 phone: "+977-9840003778",
                 email: "info@mangoanalytics.ai",
               },

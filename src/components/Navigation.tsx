@@ -12,7 +12,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
   const [isLabsOpen, setIsLabsOpen] = useState(false);
-  const [isTrainingOpen, setIsTrainingOpen] = useState(false);
+  const [isAcademicOpen, setIsAcademicOpen] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   const [showLeadership, setShowLeadership] = useState(true);
 
@@ -36,7 +36,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
     setIsIndustriesOpen(false);
     setIsLabsOpen(false);
     setIsAboutUsOpen(false);
-    setIsTrainingOpen(false);
+    setIsAcademicOpen(false);
     setIsMobileMenuOpen(false);
   };
 
@@ -55,7 +55,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
         setIsSolutionsOpen(false);
         setIsIndustriesOpen(false);
         setIsLabsOpen(false);
-        setIsTrainingOpen(false);
+        setIsAcademicOpen(false);
         setIsAboutUsOpen(false);
         setIsMobileMenuOpen(false);
       }
@@ -70,7 +70,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
     { label: 'Solutions', href: '#solutions', hasDropdown: true },
     { label: 'Industries', href: '#industries', hasDropdown: true },
     { label: 'Labs', href: '#labs', hasDropdown: true },
-    { label: 'Training', href: '#training', hasDropdown: true },
+    { label: 'Academic', href: '#academic', hasDropdown: true },
     { label: 'About Us', href: '#about', hasDropdown: true },
   ];
 
@@ -157,7 +157,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
     }
   ];
 
-  const trainingItems = [
+  const academicItems = [
     {
       title: 'Programs Overview',
       description: 'Individual and corporate AI courses'
@@ -235,21 +235,21 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                         setIsIndustriesOpen(false);
                         setIsLabsOpen(false);
                         setIsAboutUsOpen(false);
-                        setIsTrainingOpen(false);
+                        setIsAcademicOpen(false);
                       } else if (item.label === 'Industries') {
                         setIsIndustriesOpen(!isIndustriesOpen);
                         setIsSolutionsOpen(false);
                         setIsLabsOpen(false);
                         setIsAboutUsOpen(false);
-                        setIsTrainingOpen(false);
+                        setIsAcademicOpen(false);
                       } else if (item.label === 'Labs') {
                         setIsLabsOpen(!isLabsOpen);
                         setIsSolutionsOpen(false);
                         setIsIndustriesOpen(false);
                         setIsAboutUsOpen(false);
-                        setIsTrainingOpen(false);
-                      } else if (item.label === "Training") {
-                        setIsTrainingOpen(!isTrainingOpen);
+                        setIsAcademicOpen(false);
+                      } else if (item.label === "Academic") {
+                        setIsAcademicOpen(!isAcademicOpen);
                         setIsSolutionsOpen(false);
                         setIsIndustriesOpen(false);
                         setIsLabsOpen(false);
@@ -259,7 +259,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                         setIsSolutionsOpen(false);
                         setIsIndustriesOpen(false);
                         setIsLabsOpen(false);
-                        setIsTrainingOpen(false);
+                        setIsAcademicOpen(false);
                       }
                     }}
                   >
@@ -276,7 +276,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${(item.label === 'Solutions' && isSolutionsOpen) ||
                       (item.label === 'Industries' && isIndustriesOpen) ||
                       (item.label === 'Labs' && isLabsOpen) ||
-                      (item.label === 'Training' && isTrainingOpen) ||
+                      (item.label === 'Academic' && isAcademicOpen) ||
                       (item.label === 'About Us' && isAboutUsOpen) ? 'rotate-180' : ''
                       }`} style={{ color: isScrolled ? '#333' : itemColor }} />
                   </div>
@@ -434,17 +434,17 @@ export const Navigation = ({ itemColor = "#fff" }) => {
 
 
           {/* Training Dropdown */}
-          {isTrainingOpen && (
+          {isAcademicOpen && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               className="absolute top-full right-[20%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%]"
-              onClick={() => setIsTrainingOpen(!isTrainingOpen)}
+              onClick={() => setIsAcademicOpen(!isAcademicOpen)}
             >
               <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div className="grid grid-cols-1 gap-3">
-                  {trainingItems.map((trainingItem, index) => (
+                  {academicItems.map((trainingItem, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
@@ -551,8 +551,8 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                           ? industriesItems
                           : item.label === 'Labs'
                             ? labsItems
-                            : item.label === 'Training'
-                              ? trainingItems
+                            : item.label === 'Academic'
+                              ? academicItems
                               : aboutUsItems
                       ).map((dropdownItem: any, index) => (
                         <div
