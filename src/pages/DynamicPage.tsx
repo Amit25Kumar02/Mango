@@ -2779,9 +2779,12 @@ const DynamicPage = () => {
                       <SelectValue placeholder="Select an option" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="Developer" >Option 1</SelectItem>
-                      <SelectItem value="Data Scientist">Option 2</SelectItem>
-                      <SelectItem value="Product Manager">Option 2</SelectItem>
+                      <SelectItem value="Software Developer" >Software Developer</SelectItem>
+                      <SelectItem value="Data Scientist">Data Scientist</SelectItem>
+                      <SelectItem value="Product Manager">Product Manager</SelectItem>
+                      <SelectItem value="Product Manager">Executive/Leadership</SelectItem>
+                      <SelectItem value="Student">Student</SelectItem>
+                      <SelectItem value="Other">Other</SelectItem>
                     </SelectContent>
                   </Select>
 
@@ -2948,7 +2951,7 @@ const DynamicPage = () => {
 
                 <div className="space-y-4">
                   <div>
-                    <p className="text-white text-md text-center leading-relaxed">{story.challenge}. {story.solution}</p>
+                    <p className="text-white text-md text-center leading-relaxed">{story.challenge} {story.solution}</p>
                   </div>
 
                   <div className='flex flex-col'>
