@@ -131,11 +131,11 @@ export const FooterLinks = () => {
                   <a className="hover:text-foreground transition-colors" rel="noopener noreferrer">Our Story</a>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/about/leadership-team">
                   <a className="hover:text-foreground transition-colors" rel="noopener noreferrer">Leadership Team</a>
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/about/careers">
                   <a className="hover:text-foreground transition-colors" rel="noopener noreferrer">Careers</a>
