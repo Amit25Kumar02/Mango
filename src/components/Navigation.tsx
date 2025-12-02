@@ -12,7 +12,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
   const [isLabsOpen, setIsLabsOpen] = useState(false);
-  const [isAcademicOpen, setIsAcademicOpen] = useState(false);
+  const [isAcademyOpen, setIsAcademyOpen] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   const [showLeadership, setShowLeadership] = useState(true);
 
@@ -36,7 +36,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
     setIsIndustriesOpen(false);
     setIsLabsOpen(false);
     setIsAboutUsOpen(false);
-    setIsAcademicOpen(false);
+    setIsAcademyOpen(false);
     setIsMobileMenuOpen(false);
   };
 
@@ -55,7 +55,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
         setIsSolutionsOpen(false);
         setIsIndustriesOpen(false);
         setIsLabsOpen(false);
-        setIsAcademicOpen(false);
+        setIsAcademyOpen(false);
         setIsAboutUsOpen(false);
         setIsMobileMenuOpen(false);
       }
@@ -70,7 +70,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
     { label: 'Solutions', href: '#solutions', hasDropdown: true },
     { label: 'Industries', href: '#industries', hasDropdown: true },
     { label: 'Labs', href: '#labs', hasDropdown: true },
-    { label: 'Academic', href: '#academic', hasDropdown: true },
+    { label: 'Academy', href: '#Academy', hasDropdown: true },
     { label: 'About Us', href: '#about', hasDropdown: true },
   ];
 
@@ -103,7 +103,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
       description: 'Elite IT talent placement, technical consulting, and team augmentation services'
     },
     {
-      title: 'Medical & Healthcare',
+      title: 'Pharmaceutical & Health Care',
       description: 'Predictive patient analytics, diagnostics'
     },
     {
@@ -114,7 +114,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
 
   const labsItems = [
     {
-      title: 'Food Haven',
+      title: 'FoodHaven',
       category: 'Health Tech',
       description: 'AI-powered healthy lifestyle food delivery platform with personalized nutrition',
       status: 'Coming Soon',
@@ -157,7 +157,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
     }
   ];
 
-  const academicItems = [
+  const AcademyItems = [
     {
       title: 'Programs Overview',
       description: 'Individual and corporate AI courses'
@@ -212,7 +212,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
             onClick={() => navigate('/')}
           >
             <img
-              src={window.location.pathname !== "/" ? logo : whitelogo}
+              src={window.location.pathname !== "/" ? logo : logo}
               className="filter drop-shadow-[0_0_6px_rgba(255,255,255,0.75)]"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               style={{ marginTop: "10px" }}
@@ -235,21 +235,21 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                         setIsIndustriesOpen(false);
                         setIsLabsOpen(false);
                         setIsAboutUsOpen(false);
-                        setIsAcademicOpen(false);
+                        setIsAcademyOpen(false);
                       } else if (item.label === 'Industries') {
                         setIsIndustriesOpen(!isIndustriesOpen);
                         setIsSolutionsOpen(false);
                         setIsLabsOpen(false);
                         setIsAboutUsOpen(false);
-                        setIsAcademicOpen(false);
+                        setIsAcademyOpen(false);
                       } else if (item.label === 'Labs') {
                         setIsLabsOpen(!isLabsOpen);
                         setIsSolutionsOpen(false);
                         setIsIndustriesOpen(false);
                         setIsAboutUsOpen(false);
-                        setIsAcademicOpen(false);
-                      } else if (item.label === "Academic") {
-                        setIsAcademicOpen(!isAcademicOpen);
+                        setIsAcademyOpen(false);
+                      } else if (item.label === "Academy") {
+                        setIsAcademyOpen(!isAcademyOpen);
                         setIsSolutionsOpen(false);
                         setIsIndustriesOpen(false);
                         setIsLabsOpen(false);
@@ -259,7 +259,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                         setIsSolutionsOpen(false);
                         setIsIndustriesOpen(false);
                         setIsLabsOpen(false);
-                        setIsAcademicOpen(false);
+                        setIsAcademyOpen(false);
                       }
                     }}
                   >
@@ -276,7 +276,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${(item.label === 'Solutions' && isSolutionsOpen) ||
                       (item.label === 'Industries' && isIndustriesOpen) ||
                       (item.label === 'Labs' && isLabsOpen) ||
-                      (item.label === 'Academic' && isAcademicOpen) ||
+                      (item.label === 'Academy' && isAcademyOpen) ||
                       (item.label === 'About Us' && isAboutUsOpen) ? 'rotate-180' : ''
                       }`} style={{ color: isScrolled ? '#333' : itemColor }} />
                   </div>
@@ -434,17 +434,17 @@ export const Navigation = ({ itemColor = "#fff" }) => {
 
 
           {/* Training Dropdown */}
-          {isAcademicOpen && (
+          {isAcademyOpen && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               className="absolute top-full right-[20%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%]"
-              onClick={() => setIsAcademicOpen(!isAcademicOpen)}
+              onClick={() => setIsAcademyOpen(!isAcademyOpen)}
             >
               <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div className="grid grid-cols-1 gap-3">
-                  {academicItems.map((trainingItem, index) => (
+                  {AcademyItems.map((trainingItem, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
@@ -551,8 +551,8 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                           ? industriesItems
                           : item.label === 'Labs'
                             ? labsItems
-                            : item.label === 'Academic'
-                              ? academicItems
+                            : item.label === 'Academy'
+                              ? AcademyItems
                               : aboutUsItems
                       ).map((dropdownItem: any, index) => (
                         <div

@@ -421,9 +421,9 @@ const DynamicPage = () => {
                 "Compliance & Security",
                 "AI Talent Development",
                 "IT Consulting",
-                "Medical & Healthcare",
+                "Pharmaceutical & Health Care",
                 "Startup & Enterprises",
-                "Food Haven",
+                "FoodHaven",
                 "Mango Boutique",
                 "DriveMeSafe",
                 "EduMindAI",
@@ -993,12 +993,12 @@ const DynamicPage = () => {
           description: "Our AI systems are built to meet the highest regulatory standards across industries.",
           data: [
             {
-              icon: Lightbulb, company: 'HIPAA', challenge: 'Healthcare AI systems with full HIPAA compliance for protected health information.', color: 'bg-orange-500', results: ["Data encryption at rest and in transit",
+              icon: Lightbulb, company: 'HIPAA', challenge: 'Healthcare AI systems with full HIPAA compliance for protected health information', color: 'bg-orange-500', results: ["Data encryption at rest and in transit",
                 "Access controls and audit logs",
                 "Business associate agreements"]
             },
             {
-              icon: Server, company: 'FDA', challenge: 'Medical device AI with FDA 510(k) and De Novo pathway compliance.', color: 'bg-teal-500', results: ["Clinical validation protocols",
+              icon: Server, company: 'FDA', challenge: 'Medical device AI with FDA 510(k) and De Novo pathway compliance', color: 'bg-teal-500', results: ["Clinical validation protocols",
                 "Quality management systems",
                 "Post-market surveillance"]
             },
@@ -1180,7 +1180,7 @@ const DynamicPage = () => {
           ],
         }
       },
-      'industries/medical-and-healthcare': {
+      'industries/pharmaceutical-and-health-care': {
         domain: "Healthcare Innovation",
         title: 'AI Meets Compassion',
         // bannerImage: healthcare,
@@ -1297,9 +1297,9 @@ const DynamicPage = () => {
         },
       },
 
-      'labs/food-haven': {
+      'labs/foodhaven': {
         // bannerImage: delivery,
-        title: 'Food Haven',
+        title: 'FoodHaven',
         domain: "Coming Soon ,Health Tech",
         subtitle: 'AI-powered healthy lifestyle food delivery platform with personalized nutrition.',
         description: 'AI-powered healthy lifestyle food delivery platform with personalized nutrition recommendations and smart meal planning.',
@@ -2321,7 +2321,7 @@ const DynamicPage = () => {
           { title: "Global", subtitle: "Participants from 30+ Countries", },
         ],
         buttons: [
-          { label: "Browse All Programs", link: "/questionnaire/training" },
+          { label: "Browse All Programs", link: "https://www.mangoacademy.dev/" },
           { label: "Download Curriculum", link: "/questionnaire/demo" },
 
         ],
@@ -2516,11 +2516,11 @@ const DynamicPage = () => {
           title: "Ready to Transform Your Business?",
           subtitle: "Join the growing number of enterprises that trust MangoAnalytics to deliver AI solutions that drive real results."
         },
-        buttons: [
-          { label: "Learn about our mission", link: "/about/contact" },
-          { label: "Meet our team", link: "/about/contact" },
+        // buttons: [
+        //   { label: "Learn about our mission", link: "/about/contact" },
+        //   { label: "Meet our team", link: "/about/contact" },
 
-        ],
+        // ],
       },
       // 'about/leadership-team': {
       //   title: 'Leadership Team',

@@ -107,8 +107,7 @@ export const ContactSection = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto"
           >
-            Let's discuss how our AI solutions can revolutionize your operations.
-            Get in touch with our experts today.
+            Let's discuss how Mango Analytics can help your business grow. Get in touch with our experts today.
           </motion.p>
 
         </motion.div>

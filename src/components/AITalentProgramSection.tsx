@@ -71,7 +71,7 @@ export default function AITalentProgramSection() {
 
           {/* Technologies */}
           <h4 className="font-semibold text-xl mb-4 text-white">
-            Technologies We Teach:
+            Technologies We Master 
           </h4>
           <div className="flex flex-wrap gap-2 mb-4">
             {technologies.map((tech, i) => (

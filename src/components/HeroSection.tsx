@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, User } from "lucide-react";
-import heroBg from "@/assets/herovideo.mp4";
+// import heroBg from "@/assets/herovideo.mp4";
 import poster from "@/assets/poster.jpg";
 import { useNavigate } from "react-router-dom";
 
@@ -24,7 +24,7 @@ export const HeroSection = () => {
       <div className="absolute inset-0 z-0">
 
         {/*  Video Background */}
-        <video
+        {/* <video
           className="w-full h-full object-cover opacity-20 pointer-events-none transition-opacity duration-1000"
           src={heroBg}
           poster={poster}
@@ -37,7 +37,7 @@ export const HeroSection = () => {
           style={{
             opacity: loaded ? 0.8 : 0,
           }}
-        />
+        /> */}
 
 
         <div

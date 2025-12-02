@@ -83,7 +83,7 @@ export const FooterLinks = () => {
               <li>
                 <Link to="/industries/medical-and-healthcare">
                   <a className="hover:text-foreground transition-colors" rel="noopener noreferrer">
-                    Medical & Healthcare
+                    Pharmaceutical & Health Care
                   </a>
                 </Link>
               </li>
@@ -97,7 +97,7 @@ export const FooterLinks = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-lg text-gradient-primary font-semibold mb-4">Trainings</h4>
+            <h4 className="text-lg text-gradient-primary font-semibold mb-4">Academy</h4>
             <ul className="space-y-3 text-foreground ">
               <li>
                 <Link to="/training/programs-overview">

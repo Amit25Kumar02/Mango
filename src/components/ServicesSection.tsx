@@ -119,7 +119,7 @@ export const ServicesSection = () => {
             className="text-4xl md:text-5xl text-balance font-bold mb-4"
           >
             <span className="text-black font-bold ">
-              From Idea to Impact – 
+              From Idea to Impact -
               <span className="text-gradient-primary">Our Services</span>
             </span>
             <br />

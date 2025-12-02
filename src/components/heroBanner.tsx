@@ -6,7 +6,7 @@ import { CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const HeroBanner = ({ content }: any) => {
-  const  navigate= useNavigate();
+  const navigate = useNavigate();
 
   const applyExtraPadding =
     !content.bannerImage && !content.developmentProgress;
@@ -75,17 +75,26 @@ const HeroBanner = ({ content }: any) => {
                 <Button
                   key={index}
                   onClick={() => {
-                    if (item.link) {
-                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    if (!item.link) return;
+
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+
+                    // Open ONLY external links in a new tab
+                    if (item.link.startsWith("http")) {
+                      window.open(item.link, "_blank");
+                    } else {
                       navigate(item.link);
                     }
                   }}
                   variant={index === 0 ? "hero" : "cyber"}
-                  className={`flex items-center justify-center ${index === 0 ? "text-white" : "hover:bg-gradient-primary hover:text-white text-black"
+                  className={`flex items-center justify-center ${index === 0
+                      ? "text-white"
+                      : "hover:bg-gradient-primary hover:text-white text-black"
                     } w-full sm:w-auto`}
                 >
                   {item.label || item}
                 </Button>
+
               ))}
             </div>
           )}
