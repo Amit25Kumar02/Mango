@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRef } from 'react'
 import { ParticleBackground } from '@/components/ParticleBackground';
 import { Navigation } from '@/components/Navigation';
@@ -33,7 +34,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import { toast } from '@/components/ui/use-toast';
 // import { data } from '../components/constants/data';
 import SecondBanner from '@/components/SecondBanner';
-import Careers from "@/components/Careers"
+// import Careers from "@/components/Careers"
 import ThirdBanner from '@/components/ThirdBanner';
 import HeroBanner from '@/components/heroBanner';
 // import CaseStudyCarousel from '@/components/CaseStudyCarousel';
@@ -507,7 +508,7 @@ const DynamicPage = () => {
         // ],
         buttons: [
           { label: "Schedule Strategy & IT Assessment", link: "/questionnaire/consultation" },
-          { label: "Download AI & IT Readiness Guide", link: "/questionnaire/demo" },
+          // { label: "Download AI & IT Readiness Guide", link: "/questionnaire/demo" },
         ],
         companies: [
           "Fortune 500",
@@ -662,7 +663,7 @@ const DynamicPage = () => {
           // buttons: ["Start Your Analytics Journey", "View Case Studies"],
           buttons: [
             { label: "Start Your Analytics Journey", link: "/questionnaire/demo" },
-            { label: "View Case Studies", link: "/questionnaire/demo" },
+            // { label: "View Case Studies", link: "/questionnaire/demo" },
           ],
           stats: [
             { value: "500%", label: "Faster Insights" },
@@ -951,7 +952,7 @@ const DynamicPage = () => {
         // ],
         buttons: [
           { label: "Start Compliant Build", link: "/questionnaire/consultation" },
-          { label: "View Compliance Framework", link: "/questionnaire/demo" },
+          // { label: "View Compliance Framework", link: "/questionnaire/demo" },
         ],
         companies: [
           "HealthTech",
@@ -1024,7 +1025,7 @@ const DynamicPage = () => {
           'Mentorship Programs'
         ],
         buttons: [
-          { label: "Explore Programs", link: "/questionnaire/demo" },
+          // { label: "Explore Programs", link: "/questionnaire/demo" },
           { label: "Join our Community", link: "/questionnaire/demo" },
         ],
         companies: [
@@ -1157,7 +1158,7 @@ const DynamicPage = () => {
         ],
         buttons: [
           { label: "Start Your Project", link: "/questionnaire/demo" },
-          { label: "View Case Studies", link: "/questionnaire/demo" },
+          // { label: "View Case Studies", link: "/questionnaire/demo" },
         ],
         section4: {
           title: "Our IT consulting services span every stage of your transformation",
@@ -1202,7 +1203,7 @@ const DynamicPage = () => {
         ],
         buttons: [
           { label: "Transform Patient Care", link: "/questionnaire/demo" },
-          { label: "View healthcare Cases", link: "/questionnaire/demo" },
+          // { label: "View healthcare Cases", link: "/questionnaire/demo" },
         ],
         section4: {
           title: "AI solutions that improve patient outcomes",
@@ -1270,7 +1271,7 @@ const DynamicPage = () => {
         ],
         buttons: [
           { label: "Scale your Vision", link: "/questionnaire/demo" },
-          { label: "View Success Stories", link: "/questionnaire/demo" },
+          // { label: "View Success Stories", link: "/questionnaire/demo" },
         ],
         section4: {
           title: "End-to-end IT consulting for your transformation",
@@ -1312,7 +1313,7 @@ const DynamicPage = () => {
         ],
         buttons: [
           { label: "Join Waitlist", link: "/questionnaire/demo" },
-          { label: "View Demo", link: "/questionnaire/demo" },
+          // { label: "View Demo", link: "/questionnaire/demo" },
         ],
         developmentProgress: {
           percentage: 52,
@@ -1439,7 +1440,7 @@ const DynamicPage = () => {
         ],
         buttons: [
           { label: "Join Early Access", link: "/questionnaire/demo" },
-          { label: "Experience Demo", link: "/questionnaire/demo" },
+          // { label: "Experience Demo", link: "/questionnaire/demo" },
         ],
         developmentProgress: {
           percentage: 32,
@@ -1590,7 +1591,7 @@ const DynamicPage = () => {
         ],
         buttons: [
           { label: "Join Safety Network", link: "/questionnaire/demo" },
-          { label: "Learn About Safety", link: "/questionnaire/demo" },
+          // { label: "Learn About Safety", link: "/questionnaire/demo" },
         ],
         developmentProgress: {
           percentage: 28,
@@ -2158,7 +2159,7 @@ const DynamicPage = () => {
         ],
         buttons: [
           { label: "Request Healthcare Demo", link: "/questionnaire/demo" },
-          { label: "HIPAA Compliance", link: "about/our-story" },
+          // { label: "HIPAA Compliance", link: "about/our-story" },
         ],
         developmentProgress: {
           percentage: 45,
@@ -2657,22 +2658,22 @@ const DynamicPage = () => {
 
         {/* <BackgroundParticle /> */}
 
-
-
         {/* Beta Phase Section */}
         {content.betaPhase && <BetaPhase data={content.betaPhase} />}
 
         {/* GreenTrack Hero Section */}
         {content.GreenTrackHero && <GreenTrackHero data={content.GreenTrackHero} />}
 
+         {/* AnalyticsHero Section */}
         {content.AnalyticsHero && <AnalyticsHero content={content.AnalyticsHero} />}
 
+        {/* CorporateHero Section */}
         {content.corporateHero && <CorporateTrainingHero content={content.corporateHero} />}
-
-        {/* {content.} */}
 
         {/* Hero Section */}
         <HeroBanner content={content} />
+
+        {/* TrainingProgram Section */}
         {content.benefits && content.form && (
           <TrainingProgram
             data={{
@@ -2682,20 +2683,20 @@ const DynamicPage = () => {
           />
         )}
 
-
         {/* Healthcare Workflow Section */}
         {content.healthcareWorkflow && <HealthcareWorkflow title={content.healthcareWorkflow.title} steps={content.healthcareWorkflow.steps} />}
 
         {/* Development Progress Section */}
         {content.progress && <ProgressSection content={{ progress: content.progress }} />}
 
+        {/* Process Section */}
         {content.analyticsData && (<ProcessSection data={content.analyticsData} />)}
-        {/* Strategic Approach Section */}
+        
+        {/* SecondBanner Section */}
         {content.section2 && <SecondBanner data={content.section2} />}
 
         {/* Development Network Section */}
         {content.developmentNetwork && <DevelopmentNetwork data={content.developmentNetwork} />}
-
 
         {/* Platform Capabilities Section */}
         {content.platformCapabilities && <PlatformCapabilities data={content.platformCapabilities} />}
@@ -2715,6 +2716,7 @@ const DynamicPage = () => {
         {/* Services Grid Section */}
         {content.section3 && <ThirdBanner data={content.section3} />}
 
+        {/* Form Section */}
         {content.formSection && <section className="relative container mx-auto px-4 sm:px-4 md:px- lg:px-32 py-16 z-9999">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -2858,6 +2860,7 @@ const DynamicPage = () => {
           />
         )}
 
+        {/* Section5 Section */}
         {content.section5 && (
           <section className="bg-[#0b0d17] text-white py-20">
             <div className="container mx-auto px-4 md:px-8 lg:px-32 flex flex-col md:flex-row items-center gap-12">
@@ -2922,6 +2925,8 @@ const DynamicPage = () => {
         )}
 
         {/* <SuccessStoriesSection/> */}
+
+        {/* Section42 Section */}
         {content.section42 && <section className="relative container mx-auto px-4 sm:px-4 lg:px-44 py-16">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -2966,7 +2971,6 @@ const DynamicPage = () => {
 
         {/* Leadership Team Section */}
         {/* {content.leadership && (<LeadershipSection content={{ leadership: content.leadership }} />)} */}
-
 
         {/* Our Journey Timeline Section */}
         {content.journey && <section className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 rounded-3xl mb-10">
@@ -3025,12 +3029,11 @@ const DynamicPage = () => {
           </div>
         </section>}
 
+          {/* ImageSection  */}
         {content.imageSection && <ImageSection content={{ imageSection: content.imageSection }} />}
-
 
         {/* Security Framework Section (Compliance & Security only) */}
         {content.security && <SecuritySection content={{ security: content.security }} />}
-
 
         {/* Technologies Section */}
         {content?.technologies && (
@@ -3070,10 +3073,13 @@ const DynamicPage = () => {
         )}
       </main>
 
+        {/* Careers Section */} 
       {content.careers && <CareersSection content={{ careers: content.careers }} />}
 
+        {/* ContactSectionAbout section */}
       {content.contact && <ContactSectionAbout content={{ contact: content.contact }} />}
 
+        {/* FooterMain section */}
       {content?.footerMain && <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-12">
         {/* <BackgroundParticle /> */}
         <motion.div
@@ -3093,9 +3099,11 @@ const DynamicPage = () => {
         </motion.div>
 
       </section>}
+
+      {/* FooterLinks Section */}
       <FooterLinks />
 
-      {/* Footer */}
+      {/* Footer Section */}
       <Footer />
     </div>
   );

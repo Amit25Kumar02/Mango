@@ -16,11 +16,11 @@ interface MarketOpportunityProps {
 
 const MarketOpportunity: React.FC<MarketOpportunityProps> = ({ data }) => {
   return (
-    <section className="relative py-20 px-4 md:px-16 bg-gradient-to-b from-[#120b17] via-[#1b0f24] to-[#120b17] text-center text-white">
+    <section className="relative -mt-16 py-20 px-4 md:px-16 bg-gradient-to-b from-[#120b17] via-[#1b0f24] to-[#120b17] text-center text-white">
       <div className="container mx-auto px-6">
 
         {/* Title */}
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient-primary">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 py-2 text-gradient-primary">
           {data.title}
         </h2>
 

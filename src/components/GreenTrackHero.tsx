@@ -72,13 +72,13 @@ const GreenTrackHero: React.FC<GreenTrackHeroProps> = ({ data }) => {
               Request Early Access
             </button>
 
-            <button
+            {/* <button
                 onClick={() =>{
                   navigate("/questionnaire/demo")}
                 } 
             className="px-2 md:px-4 py-2 bg-[#14161b] border border-[#2a2d33] hover:bg-[#1b1d23] rounded-xl font-semibold text-green-300">
               View Roadmap
-            </button>
+            </button> */}
           </div>
         </div>
 

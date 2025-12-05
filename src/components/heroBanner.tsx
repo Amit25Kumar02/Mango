@@ -54,7 +54,7 @@ const HeroBanner = ({ content }: any) => {
 
           {/* Title */}
           <h1
-            className={`text-2xl sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-6 leading-tight ${applyExtraPadding ? "md:px-2" : "text-start"
+            className={`text-2xl py-2 sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-6 leading-tight ${applyExtraPadding ? "md:px-2" : "text-start"
               }`}
           >
             {content.title}

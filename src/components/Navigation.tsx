@@ -132,7 +132,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
       category: 'Transportation',
       description: 'Community-driven ride-sharing platform focused on family safety',
       status: 'Coming Soon',
-      statusColor: 'border-green-500'
+      statusColor: 'border-green-500',
     },
     {
       title: 'EduMind AI',
@@ -399,9 +399,14 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                       onClick={() => handleItemClick('labs', lab.title)}
                     >
                       <div className="flex justify-between items-start mb-2">
+                        <div className='flex-1'>
                         <h3 className="text-gradient-primary font-semibold text-lg transition-colors duration-300">
                           {lab.title}
                         </h3>
+                        <p className="text-black/65 text-sm leading-relaxed">
+                          {lab.category}
+                        </p>
+                        </div>
                         <span className={`px-2 py-1 rounded-full text-xs text-black border ${lab.statusColor}`}>
                           {lab.status}
                         </span>

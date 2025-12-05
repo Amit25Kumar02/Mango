@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const ThirdBanner = ({ data }) => {
   return (
-    <section className="relative container mx-auto px-4 sm:px-4 md:px-16 lg:px-44 py-16">
+    <section className="relative container mx-auto px-4 sm:px-4 md:px-16 lg:px-44 pb-16 ">
 
       {/* Title */}
       <motion.div
@@ -50,19 +50,18 @@ const ThirdBanner = ({ data }) => {
             "
           >
 
-            {/* ICON ROW - perfectly aligned for all cards */}
             <div className="flex flex-col items-center justify-center min-h-[64px] mb-4">
               <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center">
                 <service.icon className="w-6 h-6 text-white" />
               </div>
             </div>
 
-            {/* TITLE — same height for alignment */}
+        
             <h3 className="text-lg font-bold text-gradient-primary mb-3 min-h-[48px]">
               {service.title}
             </h3>
 
-            {/* DESCRIPTION — same height for alignment */}
+         
             <p className="text-white/55 text-sm leading-relaxed mb-4 min-h-[80px]">
               {service.description}
             </p>
