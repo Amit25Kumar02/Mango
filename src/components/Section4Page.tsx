@@ -58,7 +58,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
     const section = content.section4;
 
     return (
-        <section className="relative container mx-auto px-4 sm:px-4 lg:px-44 pb-14">
+        <section className="relative container mx-auto px-4 sm:px-4 lg:px-44 py-12">
 
             {/* Header */}
             <motion.div
