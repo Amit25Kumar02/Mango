@@ -29,7 +29,7 @@ interface GreenTrackHeroProps {
 const GreenTrackHero: React.FC<GreenTrackHeroProps> = ({ data }) => {
   const navigate = useNavigate();
   return (
-    <section className="py-20 px-4 md:px-8 bg-[#0b0d12] text-white -mb-32">
+    <section className="py-20 px-4 md:px-48 bg-[#0b0d12] text-white -mb-32">
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
 
         {/* LEFT SIDE */}
@@ -53,7 +53,7 @@ const GreenTrackHero: React.FC<GreenTrackHeroProps> = ({ data }) => {
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-4">
             {data.title}
           </h1>
 

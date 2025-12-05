@@ -23,7 +23,7 @@ interface LearningPathsProps {
 const LearningPaths: React.FC<LearningPathsProps> = ({ data }) => {
   const navigate =useNavigate();
   return (
-    <section className="py-20 px-4 md:px-16 lg:px-40 bg-[#0d0d0f] text-white">
+    <section className="py-20 px-4 md:px-16 lg:px-52 bg-[#0d0d0f] text-white">
       <div className="container mx-auto px-6">
 
         {/* Title */}
