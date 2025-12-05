@@ -500,7 +500,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                             return;
                           }
 
-                          handleItemClick('about', aboutItem.title);
+                          handleItemClick('about-us', aboutItem.title);
                         }}
                       >
                         <h3 className="text-gradient-primary font-semibold text-lg mb-2 transition-colors duration-300">

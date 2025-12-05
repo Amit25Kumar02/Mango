@@ -123,7 +123,7 @@ const Section4Page: React.FC<Props> = ({ content }) => {
                                     }}
                                     className="text-white/55 text-sm leading-relaxed overflow-hidden"
                                 >
-                                    {story.challenge}. {story.solution}
+                                    {story.challenge} {story.solution}
                                 </p>
                             </div>
 

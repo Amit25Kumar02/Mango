@@ -2488,7 +2488,7 @@ const DynamicPage = () => {
       },
 
       // About Us
-      'about/our-story': {
+      'about-us/our-story': {
         title: 'Our Story',
         subtitle: 'Learn about our journey, mission, and vision for the future of AI and technology.',
         description: 'Where strategic vision meets AI innovation. We are a collective of world-class passionate technologists bound together by our deep tech knowledge, business acumen, and a passion for using technology and digital solutions to drive business transformation.',
@@ -2565,7 +2565,7 @@ const DynamicPage = () => {
       //     subtitle: "We're always looking for exceptional talent to join our team. Help us build the future of AI-powered business transformation."
       //   },
       // },
-      'about/careers': {
+      'about-us/careers': {
         title: 'Join Our Mission',
         subtitle: 'Join our team and be part of the next generation of AI solutions.',
         description: 'We’re always looking for exceptional talent who want to help build the future of AI-powered business transformation.',
@@ -2597,7 +2597,7 @@ const DynamicPage = () => {
         ],
         careers: {}
       },
-      'about/contact': {
+      'about-us/contact': {
         contact: {},
         title: 'Contact Us',
         subtitle: 'Connect with MangoAnalytics for inquiries, partnerships, or support.',

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 const SecondBanner = ({ data }) => {
-  return <section className="mx-auto px-4 sm:px-4 md:px-16 lg:px-48 py-16  z-9999" style={{
+  return <section className="mx-auto px-4 sm:px-4 md:px-16 lg:px-48 py-16 mb-16 z-9999" style={{
     background: '#21253F',
   }}>
     <motion.div

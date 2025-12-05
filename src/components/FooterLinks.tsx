@@ -127,7 +127,7 @@ export const FooterLinks = () => {
             <h4 className="text-lg text-gradient-primary font-semibold mb-4">Company</h4>
             <ul className="space-y-3 text-foreground ">
               <li>
-                <Link to="/about/our-story">
+                <Link to="/about-us/our-story">
                   <a className="hover:text-foreground transition-colors" rel="noopener noreferrer">Our Story</a>
                 </Link>
               </li>
@@ -137,12 +137,12 @@ export const FooterLinks = () => {
                 </Link>
               </li> */}
               <li>
-                <Link to="/about/careers">
+                <Link to="/about-us/careers">
                   <a className="hover:text-foreground transition-colors" rel="noopener noreferrer">Careers</a>
                 </Link>
               </li>
               <li>
-                <Link to="/about/contact">
+                <Link to="/about-us/contact">
                   <a className="hover:text-foreground transition-colors" rel="noopener noreferrer">Contact</a>
                 </Link>
               </li>
