@@ -2952,7 +2952,7 @@ const DynamicPage = () => {
                 className="rounded-xl p-6 border border-primary/40 bg-[#21253F] hover:bg-[#21253F]"
               >
 
-                <p className="text-2xl font-bold  text-gradient-primary mb-4">{story.company}</p>
+                <p className="text-xl font-bold  text-gradient-primary mb-4">{story.company}</p>
 
                 <div className="space-y-4">
                   <div>

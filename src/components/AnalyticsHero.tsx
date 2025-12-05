@@ -137,7 +137,7 @@ const AnalyticsHero = ({ content }: any) => {
                     key={i}
                     className="bg-[#0e1522] p-4 sm:p-5 rounded-xl border border-cyan-500/10"
                   >
-                    <div className="flex items-center gap-2 text-gray-300 text-sm mb-1">
+                    <div className="flex items-center gap-2 text-gray-300 text-sm mb-1 h-10">
                       {IconComponent && (
                         <IconComponent
                           size={18}

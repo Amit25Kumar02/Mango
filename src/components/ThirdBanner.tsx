@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const ThirdBanner = ({ data }) => {
   return (
-    <section className="relative container mx-auto px-4 sm:px-4 md:px-16 lg:px-44 pb-16 ">
+    <section className="relative container mx-auto px-4 sm:px-4 md:px-16 lg:px-44 py-14">
 
       {/* Title */}
       <motion.div

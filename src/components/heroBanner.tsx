@@ -206,7 +206,7 @@ const HeroBanner = ({ content }: any) => {
 
       {/* COMPANIES LIST */}
       {content?.companies?.length > 0 && (
-        <div className="text-sm text-black mb-10 mt-16 flex flex-col items-center">
+        <div className="text-sm text-black mb-10  flex flex-col items-center">
           <p className="mb-3 text-primary tracking-wide font-medium">
             TRUSTED BY EXECUTIVES AT
           </p>
