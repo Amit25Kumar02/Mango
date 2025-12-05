@@ -2952,11 +2952,11 @@ const DynamicPage = () => {
                 className="rounded-xl p-6 border border-primary/40 bg-[#21253F] hover:bg-[#21253F]"
               >
 
-                <p className="text-2xl font-bold text-center text-gradient-primary mb-4">{story.company}</p>
+                <p className="text-2xl font-bold  text-gradient-primary mb-4">{story.company}</p>
 
                 <div className="space-y-4">
                   <div>
-                    <p className="text-white text-md text-center leading-relaxed">{story.challenge} {story.solution}</p>
+                    <p className="text-white text-md  leading-relaxed">{story.challenge} {story.solution}</p>
                   </div>
 
                   <div className='flex flex-col'>

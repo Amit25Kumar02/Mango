@@ -17,7 +17,7 @@ export const FooterLinks = () => {
               </div>
             </div>
             <p className="text-sm text-foreground leading-relaxed mb-6">
-              Leading AI transformation and career advancement through cutting‑edge
+              Leading AI transformation and career advancement through cutting-edge
               technology and expert guidance.
             </p>
             <div className="flex items-center gap-4 text-foreground/80">
@@ -81,7 +81,7 @@ export const FooterLinks = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/industries/medical-and-healthcare">
+                <Link to="/industries/pharmaceutical-and-health-care">
                   <a className="hover:text-foreground transition-colors" rel="noopener noreferrer">
                     Pharmaceutical & Health Care
                   </a>
