@@ -4,7 +4,13 @@ import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from "@/assets/hero-logo.png"
-import whitelogo from "@/assets/white-hero.png"
+import whitelogo from "@/assets/white-hero.png";
+import Food from "@/assets/foodhaven.png";
+import mango from "@/assets/mango.jpeg";
+import drive from "@/assets/drivemeSafe.jpeg";
+import edu from "@/assets/edumindai-1.jpeg";
+import green from "@/assets/greentrack.jpeg";
+import health from "@/assets/healthsync.jpeg";
 
 export const Navigation = ({ itemColor = "#fff" }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +25,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
   const navigate = useNavigate();
   const navRef = useRef<HTMLDivElement>(null);
 
-  const ref = useRef(null)
+  const ref = useRef(null);
 
   // Helper function to generate route paths
   const getRoutePath = (category: string, item: string) => {
@@ -64,7 +70,6 @@ export const Navigation = ({ itemColor = "#fff" }) => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
 
   const navItems = [
     { label: 'Solutions', href: '#solutions', hasDropdown: true },
@@ -112,49 +117,14 @@ export const Navigation = ({ itemColor = "#fff" }) => {
     }
   ];
 
+  //  Labs: only logos, no text
   const labsItems = [
-    {
-      title: 'FoodHaven',
-      category: 'Health Tech',
-      description: 'AI-powered healthy lifestyle food delivery platform with personalized nutrition',
-      status: 'Coming Soon',
-      statusColor: 'border-green-500'
-    },
-    {
-      title: 'Mango Boutique',
-      category: 'E-commerce',
-      description: 'Immersive VR shopping experience with AI-powered style recommendations',
-      status: 'Coming Soon',
-      statusColor: 'border-green-500'
-    },
-    {
-      title: 'DriveMeSafe',
-      category: 'Transportation',
-      description: 'Community-driven ride-sharing platform focused on family safety',
-      status: 'Coming Soon',
-      statusColor: 'border-green-500',
-    },
-    {
-      title: 'EduMind AI',
-      category: 'Education',
-      description: 'Personalized learning platform with adaptive AI tutoring systems',
-      status: 'Beta Testing',
-      statusColor: 'border-blue-500'
-    },
-    {
-      title: 'GreenTrack',
-      category: 'Sustainability',
-      description: 'Carbon footprint tracking and sustainability optimization for businesses',
-      status: 'In Development',
-      statusColor: 'border-orange-500'
-    },
-    {
-      title: 'HealthSync',
-      category: 'Healthcare',
-      description: 'AI-powered patient data integration and predictive health analytics',
-      status: 'Coming Soon',
-      statusColor: 'border-green-500'
-    }
+    { title: 'foodhaven', logo: Food },
+    { title: 'mango-boutique', logo: mango },
+    { title: 'drivemesafe', logo: drive },
+    { title: 'edumind-ai', logo: edu },
+    { title: 'greentrack', logo: green },
+    { title: 'healthsync', logo: health },
   ];
 
   const AcademyItems = [
@@ -190,7 +160,6 @@ export const Navigation = ({ itemColor = "#fff" }) => {
       description: 'Join our team and be part of the next generation of AI solutions.'
     }
   ];
-
 
   return (
     <motion.nav ref={navRef}
@@ -367,7 +336,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
             </motion.div>
           )}
 
-          {/* Labs Dropdown */}
+          {/* Labs Dropdown (Desktop – logos only) */}
           {isLabsOpen && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -378,7 +347,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
             >
               <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-                {/* ✅ New Heading Section */}
+                {/* Heading (keep or remove as you like) */}
                 <div className="mb-6 text-center">
                   <h2 className="text-2xl font-bold text-gradient-primary">
                     MangoAnalytics Labs
@@ -392,28 +361,11 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                   {labsItems.map((lab, index) => (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
-                      onClick={() => handleItemClick('labs', lab.title)}
+                      whileHover={{ scale: 1.1 }}
+                      onClick={() => handleItemClick("labs", lab.title)}
+                      className="bg-gray-100 p-4 rounded-lg flex justify-center items-center cursor-pointer"
                     >
-                      <div className="flex justify-between items-start mb-2">
-                        <div className='flex-1'>
-                        <h3 className="text-gradient-primary font-semibold text-lg transition-colors duration-300">
-                          {lab.title}
-                        </h3>
-                        <p className="text-black/65 text-sm leading-relaxed">
-                          {lab.category}
-                        </p>
-                        </div>
-                        <span className={`px-2 py-1 rounded-full text-xs text-black border ${lab.statusColor}`}>
-                          {lab.status}
-                        </span>
-                      </div>
-                      <p className="text-black text-sm leading-relaxed">
-                        {lab.description}
-                      </p>
+                      <img src={lab.logo} className="h-full object-contain" alt={lab.title} />
                     </motion.div>
                   ))}
                 </div>
@@ -436,7 +388,6 @@ export const Navigation = ({ itemColor = "#fff" }) => {
               </div>
             </motion.div>
           )}
-
 
           {/* Training Dropdown */}
           {isAcademyOpen && (
@@ -541,50 +492,67 @@ export const Navigation = ({ itemColor = "#fff" }) => {
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
                 <div key={item.label}>
-                  <a
-                    href={item.href}
-                    className="block text-black hover:text-primary transition-colors duration-300 py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                  <button
+                    type="button"
+                    className="w-full text-left block text-black hover:text-primary transition-colors duration-300 py-2 font-medium"
                   >
                     {item.label}
-                  </a>
+                  </button>
+
                   {item.hasDropdown && (
-                    <div className="ml-4 mt-2 space-y-2">
-                      {(item.label === 'Solutions'
-                        ? solutionsItems
-                        : item.label === 'Industries'
-                          ? industriesItems
-                          : item.label === 'Labs'
-                            ? labsItems
+                    item.label === 'Labs' ? (
+                      <div className="ml-2 mt-2 grid grid-cols-1 gap-3">
+                        {labsItems.map((lab, index) => (
+                          <div
+                            key={index}
+                            onClick={() => handleItemClick("labs", lab.title)}
+                            className="p-3 bg-slate-700/30 rounded-lg flex justify-center items-center"
+                          >
+                            <img
+                              src={lab.logo}
+                              alt={lab.title}
+                              className="h-full object-contain"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      /* Other dropdowns keep text cards */
+                      <div className="ml-4 mt-2 space-y-2">
+                        {(item.label === 'Solutions'
+                          ? solutionsItems
+                          : item.label === 'Industries'
+                            ? industriesItems
                             : item.label === 'Academy'
                               ? AcademyItems
                               : aboutUsItems
-                      ).map((dropdownItem: any, index) => (
-                        <div
-                          key={index}
-                          className="p-3 bg-slate-700/30 rounded-lg cursor-pointer hover:bg-slate-600/30 transition-colors duration-300"
-                          onClick={() => {
-                            const category = item.label.toLowerCase().replace(/\s+/g, '-');
-                            handleItemClick(category, dropdownItem.title);
-                          }}
-                        >
-                          <h4 className="text-gradient-primary font-medium text-sm mb-1">
-                            {dropdownItem.title}
-                          </h4>
-                          {dropdownItem.category && (
-                            <p className="text-purple-400 text-xs mb-1">{dropdownItem.category}</p>
-                          )}
-                          <p className={`text-black text-xs`}>
-                            {dropdownItem.description}
-                          </p>
-                          {dropdownItem.status && (
-                            <span className={`inline-block px-2 py-1 rounded-full text-xs text-white mt-2 ${dropdownItem.statusColor}`}>
-                              {dropdownItem.status}
-                            </span>
-                          )}
-                        </div>
-                      ))}
-                    </div>
+                        ).map((dropdownItem: any, index) => (
+                          <div
+                            key={index}
+                            className="p-3 bg-slate-700/30 rounded-lg cursor-pointer hover:bg-slate-600/30 transition-colors duration-300"
+                            onClick={() => {
+                              const category = item.label.toLowerCase().replace(/\s+/g, '-');
+                              handleItemClick(category, dropdownItem.title);
+                            }}
+                          >
+                            <h4 className="text-gradient-primary font-medium text-sm mb-1">
+                              {dropdownItem.title}
+                            </h4>
+                            {dropdownItem.category && (
+                              <p className="text-purple-400 text-xs mb-1">{dropdownItem.category}</p>
+                            )}
+                            <p className="text-black text-xs">
+                              {dropdownItem.description}
+                            </p>
+                            {dropdownItem.status && (
+                              <span className={`inline-block px-2 py-1 rounded-full text-xs text-white mt-2 ${dropdownItem.statusColor}`}>
+                                {dropdownItem.status}
+                              </span>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )
                   )}
                 </div>
               ))}
