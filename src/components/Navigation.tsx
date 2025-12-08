@@ -126,6 +126,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
       description: 'AI-powered healthy lifestyle food delivery platform with personalized nutrition',
       status: 'Coming Soon',
       statusColor: 'border-green-500',
+      statusTextColor: 'text-green-700',
       logo: Food,
     },
     {
@@ -134,6 +135,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
       description: 'Immersive VR shopping experience with AI-powered style recommendations',
       status: 'Coming Soon',
       statusColor: 'border-green-500',
+      statusTextColor: 'text-green-700',
       logo: mango,
     },
     {
@@ -142,6 +144,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
       description: 'Community-driven ride-sharing platform focused on family safety',
       status: 'Coming Soon',
       statusColor: 'border-green-500',
+      statusTextColor: 'text-green-700',
       logo: drive,
     },
     {
@@ -150,6 +153,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
       description: 'Personalized learning platform with adaptive AI tutoring systems',
       status: 'Beta Testing',
       statusColor: 'border-blue-500',
+      statusTextColor: 'text-blue-700',
       logo: edu,
     },
     {
@@ -158,6 +162,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
       description: 'Carbon footprint tracking and sustainability optimization for businesses',
       status: 'In Development',
       statusColor: 'border-orange-500',
+      statusTextColor: 'text-orange-700',
       logo: green,
     },
     {
@@ -166,6 +171,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
       description: 'AI-powered patient data integration and predictive health analytics',
       status: 'Coming Soon',
       statusColor: 'border-green-500',
+      statusTextColor: 'text-green-700',
       logo: health,
     }
   ];
@@ -282,15 +288,14 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
                     </motion.span>
                     <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${
-                        (item.label === 'Solutions' && isSolutionsOpen) ||
+                      className={`w-4 h-4 transition-transform duration-200 ${(item.label === 'Solutions' && isSolutionsOpen) ||
                         (item.label === 'Industries' && isIndustriesOpen) ||
                         (item.label === 'Labs' && isLabsOpen) ||
                         (item.label === 'Academy' && isAcademyOpen) ||
                         (item.label === 'About Us' && isAboutUsOpen)
-                          ? 'rotate-180'
-                          : ''
-                      }`}
+                        ? 'rotate-180'
+                        : ''
+                        }`}
                       style={{ color: isScrolled ? '#333' : itemColor }}
                     />
                   </div>
@@ -398,7 +403,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
           </motion.div>
         )}
 
-        {/* Labs Dropdown – ✅ logo + name + "coming soon" style like your sketch */}
+        {/* Labs Dropdown – logo + name + "coming soon" style like your sketch */}
         {isLabsOpen && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -425,39 +430,47 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                   whileHover={{ scale: 1.02 }}
-                  className="flex items-center justify-between border rounded-xl px-4 py-2 cursor-pointer hover:bg-gray-50 transition"
+                  className="flex gap-3 items-start border border-primary/30 rounded-xl p-3 cursor-pointer hover:bg-gray-50 transition"
                   onClick={() => handleItemClick('labs', lab.title)}
                 >
-                  {/* Left: Logo + Name */}
-                  <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-24 h-28 rounded-lg overflow-hidden flex-shrink-0">
-                      <img
-                        src={lab.logo}
-                        alt={lab.title}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <div className="flex flex-col min-w-0">
-                      <span className="text-black font-semibold text-sm truncate">
-                        {lab.title}
-                      </span>
-                      <span className="text-xs text-gray-500 truncate">
-                        {lab.category}
-                      </span>
-                    </div>
+                  {/* Logo */}
+                  <div className="w-24 h-20 rounded-md  overflow-hidden flex-shrink-0">
+                    <img
+                      src={lab.logo}
+                      alt={lab.title}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
 
-                  {/* Right: Status pill (Coming Soon / Beta etc.) */}
-                  <span
-                    className={`text-[11px] font-semibold rounded-full px-3 py-1 border whitespace-nowrap ${
-                      lab.statusColor || "border-purple-600"
-                    } text-purple-700`}
-                  >
-                    {lab.status || "Coming Soon"}
-                  </span>
+                  {/* Text Content */}
+                  <div className="flex flex-col flex-grow min-w-0">
+                    {/* Title + Status */}
+                    <div className="flex justify-between items-center gap-2">
+                      <span className="text-black font-semibold text-md truncate">
+                        {lab.title}
+                      </span>
+                      <span
+                        className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border whitespace-nowrap ${lab.statusColor || "border-purple-600"
+                          } ${lab.statusTextColor || "text-purple-700"}`}
+                      >
+                        {lab.status || "Coming Soon"}
+                      </span>
+                    </div>
+
+                    {/* Category */}
+                    <span className="text-sm text-black/80">
+                      {lab.category}
+                    </span>
+
+                    {/* Description */}
+                    <p className="text-[14px] text-gray-500 leading-tight ">
+                      {lab.description}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>
+
 
             {/* Optional buttons – keep/remove as you like */}
             <div className="flex gap-2 justify-between mt-4">
@@ -602,11 +615,27 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                                 </p>
                               </div>
                             </div>
-                            <span className="text-[11px] font-semibold text-center border border-purple-600 text-purple-700 rounded-full px-2 py-1">
+                            <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border whitespace-nowrap ${lab.statusColor || "border-purple-600"
+                              } ${lab.statusTextColor || "text-purple-700"}`}>
                               {lab.status || "Coming Soon"}
                             </span>
                           </div>
                         ))}
+                        <div className="flex gap-2 justify-between mt-4">
+                          <Button
+                            onClick={() => window.open("/training/waitlist-signup", "_self")}
+                            className="bg-gradient-primary py-2 px-4"
+                          >
+                            Join Beta Waitlist
+                          </Button>
+
+                          <Button
+                            onClick={() => window.open("/labs/labs", "_self")}
+                            className="text-black bg-white border hover:bg-gradient-primary py-2 px-4"
+                          >
+                            Learn More
+                          </Button>
+                        </div>
                       </div>
                     ) : (
                       /* Other dropdowns keep text cards */
