@@ -83,7 +83,7 @@ export const ContactSection = () => {
             <button
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: "smooth" })
-                navigate("/about/contact")
+                navigate("/about-us/contact")
               }
               }
               className="text-lg font-medium text-gradient-primary">

@@ -105,7 +105,7 @@ export const ServicesSection = () => {
             <Sparkles className="h-5 w-5 text-primary" />
             <button
              onClick={() =>{
-                  navigate("/about/our-story")}
+                  navigate("/about-us/our-story")}
                 }
              className="text-md font-medium text-gradient-primary">
               Our Services
@@ -203,7 +203,7 @@ export const ServicesSection = () => {
             variant="hero"
             size="sm"
             className="group/btn h-10 w-full md:w-80 justify-betweent"
-            onClick={() => window.open("/about/contact")}
+            onClick={() => navigate("/about-us/contact")}
           >
             Start Your AI Transformation
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

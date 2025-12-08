@@ -121,7 +121,7 @@ export const AboutSection = () => {
                 <button
                 onClick={() =>{
                    window.scrollTo({ top: 0, behavior: "smooth" })
-                  navigate("/about/our-story")}
+                  navigate("/about-us/our-story")}
                 }
                 
                  className="text-md font-medium text-gradient-primary">

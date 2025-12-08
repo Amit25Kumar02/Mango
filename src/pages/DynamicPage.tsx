@@ -2591,8 +2591,8 @@ const DynamicPage = () => {
           subtitle: "Don't see a perfect fit? We're always interested in hearing from exceptional talent. Send us your resume and let's start a conversation."
         },
         buttons: [
-          { label: "See open roles", link: "/about/contact" },
-          { label: "Learn more about us", link: "/about/contact" },
+          { label: "See open roles", link: "/about-us/contact" },
+          { label: "Learn more about us", link: "/about-us/contact" },
 
         ],
         careers: {}
@@ -3094,7 +3094,7 @@ const DynamicPage = () => {
           </p>
           <div className='flex gap-2 md:gap-5 justify-center mt-5'>
             <Button variant="hero" onClick={() => window.open('https://calendly.com/mangoanalytics-ai/30min', '_blank')}>Request Demo</Button>
-            <Button variant='cyber' onClick={() => window.open('/about/contact', '_blank')} className='border border-primary/30 text-black'>Partner with us</Button>
+            <Button variant='cyber' onClick={() => window.open('/about-us/contact', '_blank')} className='border border-primary/30 text-black'>Partner with us</Button>
           </div>
         </motion.div>
 
