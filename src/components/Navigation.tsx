@@ -118,7 +118,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
     }
   ];
 
-  // ✅ Labs: logo + name + coming soon (and still keeps meta info)
+
   const labsItems = [
     {
       title: 'Foodhaven',
@@ -317,7 +317,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
             <Button
               variant="hero"
               size="sm"
-              onClick={() => window.open("/about/contact")}
+              onClick={() => window.open("/about-us/contact")}
             >
               Get Started
             </Button>
