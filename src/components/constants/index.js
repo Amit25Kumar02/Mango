@@ -566,7 +566,7 @@ const LabsData = [
     challenge:
       "AI-powered healthy lifestyle food delivery platform with personalized nutrition",
     results: ["Personalized Nutrition", "AI Recipe Generation", "Health Tracking"],
-     button: [{label:"View Details", link:"/labs/food-haven"}],
+     button: [{label:"View Details", link:"/labs/foodhaven"}],
     expected: "Q2 2025",
     slug: "food-haven"
   },
