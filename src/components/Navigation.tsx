@@ -3,12 +3,15 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from "@/assets/hero-logo.png"
-import whitelogo from "@/assets/white-hero.png";
+
+import logo from "@/assets/hero-logo.png";
+// import whitelogo from "@/assets/white-hero.png"; // not used now
+
+// Labs logos
 import Food from "@/assets/foodhaven.png";
 import mango from "@/assets/mango.jpeg";
 import drive from "@/assets/drivemeSafe.jpeg";
-import edu from "@/assets/edumindai-1.jpeg";
+import edu from "@/assets/edumindai.jpeg";
 import green from "@/assets/greentrack.jpeg";
 import health from "@/assets/healthsync.jpeg";
 
@@ -24,8 +27,6 @@ export const Navigation = ({ itemColor = "#fff" }) => {
 
   const navigate = useNavigate();
   const navRef = useRef<HTMLDivElement>(null);
-
-  const ref = useRef(null);
 
   // Helper function to generate route paths
   const getRoutePath = (category: string, item: string) => {
@@ -117,14 +118,56 @@ export const Navigation = ({ itemColor = "#fff" }) => {
     }
   ];
 
-  //  Labs: only logos, no text
+  // ✅ Labs: logo + name + coming soon (and still keeps meta info)
   const labsItems = [
-    { title: 'foodhaven', logo: Food },
-    { title: 'mango-boutique', logo: mango },
-    { title: 'drivemesafe', logo: drive },
-    { title: 'edumind-ai', logo: edu },
-    { title: 'greentrack', logo: green },
-    { title: 'healthsync', logo: health },
+    {
+      title: 'Foodhaven',
+      category: 'Health Tech',
+      description: 'AI-powered healthy lifestyle food delivery platform with personalized nutrition',
+      status: 'Coming Soon',
+      statusColor: 'border-green-500',
+      logo: Food,
+    },
+    {
+      title: 'Mango Boutique',
+      category: 'E-commerce',
+      description: 'Immersive VR shopping experience with AI-powered style recommendations',
+      status: 'Coming Soon',
+      statusColor: 'border-green-500',
+      logo: mango,
+    },
+    {
+      title: 'DriveMeSafe',
+      category: 'Transportation',
+      description: 'Community-driven ride-sharing platform focused on family safety',
+      status: 'Coming Soon',
+      statusColor: 'border-green-500',
+      logo: drive,
+    },
+    {
+      title: 'EduMind AI',
+      category: 'Education',
+      description: 'Personalized learning platform with adaptive AI tutoring systems',
+      status: 'Beta Testing',
+      statusColor: 'border-blue-500',
+      logo: edu,
+    },
+    {
+      title: 'GreenTrack',
+      category: 'Sustainability',
+      description: 'Carbon footprint tracking and sustainability optimization for businesses',
+      status: 'In Development',
+      statusColor: 'border-orange-500',
+      logo: green,
+    },
+    {
+      title: 'HealthSync',
+      category: 'Healthcare',
+      description: 'AI-powered patient data integration and predictive health analytics',
+      status: 'Coming Soon',
+      statusColor: 'border-green-500',
+      logo: health,
+    }
   ];
 
   const AcademyItems = [
@@ -147,10 +190,6 @@ export const Navigation = ({ itemColor = "#fff" }) => {
       title: 'Our Story',
       description: 'Learn about our journey, mission, and vision for the future of AI and technology.'
     },
-    // {
-    //   title: 'Leadership Team',
-    //   description: 'Meet the experts and leaders driving innovation at MangoAnalytics.'
-    // },
     {
       title: 'Careers',
       description: 'Join our team and be part of the next generation of AI solutions.'
@@ -162,16 +201,16 @@ export const Navigation = ({ itemColor = "#fff" }) => {
   ];
 
   return (
-    <motion.nav ref={navRef}
+    <motion.nav
+      ref={navRef}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300
-    ${isScrolled
+        ${isScrolled
           ? "backdrop-blur-md border-b border-primary/20 bg-white/70"
           : "bg-transparent"
         }`}
     >
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -181,7 +220,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
             onClick={() => navigate('/')}
           >
             <img
-              src={window.location.pathname !== "/" ? logo : logo}
+              src={logo}
               className="filter drop-shadow-[0_0_6px_rgba(255,255,255,0.75)]"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               style={{ marginTop: "10px" }}
@@ -242,12 +281,18 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                       {item.label}
                       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
                     </motion.span>
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${(item.label === 'Solutions' && isSolutionsOpen) ||
-                      (item.label === 'Industries' && isIndustriesOpen) ||
-                      (item.label === 'Labs' && isLabsOpen) ||
-                      (item.label === 'Academy' && isAcademyOpen) ||
-                      (item.label === 'About Us' && isAboutUsOpen) ? 'rotate-180' : ''
-                      }`} style={{ color: isScrolled ? '#333' : itemColor }} />
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        (item.label === 'Solutions' && isSolutionsOpen) ||
+                        (item.label === 'Industries' && isIndustriesOpen) ||
+                        (item.label === 'Labs' && isLabsOpen) ||
+                        (item.label === 'Academy' && isAcademyOpen) ||
+                        (item.label === 'About Us' && isAboutUsOpen)
+                          ? 'rotate-180'
+                          : ''
+                      }`}
+                      style={{ color: isScrolled ? '#333' : itemColor }}
+                    />
                   </div>
                 ) : (
                   <motion.a
@@ -264,209 +309,14 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                 )}
               </div>
             ))}
-            <Button variant="hero" size="sm" onClick={() => window.open("/about/contact",)}>
+            <Button
+              variant="hero"
+              size="sm"
+              onClick={() => window.open("/about/contact")}
+            >
               Get Started
             </Button>
           </div>
-
-          {/* Solutions Dropdown */}
-          {isSolutionsOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full right-[40%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%] overflow-y-auto max-h-[500px]"
-              onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
-            >
-              <div className="mx-auto px-2 sm:px-6 lg:px-8 py-8">
-                <div className="grid grid-cols-1 md:grid-cols-1 gap-3">
-                  {solutionsItems.map((solution, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95 "
-                      onClick={() => handleItemClick('solutions', solution.title)}
-                    >
-                      <h3 className="text-white font-semibold text-lg mb-2 text-gradient-primary transition-colors duration-300">
-                        {solution.title}
-                      </h3>
-
-                      <p className="text-black text-sm leading-relaxed">
-                        {solution.description}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          )}
-
-          {/* Industries Dropdown */}
-          {isIndustriesOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full right-[30%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%]"
-              onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
-            >
-              <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="grid grid-cols-1 gap-3">
-                  {industriesItems.map((industry, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
-                      onClick={() => handleItemClick('industries', industry.title)}
-                    >
-                      <h3 className="text-white font-semibold text-lg mb-2 text-gradient-primary transition-colors duration-300">
-                        {industry.title}
-                      </h3>
-                      <p className="text-black text-sm leading-relaxed">
-                        {industry.description}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          )}
-
-          {/* Labs Dropdown (Desktop – logos only) */}
-          {isLabsOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full right-[20%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%] overflow-y-auto max-h-[500px]"
-              onClick={() => setIsLabsOpen(!isLabsOpen)}
-            >
-              <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
-                {/* Heading (keep or remove as you like) */}
-                <div className="mb-6 text-center">
-                  <h2 className="text-2xl font-bold text-gradient-primary">
-                    MangoAnalytics Labs
-                  </h2>
-                  <p className="text-sm text-black mt-1">
-                    Innovations in progress — shaping the future, one breakthrough at a time.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
-                  {labsItems.map((lab, index) => (
-                    <motion.div
-                      key={index}
-                      whileHover={{ scale: 1.1 }}
-                      onClick={() => handleItemClick("labs", lab.title)}
-                      className="bg-gray-100 p-4 rounded-lg flex justify-center items-center cursor-pointer"
-                    >
-                      <img src={lab.logo} className="h-full object-contain" alt={lab.title} />
-                    </motion.div>
-                  ))}
-                </div>
-                <div className="flex gap-2 justify-between mt-4">
-                  <Button
-                    onClick={() => window.open("/training/waitlist-signup", "_self")}
-                    className="bg-gradient-primary py-2 px-4"
-                  >
-                    Join Beta Waitlist
-                  </Button>
-
-                  <Button
-                    onClick={() => window.open("/labs/labs", "_self")}
-                    className="text-black bg-white border hover:bg-gradient-primary py-2 px-4"
-                  >
-                    Learn More
-                  </Button>
-                </div>
-
-              </div>
-            </motion.div>
-          )}
-
-          {/* Training Dropdown */}
-          {isAcademyOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full right-[20%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%]"
-              onClick={() => setIsAcademyOpen(!isAcademyOpen)}
-            >
-              <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="grid grid-cols-1 gap-3">
-                  {AcademyItems.map((trainingItem, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
-                      onClick={() => handleItemClick('training', trainingItem.title)}
-                    >
-                      <h3 className="text-gradient-primary font-semibold text-lg mb-2 transition-colors duration-300">
-                        {trainingItem.title}
-                      </h3>
-                      <p className="text-black text-sm leading-relaxed">
-                        {trainingItem.description}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          )}
-
-          {/* About Us Dropdown */}
-          {isAboutUsOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full right-[10%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%] overflow-y-auto max-h-[500px]"
-              onClick={() => setIsAboutUsOpen(!isAboutUsOpen)}
-            >
-              <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="grid grid-cols-1 gap-3">
-                  {aboutUsItems
-                    .filter(item => showLeadership || item.title !== "Leadership Team")
-                    .map((aboutItem, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                        className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
-                        onClick={(e) => {
-                          e.stopPropagation();
-
-                          // Toggle Leadership on double click
-                          if (aboutItem.title === "Our Story" && e.detail === 2) {
-                            setShowLeadership(!showLeadership);
-                            return;
-                          }
-
-                          handleItemClick('about-us', aboutItem.title);
-                        }}
-                      >
-                        <h3 className="text-gradient-primary font-semibold text-lg mb-2 transition-colors duration-300">
-                          {aboutItem.title}
-                        </h3>
-                        <p className="text-black text-sm leading-relaxed">
-                          {aboutItem.description}
-                        </p>
-                      </motion.div>
-                    ))}
-
-                </div>
-              </div>
-            </motion.div>
-          )}
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
@@ -480,6 +330,232 @@ export const Navigation = ({ itemColor = "#fff" }) => {
             </Button>
           </div>
         </div>
+
+        {/* Solutions Dropdown */}
+        {isSolutionsOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full right-[40%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%] overflow-y-auto max-h-[500px]"
+            onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+          >
+            <div className="mx-auto px-2 sm:px-6 lg:px-8 py-8">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-3">
+                {solutionsItems.map((solution, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95 "
+                    onClick={() => handleItemClick('solutions', solution.title)}
+                  >
+                    <h3 className="text-white font-semibold text-lg mb-2 text-gradient-primary transition-colors duration-300">
+                      {solution.title}
+                    </h3>
+
+                    <p className="text-black text-sm leading-relaxed">
+                      {solution.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Industries Dropdown */}
+        {isIndustriesOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full right-[30%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%]"
+            onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
+          >
+            <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              <div className="grid grid-cols-1 gap-3">
+                {industriesItems.map((industry, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
+                    onClick={() => handleItemClick('industries', industry.title)}
+                  >
+                    <h3 className="text-white font-semibold text-lg mb-2 text-gradient-primary transition-colors duration-300">
+                      {industry.title}
+                    </h3>
+                    <p className="text-black text-sm leading-relaxed">
+                      {industry.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Labs Dropdown – ✅ logo + name + "coming soon" style like your sketch */}
+        {isLabsOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full right-[20%] bg-white/95 backdrop-blur-md rounded-xl shadow-2xl z-[1000] w-[420px] max-w-[95vw] overflow-y-auto max-h-[500px] p-4"
+            onClick={() => setIsLabsOpen(!isLabsOpen)}
+          >
+            {/* Heading (can remove if you don't want it) */}
+            <div className="mb-4 text-center">
+              <h2 className="text-xl font-bold text-gradient-primary">
+                MangoAnalytics Labs
+              </h2>
+              <p className="text-sm text-black/70 mt-1">
+                Innovations in progress — shaping the future, one breakthrough at a time.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              {labsItems.map((lab, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-center justify-between border rounded-xl px-4 py-2 cursor-pointer hover:bg-gray-50 transition"
+                  onClick={() => handleItemClick('labs', lab.title)}
+                >
+                  {/* Left: Logo + Name */}
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-24 h-28 rounded-lg overflow-hidden flex-shrink-0">
+                      <img
+                        src={lab.logo}
+                        alt={lab.title}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div className="flex flex-col min-w-0">
+                      <span className="text-black font-semibold text-sm truncate">
+                        {lab.title}
+                      </span>
+                      <span className="text-xs text-gray-500 truncate">
+                        {lab.category}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Right: Status pill (Coming Soon / Beta etc.) */}
+                  <span
+                    className={`text-[11px] font-semibold rounded-full px-3 py-1 border whitespace-nowrap ${
+                      lab.statusColor || "border-purple-600"
+                    } text-purple-700`}
+                  >
+                    {lab.status || "Coming Soon"}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Optional buttons – keep/remove as you like */}
+            <div className="flex gap-2 justify-between mt-4">
+              <Button
+                onClick={() => window.open("/training/waitlist-signup", "_self")}
+                className="bg-gradient-primary py-2 px-4"
+              >
+                Join Beta Waitlist
+              </Button>
+
+              <Button
+                onClick={() => window.open("/labs/labs", "_self")}
+                className="text-black bg-white border hover:bg-gradient-primary py-2 px-4"
+              >
+                Learn More
+              </Button>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Training / Academy Dropdown */}
+        {isAcademyOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full right-[20%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%]"
+            onClick={() => setIsAcademyOpen(!isAcademyOpen)}
+          >
+            <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              <div className="grid grid-cols-1 gap-3">
+                {AcademyItems.map((trainingItem, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
+                    onClick={() => handleItemClick('training', trainingItem.title)}
+                  >
+                    <h3 className="text-gradient-primary font-semibold text-lg mb-2 transition-colors duration-300">
+                      {trainingItem.title}
+                    </h3>
+                    <p className="text-black text-sm leading-relaxed">
+                      {trainingItem.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* About Us Dropdown */}
+        {isAboutUsOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full right-[10%] bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl z-[1000] bg-white w-[30%] overflow-y-auto max-h-[500px]"
+            onClick={() => setIsAboutUsOpen(!isAboutUsOpen)}
+          >
+            <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              <div className="grid grid-cols-1 gap-3">
+                {aboutUsItems
+                  .filter(item => showLeadership || item.title !== "Leadership Team")
+                  .map((aboutItem, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
+                      onClick={(e) => {
+                        e.stopPropagation();
+
+                        // Toggle Leadership on double click
+                        if (aboutItem.title === "Our Story" && e.detail === 2) {
+                          setShowLeadership(!showLeadership);
+                          return;
+                        }
+
+                        handleItemClick('about-us', aboutItem.title);
+                      }}
+                    >
+                      <h3 className="text-gradient-primary font-semibold text-lg mb-2 transition-colors duration-300">
+                        {aboutItem.title}
+                      </h3>
+                      <p className="text-black text-sm leading-relaxed">
+                        {aboutItem.description}
+                      </p>
+                    </motion.div>
+                  ))}
+
+              </div>
+            </div>
+          </motion.div>
+        )}
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
@@ -501,18 +577,34 @@ export const Navigation = ({ itemColor = "#fff" }) => {
 
                   {item.hasDropdown && (
                     item.label === 'Labs' ? (
+                      // Mobile Labs: logo + name + status
                       <div className="ml-2 mt-2 grid grid-cols-1 gap-3">
                         {labsItems.map((lab, index) => (
                           <div
                             key={index}
                             onClick={() => handleItemClick("labs", lab.title)}
-                            className="p-3 bg-slate-700/30 rounded-lg flex justify-center items-center"
+                            className="p-3 bg-slate-100 rounded-lg flex-1 gap-4 items-center justify-between cursor-pointer"
                           >
-                            <img
-                              src={lab.logo}
-                              alt={lab.title}
-                              className="h-full object-contain"
-                            />
+                            <div className="flex-1 w-full items-center gap-4">
+                              <div className="md:w-16 md:h-16 rounded-lg overflow-hidden flex-shrink-0 border border-gray-200">
+                                <img
+                                  src={lab.logo}
+                                  alt={lab.title}
+                                  className="w-full h-full object-contain"
+                                />
+                              </div>
+                              <div>
+                                <p className="text-black text-center text-md mb-2 font-semibold">
+                                  {lab.title}
+                                </p>
+                                <p className="text-gray-500 text-center mb-2 text-xs">
+                                  {lab.category}
+                                </p>
+                              </div>
+                            </div>
+                            <span className="text-[11px] font-semibold text-center border border-purple-600 text-purple-700 rounded-full px-2 py-1">
+                              {lab.status || "Coming Soon"}
+                            </span>
                           </div>
                         ))}
                       </div>
