@@ -9,7 +9,7 @@ import logo from "@/assets/hero-logo.png";
 
 // Labs logos
 import Food from "@/assets/foodhaven.png";
-import mango from "@/assets/mango.jpeg";
+import mango from "@/assets/mango-c.png";
 import drive from "@/assets/drivemeSafe.jpeg";
 import edu from "@/assets/edumindai.jpeg";
 import green from "@/assets/greentrack.jpeg";
