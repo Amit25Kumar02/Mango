@@ -2299,7 +2299,7 @@ const DynamicPage = () => {
         },
         status: 'Coming Soon'
       },
-      'training/programs-overview': {
+      'academy/programs-overview': {
         domain: "Training Programs",
         title: 'Individual and corporate AI courses',
         subtitle: 'AI-powered patient data integration and predictive health analytics.',
@@ -2368,7 +2368,7 @@ const DynamicPage = () => {
         },
 
       },
-      'training/corporate-training': {
+      'academy/corporate-training': {
         corporateHero: {
           domain: "Corporate Training",
           title: 'Upskilling enterprise teams',
@@ -2457,7 +2457,7 @@ const DynamicPage = () => {
         },
 
       },
-      'training/waitlist-signup': {
+      'academy/waitlist-signup': {
         domain: "Early Access",
         title: 'Get early access to our programs',
         subtitle: 'AI-powered patient data integration and predictive health analytics.',

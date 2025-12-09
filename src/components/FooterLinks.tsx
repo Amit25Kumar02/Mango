@@ -100,21 +100,21 @@ export const FooterLinks = () => {
             <h4 className="text-lg text-gradient-primary font-semibold mb-4">Academy</h4>
             <ul className="space-y-3 text-foreground ">
               <li>
-                <Link to="/training/programs-overview">
+                <Link to="/academy/programs-overview">
                   <a className="hover:text-foreground transition-colors" rel="noopener noreferrer">
                     Programs Overview
                   </a>
                 </Link>
               </li>
               <li>
-                <Link to="/training/waitlist-signup">
+                <Link to="/academy/waitlist-signup">
                   <a className="hover:text-foreground transition-colors" rel="noopener noreferrer">
                     Waitlist Signup
                   </a>
                 </Link>
               </li>
               <li>
-                <Link to="/training/corporate-training">
+                <Link to="/academy/corporate-training">
                   <a className="hover:text-foreground transition-colors" rel="noopener noreferrer">
                     Corporate training
                   </a>

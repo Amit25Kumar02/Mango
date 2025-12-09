@@ -475,7 +475,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
             {/* Optional buttons – keep/remove as you like */}
             <div className="flex gap-2 justify-between mt-4">
               <Button
-                onClick={() => window.open("/training/waitlist-signup", "_self")}
+                onClick={() => window.open("/academy/waitlist-signup", "_self")}
                 className="bg-gradient-primary py-2 px-4"
               >
                 Join Beta Waitlist
@@ -509,7 +509,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     className="group cursor-pointer p-4 rounded-lg transition-colors duration-300 border border-primary/30 hover:bg-slate-100/95"
-                    onClick={() => handleItemClick('training', trainingItem.title)}
+                    onClick={() => handleItemClick('academy', trainingItem.title)}
                   >
                     <h3 className="text-gradient-primary font-semibold text-lg mb-2 transition-colors duration-300">
                       {trainingItem.title}
@@ -623,7 +623,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                         ))}
                         <div className="flex gap-2 justify-between mt-4">
                           <Button
-                            onClick={() => window.open("/training/waitlist-signup", "_self")}
+                            onClick={() => window.open("/academy/waitlist-signup", "_self")}
                             className="bg-gradient-primary py-2 px-4"
                           >
                             Join Beta Waitlist
@@ -653,7 +653,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                             className="p-3 bg-slate-700/30 rounded-lg cursor-pointer hover:bg-slate-600/30 transition-colors duration-300"
                             onClick={() => {
                               const category = item.label.toLowerCase().replace(/\s+/g, '-');
-                              handleItemClick('training', dropdownItem.title);
+                              handleItemClick(category, dropdownItem.title);
                             }}
                           >
                             <h4 className="text-gradient-primary font-medium text-sm mb-1">

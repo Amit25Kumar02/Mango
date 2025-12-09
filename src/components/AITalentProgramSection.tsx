@@ -98,7 +98,7 @@ export default function AITalentProgramSection() {
             <button
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: "smooth" })
-                navigate("/training/waitlist-signup")
+                navigate("/academy/waitlist-signup")
               }
               }
               className="border border-yellow-500 text-yellow-400 text-[14px] px-4 py-2 rounded-lg hover:bg-gradient-primary hover:text-white transition-all">
