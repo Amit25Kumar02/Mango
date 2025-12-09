@@ -653,7 +653,7 @@ export const Navigation = ({ itemColor = "#fff" }) => {
                             className="p-3 bg-slate-700/30 rounded-lg cursor-pointer hover:bg-slate-600/30 transition-colors duration-300"
                             onClick={() => {
                               const category = item.label.toLowerCase().replace(/\s+/g, '-');
-                              handleItemClick(category, dropdownItem.title);
+                              handleItemClick('training', dropdownItem.title);
                             }}
                           >
                             <h4 className="text-gradient-primary font-medium text-sm mb-1">

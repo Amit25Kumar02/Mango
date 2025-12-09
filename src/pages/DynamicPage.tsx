@@ -2664,7 +2664,7 @@ const DynamicPage = () => {
         {/* GreenTrack Hero Section */}
         {content.GreenTrackHero && <GreenTrackHero data={content.GreenTrackHero} />}
 
-         {/* AnalyticsHero Section */}
+        {/* AnalyticsHero Section */}
         {content.AnalyticsHero && <AnalyticsHero content={content.AnalyticsHero} />}
 
         {/* CorporateHero Section */}
@@ -2691,7 +2691,7 @@ const DynamicPage = () => {
 
         {/* Process Section */}
         {content.analyticsData && (<ProcessSection data={content.analyticsData} />)}
-        
+
         {/* SecondBanner Section */}
         {content.section2 && <SecondBanner data={content.section2} />}
 
@@ -2726,29 +2726,24 @@ const DynamicPage = () => {
           >
             {/* <BackgroundParticle /> */}
             <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary mb-6" style={{ lineHeight: 1.15 }}>{content.formSection.title}</h2>
-            <p className="text-xl text-black max-w-4xl mx-auto">
+            <p className="text-xl text-black max-w-4xl mx-auto pb-8">
               {content.formSection.subtitle}
             </p>
-            <div className='flex items-center justify-center m-10 relative gap-4 z-999999'>
-              <form className="space-y-6  border border-primary/30 rounded-[1rem] p-5">
-                <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full max-w-7xl mx-auto px-2 sm:px-4">
+              {/* FORM SECTION */}
+              <form className="space-y-6 border border-primary/30 rounded-[1rem] p-6 bg-white/90 shadow-lg w-full">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-black mb-2 text-left">
                       First Name
                     </label>
-                    <Input
-                      placeholder="John"
-                      className=" border-primary/20 focus:border-primary"
-                    />
+                    <Input placeholder="John" className="border-primary/20 focus:border-primary" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-black mb-2 text-left">
                       Last Name
                     </label>
-                    <Input
-                      placeholder="Doe"
-                      className="border-primary/20 focus:border-primary"
-                    />
+                    <Input placeholder="Doe" className="border-primary/20 focus:border-primary" />
                   </div>
                 </div>
 
@@ -2756,23 +2751,17 @@ const DynamicPage = () => {
                   <label className="block text-sm font-medium text-black mb-2 text-left">
                     Email Address
                   </label>
-                  <Input
-                    type="email"
-                    placeholder="john@company.com"
-                    className=" border-primary/20 focus:border-primary"
-                  />
+                  <Input type="email" placeholder="john@company.com" className="border-primary/20 focus:border-primary" />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-black mb-2 text-left">
                     Company
                   </label>
-                  <Input
-                    placeholder="Your Company Name"
-                    className="border-primary/20 focus:border-primary"
-                  />
+                  <Input placeholder="Your Company Name" className="border-primary/20 focus:border-primary" />
                 </div>
-                <div className='text-black'>
+
+                <div>
                   <label className="block text-sm font-medium text-black mb-2 text-left">
                     Current Role
                   </label>
@@ -2781,15 +2770,14 @@ const DynamicPage = () => {
                       <SelectValue placeholder="Select an option" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="Software Developer" >Software Developer</SelectItem>
+                      <SelectItem value="Software Developer">Software Developer</SelectItem>
                       <SelectItem value="Data Scientist">Data Scientist</SelectItem>
                       <SelectItem value="Product Manager">Product Manager</SelectItem>
-                      <SelectItem value="Product Manager">Executive/Leadership</SelectItem>
+                      <SelectItem value="Leadership">Executive/Leadership</SelectItem>
                       <SelectItem value="Student">Student</SelectItem>
                       <SelectItem value="Other">Other</SelectItem>
                     </SelectContent>
                   </Select>
-
                 </div>
 
                 <div>
@@ -2798,8 +2786,8 @@ const DynamicPage = () => {
                   </label>
                   <Textarea
                     placeholder="Tell us about your project and how AI can help your business..."
-                    rows={5}
-                    className=" border-primary/20 focus:border-primary resize-none"
+                    rows={4}
+                    className="border-primary/20 focus:border-primary resize-none"
                   />
                 </div>
 
@@ -2808,40 +2796,49 @@ const DynamicPage = () => {
                   <Send className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </form>
-              {/* Upcoming Programs Section */}
-              <div className="bg-white rounded-2xl mt-5 mb-5 py-8 px-4 md:px-4 w-[50%]">
-                <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary mb-8">Upcoming Programs</h2>
-                <div className="flex flex-col gap-7">
-                  {/* Program 1 */}
-                  <div className="rounded-xl border border-gray-200 bg-white px-6 py-6 relative flex flex-col gap-2 shadow-sm">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="bg-gradient-primary text-xs text-white px-3 py-1 rounded-full font-semibold">Advanced</span>
-                      <span className="text-sm text-amber-600 font-semibold">Q2 2024</span>
+
+              {/* PROGRAMS SECTION */}
+              <div className="bg-white rounded-2xl shadow-lg p-6 w-full">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gradient-primary mb-6">
+                  Upcoming Programs
+                </h2>
+
+                <div className="flex flex-col gap-6">
+                  {[
+                    {
+                      level: "Advanced",
+                      time: "Q2 2024",
+                      title: "Advanced Computer Vision",
+                      desc: "Deep dive into image recognition, object detection, and neural networks",
+                    },
+                    {
+                      level: "Executive",
+                      time: "Q2 2024",
+                      title: "AI Ethics & Governance",
+                      desc: "Navigate the ethical implications and governance of AI in business",
+                    },
+                    {
+                      level: "Intermediate",
+                      time: "Q3 2024",
+                      title: "Generative AI Applications",
+                      desc: "Build applications with GPT, DALL-E, and other generative models",
+                    },
+                  ].map((item, i) => (
+                    <div key={i} className="rounded-xl border border-gray-200 bg-white px-5 py-5 flex flex-col gap-2 shadow-sm">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="bg-gradient-primary text-xs text-white px-3 py-1 rounded-full font-semibold">
+                          {item.level}
+                        </span>
+                        <span className="text-sm text-amber-600 font-semibold">{item.time}</span>
+                      </div>
+                      <p className="text-lg font-bold text-gradient-primary">{item.title}</p>
+                      <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                     </div>
-                    <p className="text-lg font-bold text-gradient-primary mb-[2px]">Advanced Computer Vision</p>
-                    <p className="text-gray-600 text-sm leading-relaxed">Deep dive into image recognition, object detection, and neural networks</p>
-                  </div>
-                  {/* Program 2 */}
-                  <div className="rounded-xl border border-gray-200 bg-white px-6 py-6 relative flex flex-col gap-2 shadow-sm">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="bg-gradient-primary text-xs text-white px-3 py-1 rounded-full font-semibold">Executive</span>
-                      <span className="text-sm text-amber-600 font-semibold">Q2 2024</span>
-                    </div>
-                    <p className="text-lg font-bold text-gradient-primary mb-[2px]">AI Ethics & Governance</p>
-                    <p className="text-gray-600 text-sm leading-relaxed">Navigate the ethical implications and governance of AI in business</p>
-                  </div>
-                  {/* Program 3 */}
-                  <div className="rounded-xl border border-gray-200 bg-white px-6 py-6 relative flex flex-col gap-2 shadow-sm">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="bg-gradient-primary text-xs text-white px-3 py-1 rounded-full font-semibold">Intermediate</span>
-                      <span className="text-sm text-amber-600 font-semibold">Q3 2024</span>
-                    </div>
-                    <p className="text-lg font-bold text-gradient-primary mb-[2px]">Generative AI Applications</p>
-                    <p className="text-gray-600 text-sm leading-relaxed">Build applications with GPT, DALL-E, and other generative models</p>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
+
           </motion.div>
         </section>}
 
@@ -3029,7 +3026,7 @@ const DynamicPage = () => {
           </div>
         </section>}
 
-          {/* ImageSection  */}
+        {/* ImageSection  */}
         {content.imageSection && <ImageSection content={{ imageSection: content.imageSection }} />}
 
         {/* Security Framework Section (Compliance & Security only) */}
@@ -3073,13 +3070,13 @@ const DynamicPage = () => {
         )}
       </main>
 
-        {/* Careers Section */} 
+      {/* Careers Section */}
       {content.careers && <CareersSection content={{ careers: content.careers }} />}
 
-        {/* ContactSectionAbout section */}
+      {/* ContactSectionAbout section */}
       {content.contact && <ContactSectionAbout content={{ contact: content.contact }} />}
 
-        {/* FooterMain section */}
+      {/* FooterMain section */}
       {content?.footerMain && <section className="relative container mx-auto px-4 sm:px-4 lg:px-32 py-12">
         {/* <BackgroundParticle /> */}
         <motion.div
