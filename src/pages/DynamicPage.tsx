@@ -1289,7 +1289,7 @@ const DynamicPage = () => {
       'labs/labs': {
         title: "MangoAnalytics Labs",
         description: "Innovations in progress — shaping the future, one breakthrough at a time.",
-        buttons: ["View All Projects", "Join Beta Program"],
+        // buttons: ["View All Projects", "Join Beta Program"],
         companies: ["TechCorp", "InnovateLab", "FutureVentures", "NextGen", "AIStartup"],
         section4: {
           title: "Innovation Pipeline",

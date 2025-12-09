@@ -630,30 +630,30 @@ const LabsData = [
     expected: "Q3 2025",
     // button: "View Details"
   },
-  {
-    icon: "trending-up",
-    category: "FinTech",
-    timeline: "Stealth Mode",
-    company: "AssetWise AI",
-    challenge:
-      "Intelligent asset management platform for optimized portfolios and risk analysis",
-    results: ["Portfolio Optimization", "Risk Analytics", "Market Prediction"],
-    button: [{label:"View Details",link:"/labs/assetwise-ai"}],
-    expected: "Q4 2025",
-    slug: "assetwise-ai"
-  },
-  {
-    icon: "heart",
-    category: "Health & Wellness",
-    timeline: "Stealth Mode",
-    company: "VitaCoach AI",
-    challenge:
-      "AI-powered personal health coach adapting to user lifestyle for better wellness",
-    results: ["Habit Tracking", "Personalized Coaching", "Wellness Analytics"],
-    button: [{label:"View Details",link:"/labs/vitacoach-ai"}],
-    expected: "Q1 2026",
-    slug: "vitacoach-ai"
-  }
+  // {
+  //   icon: "trending-up",
+  //   category: "FinTech",
+  //   timeline: "Stealth Mode",
+  //   company: "AssetWise AI",
+  //   challenge:
+  //     "Intelligent asset management platform for optimized portfolios and risk analysis",
+  //   results: ["Portfolio Optimization", "Risk Analytics", "Market Prediction"],
+  //   button: [{label:"View Details",link:"/labs/assetwise-ai"}],
+  //   expected: "Q4 2025",
+  //   slug: "assetwise-ai"
+  // },
+  // {
+  //   icon: "heart",
+  //   category: "Health & Wellness",
+  //   timeline: "Stealth Mode",
+  //   company: "VitaCoach AI",
+  //   challenge:
+  //     "AI-powered personal health coach adapting to user lifestyle for better wellness",
+  //   results: ["Habit Tracking", "Personalized Coaching", "Wellness Analytics"],
+  //   button: [{label:"View Details",link:"/labs/vitacoach-ai"}],
+  //   expected: "Q1 2026",
+  //   slug: "vitacoach-ai"
+  // }
 ];
 
 
