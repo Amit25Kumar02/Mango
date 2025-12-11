@@ -42,7 +42,7 @@ const TrainingProgram: React.FC<TrainingProps> = ({ data }) => {
 
   return (
     <section className="w-full bg-gradient-to-br from-[#0c0d17] via-[#0f101c] to-[#141627] px-4 md:px-16 lg:px-16 py-20 text-white">
-      
+
       <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-12 max-w-5xl mx-auto">
 
         {/* LEFT BENEFITS */}
@@ -70,7 +70,7 @@ const TrainingProgram: React.FC<TrainingProps> = ({ data }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {form?.fields?.map((field, idx) => (
               <div key={idx} className={field.type === "textarea" ? "md:col-span-2" : ""}>
-                
+
                 {/* LABEL */}
                 <label className="text-sm text-gray-300">{field.label} {field.required ? "*" : ""}</label>
 
@@ -133,10 +133,14 @@ const TrainingProgram: React.FC<TrainingProps> = ({ data }) => {
           </div>
 
           {/* SUBMIT */}
-          <button className="w-full mt-8 py-3 rounded-xl bg-gradient-primary text-white font-semibold shadow-lg hover:opacity-90 transition flex items-center justify-center gap-2">
+          <button
+            onClick={() => window.open("https://calendly.com/mangoanalytics-ai/30min", "_blank")}
+            className="w-full mt-8 py-3 rounded-xl bg-gradient-primary text-white font-semibold shadow-lg hover:opacity-90 transition flex items-center justify-center gap-2"
+          >
             {form?.submitButton}
             <span>➜</span>
           </button>
+
 
         </div>
       </div>
