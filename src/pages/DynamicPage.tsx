@@ -2140,7 +2140,7 @@ const DynamicPage = () => {
         },
         footerMain: {
           title: "Lead the Sustainability Revolution",
-          subtitle: "Join our pilot program and be among the first to experience next-generation sustainability tracking.."
+          subtitle: "Join our pilot program and be among the first to experience next-generation sustainability tracking."
         },
       },
 
